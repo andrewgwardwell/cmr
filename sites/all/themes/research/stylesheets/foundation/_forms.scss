@@ -1,0 +1,32 @@
+input, textarea, select {
+  font-size: 1.0em;
+  padding: 5px 0 5px 10px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+  outline: none;
+  @include placeholder {
+    color: #ccc;
+  }
+}
+
+input[type="submit"] {
+  background-color: $color-orange;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0 10px 0;
+  text-align: center;
+  @include transition(all .2s);
+  text-transform: uppercase;
+  &:hover {
+    background-color: darken($color-orange, 10%);
+  }
+  &:active {
+    background-color: darken($color-orange, 15%);
+  }
+}
+
+.form-item {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}

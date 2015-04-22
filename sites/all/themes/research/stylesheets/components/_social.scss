@@ -1,0 +1,21 @@
+.pw-widget{
+  position: absolute;
+  z-index: 999999999;
+  display: block;
+  left: 5px;
+  @include transition(padding-top .5s);
+}
+
+.pw-widget.fixed{
+  position: fixed;
+  top: 0 !important;
+  padding-top: 10%;
+}
+
+
+@include media($mq-lap-up){
+  .pw-widget{
+    left: 20px;
+  }
+
+}

@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+span,
+strong,
+em{
+  @extend %reset-margin;
+  color:$color-heading;
+}
+
+.invert{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  span,
+  strong,
+  li,
+  em{
+    color:$color-heading-invert;
+  }
+}
+
+h1 {
+  @include heading(1);
+  @extend %font-sans-serif-bold;
+}
+
+h2 {
+  @include heading(2);
+  @extend %font-sans-serif-semi;
+}
+
+h3 {
+  @include heading(3);
+  @extend %font-sans-serif-bold;
+}
+
+h4 {
+  @include heading(4);
+  @extend %font-sans-serif-semi;
+}
+
+h5 {
+  @include heading(5);
+  @extend %font-sans-serif-semi;
+}
+
+//h6 {
+//  @include heading(6);
+//}
+

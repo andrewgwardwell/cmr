@@ -1,0 +1,536 @@
+<?php
+
+/**
+ *  Implements hook_permission().
+ */
+function cmr_permission() {
+  return array(
+    'simple_admin' => array(
+      'title' => t('See Admin Dashboard on login.'),
+      'description' => t('See Admin Dashboard on login.'),
+    ),
+  );
+}
+
+/**
+ *  Implements hook_block_info().
+ */
+function cmr_block_info() {
+  $blocks['staff'] = array(
+    'info' => t('Staff'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['global'] = array(
+    'info' => t('Globe'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['global2'] = array(
+    'info' => t('Globe 2'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['global_practices'] = array(
+    'info' => t('Global Practices'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['clients'] = array(
+    'info' => t('Clients'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['therapy_area'] = array(
+    'info' => t('Therapy Areas'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ *  Implements hook_block_view().
+ */
+function cmr_block_view($delta = '') {
+switch ($delta){
+  case 'global_practices':
+    $block['content'] = theme('cmr_global_practices');
+    break;
+  case 'global2':
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/d3.min.js');
+    drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/datamaps.world.min.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/cmr_globe2.js');
+    $points = $expertise = $devices = array();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'clients')
+      ->entityCondition('status', 1);
+    $res = $query->execute();
+    $cl_nodes = node_load_multiple(array_keys($res['node']));
+    foreach ($cl_nodes as $cl){
+      $terms = $cl->field_work_location[LANGUAGE_NONE];
+      $raw = $cl->field_therapy_areas[LANGUAGE_NONE];
+      $m_raw = $cl->field_medical_device[LANGUAGE_NONE];
+      $picture = $cl->field_client_logo[LANGUAGE_NONE][0];
+      $pic_src = image_style_url('client_logo', $picture['uri']);
+      $areas = $m_areas = $ex_blob = $device_blob = array();
+      foreach($raw as $r){
+        $th_term = taxonomy_term_load($r['tid']);
+        $areas[$r['tid']] = $r['tid'];
+        $expertise[$th_term->name] = $r['tid'];
+        $ex_blob[] = $th_term->name;
+      }
+      foreach($m_raw as $m_r){
+        $mth_term = taxonomy_term_load($m_r['tid']);
+        $m_areas[$m_r['tid']] = $m_r['tid'];
+        $devices[$mth_term->name] = $m_r['tid'];
+        $device_blob[] = $mth_term->name;
+      }
+      $a_areas = array_merge($areas, $m_areas);
+      foreach($terms as $t){
+        $term = taxonomy_term_load($t['tid']);
+        $c = $term->field_location[LANGUAGE_NONE][0];
+        $loc = location_load_location($c['lid']);
+        $points[] =  array(
+          'country' => $term->name,
+          'client_name' => $cl->title,
+          'therapy_areas' => $a_areas,
+          'devs' => $device_blob,
+          'exs' => $ex_blob,
+          'picture' => $pic_src,
+          'lat' => $loc['latitude'],
+          'long' => $loc['longitude'],
+        );
+      }
+    }
+
+    $sing_loc = array();
+    foreach ($points as $k => $p){
+      $id = $p['lat'].'/'.$p['long'];
+      $country = $sing_loc[$p['country']];
+      $la = $p['lat'];
+      $lo = $p['long'];
+          if (!empty($country)) {
+            $fin_id = make_uniq_offset($p, $country, $id, false);
+            $la = $fin_id[0];
+            $lo = $fin_id[1];
+            $n_id = $lo.'/'.$la;
+            $p['lat'] = $la;
+            $p['long'] = $lo;
+            $sing_loc[$p['country']][$n_id] = $p;
+            //}
+          } else {
+            $sing_loc[$p['country']] = array();
+            $sing_loc[$p['country']][$id] = $p;
+          }
+          $points[$k]['lat'] = $la;
+          $points[$k]['long'] = $lo;
+    }
+
+
+    $expertise['All'] = 'all';
+    $devices['All'] = 'all';
+
+    drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
+    $block['subject'] = '';
+    $block['content'] = '<div id = "map-container"></div>';
+    break;
+  case 'global':
+    drupal_add_js('http://www.webglearth.com/v2/api.js', 'external');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/underscore.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/mustache.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/cmr_globe.js');
+    $points = $expertise = $devices = array();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'clients')
+      ->entityCondition('status', 1);
+    $res = $query->execute();
+    $cl_nodes = node_load_multiple(array_keys($res['node']));
+    foreach ($cl_nodes as $cl){
+      $terms = $cl->field_work_location[LANGUAGE_NONE];
+      $raw = $cl->field_therapy_areas[LANGUAGE_NONE];
+      $m_raw = $cl->field_medical_device[LANGUAGE_NONE];
+      $picture = $cl->field_client_logo[LANGUAGE_NONE][0];
+      $pic_src = image_style_url('client_logo', $picture['uri']);
+      $areas = $m_areas = $ex_blob = $device_blob = array();
+      foreach($raw as $r){
+        $th_term = taxonomy_term_load($r['tid']);
+        $areas[$r['tid']] = $r['tid'];
+        $expertise[$th_term->name] = $r['tid'];
+        $ex_blob[] = $th_term->name;
+      }
+      foreach($m_raw as $m_r){
+        $mth_term = taxonomy_term_load($m_r['tid']);
+        $m_areas[$m_r['tid']] = $m_r['tid'];
+        $devices[$mth_term->name] = $m_r['tid'];
+        $device_blob[] = $mth_term->name;
+      }
+      $a_areas = array_merge($areas, $m_areas);
+      foreach($terms as $t){
+        $term = taxonomy_term_load($t['tid']);
+        $c = $term->field_location[LANGUAGE_NONE][0];
+        $loc = location_load_location($c['lid']);
+        $points[] =  array(
+          'country' => $term->name,
+          'client_name' => $cl->title,
+          'therapy_areas' => $a_areas,
+          'devs' => $device_blob,
+          'exs' => $ex_blob,
+          'picture' => $pic_src,
+          'lat' => $loc['latitude'],
+          'long' => $loc['longitude'],
+        );
+      }
+    }
+
+    $sing_loc = array();
+    foreach ($points as $k => $p){
+      $id = $p['lat'].'/'.$p['long'];
+      $country = $sing_loc[$p['country']];
+      $la = $p['lat'];
+      $lo = $p['long'];
+          if (!empty($country)) {
+            $fin_id = make_uniq_offset($p, $country, $id, false);
+            $la = $fin_id[0];
+            $lo = $fin_id[1];
+            $n_id = $lo.'/'.$la;
+            $p['lat'] = $la;
+            $p['long'] = $lo;
+            $sing_loc[$p['country']][$n_id] = $p;
+            //}
+          } else {
+            $sing_loc[$p['country']] = array();
+            $sing_loc[$p['country']][$id] = $p;
+          }
+          $points[$k]['lat'] = $la;
+          $points[$k]['long'] = $lo;
+    }
+
+
+    $expertise['All'] = 'all';
+    $devices['All'] = 'all';
+
+    drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
+    $block['subject'] = '';
+    $block['content'] = theme('cmr_globe', array('data_points' => $points, 'expertise' => $expertise, 'devices' => $devices));
+    break;
+  case 'staff':
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'staff')
+      ->entityCondition('status', 1);
+    $res = $query->execute();
+    if(count($res['node']) > 0) {
+      $staff = node_load_multiple(array_keys($res['node']));
+      foreach ($staff as $person) {
+        $p_w = entity_metadata_wrapper('node', $person->nid);
+        $title = $person->title;
+        $body = $p_w->body->value();
+        $picture = $p_w->field_staff_image->value();
+        $pic_src = image_style_url('headshot_image', $picture['uri']);
+        $ms = $p_w->field_medical_device->value();
+        $as = $p_w->field_therapy_areas->value();
+        $meds = array();
+        $ars = array();
+        foreach($ms as $m){
+          $meds[] = $m->name;
+        }
+        foreach($as as $a){
+          $ars[] = $a->name;
+        }
+        $m_skills = theme('skills', array('title' => 'Medical Devices', 'skills' => $meds));
+        $a_skills = theme('skills', array('title' => 'Therapy Areas', 'skills' => $ars));
+        $users[] = array(
+          'name' => $title,
+          'pic' => $pic_src,
+          'copy' => $body['value'],
+          'skills' => $a_skills.$m_skills
+        );
+      }
+      drupal_add_js(drupal_get_path('theme', 'research').'/js/staff.js');
+      $block['subject'] = '';
+      $block['content'] = theme('staff', array('users' => $users));
+    }
+    break;
+  case 'therapy_area':
+    //@todo finish this shit.
+    $voc = taxonomy_vocabulary_machine_name_load('therapy_area');
+//    $terms = taxonomy_get_nested_tree($voc->vid, 10);
+    $terms = taxonomy_get_nested_tree($voc->vid, 10);
+//    var_dump($terms);
+    $dr_terms['name'] = 'Therapy Areas';
+    array_walk($terms, 'cmr_to_arrays');
+    $dr_terms['children'] = $terms;
+//    drupal_add_js("http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js");
+//    drupal_add_js("http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone.js");
+    drupal_add_js(array('therapy_terms' => $dr_terms), 'setting');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/d3.min.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/libraries/mustache.js');
+    drupal_add_js(drupal_get_path('theme', 'research').'/js/d3.test.2.js');
+    $block['subject'] = '';
+    $block['content'] = theme('cmr_therapy_areas', array('data' => $dr_terms));
+    break;
+  case 'clients':
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'clients')
+      ->entityCondition('status', 1);
+    $res = $query->execute();
+    if(count($res['node']) > 0){
+      $cl = node_load_multiple(array_keys($res['node']));
+      $clients = array();
+      foreach($cl as $cli){
+        $lang = $cli->language;
+        $name = $cli->title;
+        $body = $cli->body[$lang][0]['value'];
+        $link = $cli->field_website_link[$lang][0]['value'];
+        $loc = empty($cli->field_work_location) ? '' : taxonomy_term_load($cli->field_work_location[$lang][0]['value']);
+        $therapy = empty($cli->field_therapy_areas) ? '' : taxonomy_term_load($cli->field_therapy_areas[$lang][0]['value']);
+        $dev = empty($cli->field_medical_device) ? '' : taxonomy_term_load($cli->field_medical_device[$lang][0]['value']);
+        $picture = $cli->field_client_logo[$lang][0];
+        $pic_src = image_style_url('client_logo', $picture['uri']);
+        $clients[] = array(
+          'name' => $name,
+          'pic' => $pic_src,
+          'link' => $link,
+          'body' => $body,
+          'loc' => $loc->name,
+          'therapy' => $therapy->name,
+          'dev' => $dev->name,
+        );
+      }
+      $block['subject'] = '';
+      $block['content'] = theme('clients', array('clients' => $clients));
+    }
+
+    break;
+};
+return $block;
+}
+
+/**
+ * @param \item $
+ * @param \comp $
+ * @param \id $
+ * @param \split $
+ * @return mixed
+ */
+function make_uniq_offset($item, $comp, $id, $split){
+  if(!empty($comp[$id])){
+    $rand = mt_rand(1.2*10, 5.2*10) / 10;
+    $rand2 = mt_rand(1.5*10, 4.1*10) / 10;
+    $dec = $rand * (0.120 - 0.300) + 0.200;
+    $dec_1 = $rand2 * (0.120 - 0.300) + 0.200;
+    $dev_lat = number_format((float)$dec, 2, '.', '');
+    $dev_long = number_format((float)$dec_1, 2, '.', '');
+    $la = (float)$item['lat'] + (float)$dev_lat;
+    $lo = (float)$item['long'] + (float)$dev_long;
+    $n_id = $la.'/'.$lo;
+    $split[0] = $la;
+    $split[1] =  $lo;
+    make_uniq_offset($item, $comp, $n_id, $split);
+  }
+  return $split;
+}
+
+function cmr_to_arrays(&$item){
+  $item = get_object_vars($item);
+}
+
+
+/**
+ *  Implements hook_menu().
+ */
+function cmr_menu() {
+  $items = array();
+  $items['colmares-dashboard'] = array(
+      'page callback' => '_cmr_dashboard_build',
+      'access arguments' => array('simple_admin'),
+      'type' => MENU_CALLBACK,
+  );
+  $items['ajax/get/therapy_areas'] = array(
+    'page callback' => 'ajax_get_therapy_areas',
+//    'access arguments' => TRUE,
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * dashboard function for the Collmares admin.
+ */
+function _cmr_dashboard_build(){
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'staff');
+  $results = $query->execute();
+  $users = node_load_multiple(array_keys($results['node']));
+  foreach($users as $u){
+    $items['User-'.$u->nid]= array(
+      'link' => 'node/'.$u->nid.'/edit',
+      'name' => 'Edit '.$u->title,
+      'description' => 'Edit and Add information about '.$u->title,
+    );
+  }
+
+  $items['Locations Vocab']= array(
+    'link' => 'admin/structure/taxonomy/location',
+    'name' => 'Add/Edit Locations',
+    'description' => 'Edit and Add locations where Collmares has administered work.'
+  );
+
+  $items['Add Staff']= array(
+    'link' => 'node/add/staff',
+    'name' => 'Add Staff',
+    'description' => 'Add a Staff member.'
+  );
+
+  $items['Add Clients']= array(
+    'link' => 'node/add/clients',
+    'name' => 'Add Clients',
+    'description' => 'Add a Client.'
+  );
+
+  $items['Therapy Vocab']= array(
+    'link' => 'admin/structure/taxonomy/therapy_area',
+    'name' => 'Add/Edit Therapy Area + Experience',
+    'description' => 'Edit and Add Therapy Areas and Experience work.'
+  );
+  $items['Medical Vocab']= array(
+    'link' => 'admin/structure/taxonomy/medical_device',
+    'name' => 'Add/Edit Medical Devices',
+    'description' => 'Edit and Add Medical Devices.'
+  );
+  $items['Client Listing/Export']= array(
+    'link' => '/clients-data',
+    'name' => 'Edit/Export Clients',
+    'description' => 'Listing page where you can edit Individual Clients.'
+  );
+  $items['Add Client']= array(
+    'link' => 'node/add/clients',
+    'name' => 'Add Client',
+    'description' => 'Add a single client.'
+  );
+  $output = theme('dashboard', array('items' => $items));
+  return $output;
+}
+
+
+
+function cmr_build_term_with_feed($name, $tids) {
+  $count = db_query("SELECT COUNT(nid) FROM {taxonomy_index} WHERE tid IN (:tids) ", array(':tids' => implode(',', $tids)))->fetchField();
+  $markup = l($name . ' (' . $count . ')', 'taxonomy/term/'. implode('+', $tids), array('attributes' => (array('class' => array('termtext')))));
+  return $markup;
+}
+
+/**
+ * Heirarchical tree.
+ * @param array $terms
+ * @param null $max_depth
+ * @param int $parent
+ * @param array $parents_index
+ * @param int $depth
+ * @return mixed
+ */
+function taxonomy_get_nested_tree($terms = array(), $max_depth = NULL, $parent = 0, $parents_index = array(), $depth = 0) {
+  if (is_numeric($terms)) {
+    $terms = taxonomy_get_tree($terms);
+  }
+
+  foreach($terms as $term) {
+    foreach($term->parents as $term_parent) {
+      if ($term_parent == $parent) {
+        $return[$term->tid] = $term;
+      }
+      else {
+        $parents_index[$term_parent][$term->tid] = $term;
+      }
+    }
+  }
+
+  foreach($return as &$term) {
+    if (isset($parents_index[$term->tid]) && (is_null($max_depth) || $depth < $max_depth)) {
+      $term->children = taxonomy_get_nested_tree($parents_index[$term->tid], $max_depth, $term->tid, $parents_index, $depth + 1);
+    }
+  }
+
+  return $return;
+}
+
+/**
+ * Implements a getter function for therapy areas info. AJAX.
+ */
+function ajax_get_therapy_areas() {
+  $id = $_GET['id'];
+  $term_data = cache_get('therapy_area-'.$id);
+  if(empty($term_data)){
+  $t_raw = entity_metadata_wrapper('taxonomy_term', taxonomy_term_load($id));
+  $query = new EntityFieldQuery();
+  //    $query->entityCondition('entity_type', 'node')
+  $query->fieldCondition('field_therapy_areas', 'tid', $id);
+  $results = $query->execute();
+  $clients = array();
+  $staff = array();
+  foreach ($results['node'] as $n) {
+    $n = entity_metadata_wrapper('node', $n);
+    $type = $n->type->value();
+    $node = node_load($n->nid->value());
+    $name = $node->title;
+
+    if ($type == 'clients') {
+      $pic = image_style_url('client_logo', $node->field_client_logo[LANGUAGE_NONE][0]['uri']);
+      $link = $node->field_website_link[LANGUAGE_NONE][0];
+      $clients[] = array(
+        'pic' => $pic,
+        'link' => $link,
+        'name' => $name
+      );
+    }
+    if ($type == 'staff') {
+      $pic = image_style_url('headshot_image', $node->field_staff_image[LANGUAGE_NONE][0]['uri']);
+      $staff[] = array(
+        'pic' => $pic,
+        'name' => $name,
+        'link' => url('collaborative-team', array('absolute' => true)).'#'.strtolower(preg_replace('/ /', '-', $name))
+      );
+    }
+  }
+  $ct = count($clients) > 0 ? true : false;
+  $st = count($staff) > 0 ? true : false;
+  $term_data = array('term' => (array)$t_raw->raw(), 'client_true' => $ct, 'staff_true' => $st, 'clients' => $clients, 'staff' => $staff);
+  cache_set('therapy_area-'.$id, $term_data);
+  echo json_encode($term_data);
+  } else {
+  echo json_encode($term_data->data);
+  }
+}
+
+/**
+ *  Implements hook_node_presave().
+ */
+function cmr_node_presave($node) {
+  // all the cached therapy areas
+  cache_clear_all('therapy_area-', 'cache', true);
+}
+
+/**
+ *
+ */
+/**
+ *  Implements hook_form_alter().
+ */
+function cmr_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'taxonomy_form_term'){
+    $location = $form['field_location'];
+    if(!empty($location)){
+      drupal_add_js(drupal_get_path('theme', 'research').'/js/global_lookup.js');
+      $country = $form['field_location'][LANGUAGE_NONE][0]['#default_value']['country'];
+      $form['field_location'][LANGUAGE_NONE][0]['get_coords'] = array(
+        '#type' => 'button',
+        '#value' => 'Get Long + Lat',
+        '#wieght' => 99,
+        '#attributes' => array(
+          'class' => array('get-long-lat')
+        )
+      );
+    }
+  }
+}

@@ -1,0 +1,342 @@
+.globe{
+  background: $color-grey--light;
+}
+
+.globe-filter--wrapper,
+.section--globe__wrapper{
+  float: left;
+}
+
+.section--globe__wrapper{
+  height:75vh;
+  width: 70%;
+  position: relative;
+  h6{
+    margin: 10px 0;
+  }
+  .country-name{
+    font-size: 1em;
+  }
+  .we-pp-content{
+    width: 95%;
+    margin: 10px 2.5%;
+    ul{
+      overflow-y: scroll;
+      margin-top: 0;
+      display: block;
+      float: left;
+      width: 50%;
+      max-height: 200px;
+    }
+  }
+}
+
+#earth_div{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute !important;
+}
+
+.globe-filter--wrapper{
+  width: 30%;
+  .control{
+    width: 100%;
+    float: left;
+  }
+  .expertise__item{
+    @include transition(all .5s);
+    &.gs-active,
+    &:hover{
+      cursor: pointer;
+      margin-left: 5px;
+      span{
+        border-bottom: 1px solid $color-orange;
+      }
+    }
+  }
+  .globe-switch{
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    background: $color-orange-lt;
+    @include transition(all .5s);
+    span{
+      font-size: 1.2em;
+      color: $color-grey--med;
+    }
+    &:hover,
+    &.gs-active-sw{
+      cursor: pointer;
+      background: $color-orange;
+      span{
+       color: $color-grey--light;
+      }
+    }
+  }
+  .filter-wrapper{
+    float: left;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.filter_blocks{
+  opacity: 0;
+  @include transition(all 1s);
+  position: absolute;
+  top: 0px;
+  transform: translateY(50%);
+  overflow-y: scroll;
+  -ms-overflow-y: scroll;
+  height: 65vh;
+  width: 100%;
+  ul{
+    display: block;
+  }
+}
+
+.filter_blocks.globe-active{
+  opacity: 1;
+  transform: translateY(0%);
+  z-index: 99;
+}
+
+.list__heading{
+  text-decoration: underline;
+}
+.popup-logo{
+  width:  30%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+// blocks section //
+
+.global_prac{
+  .block{
+    display: block;
+    float: left;
+    padding: 20px;
+    opacity: 0;
+    background: $color-orange-lt;
+    @include transition(all 1s);
+    text-align: center;
+  }
+
+  .block-copy p{
+    text-align: left;
+  }
+
+  .arrow{
+    &:before,
+    &:after{
+      position: absolute;
+      content: '';
+      display: block
+    }
+  }
+  // Complete state
+  .complete{
+    .down-arrow .arrow-shaft{
+      opacity: 1;
+        @include transform(translateY(40px));
+    }
+    .block-hor .arrow-shaft{
+        @include transform(translateX(0));
+    }
+    .block{
+      opacity: 1;
+    }
+    &.gp_mid{
+      .block-right{
+        @include transform(translateX(0px));
+      }
+
+      .block-left{
+        @include transform(translateY(0px));
+      }
+    }
+  }
+
+  .down-arrow{
+    width: 10%;
+    height: 600px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 9.5%;
+    overflow: hidden;
+    .arrow-shaft{
+      position: relative;
+      width: 40%;
+      margin-left: 25%;
+      height: 84%;
+      opacity: 0;
+      @include transform(translateY(-84%));
+      background: $color-grey--med;
+      @include transition(all 4s);
+      &:after{
+        @include triangle(70px, $color-grey--med, down);
+        bottom: -40px;
+        left: -25%;
+      }
+    }
+  }
+
+  .block-hor{
+    position: absolute;
+    left: 30%;
+    width: 30%;
+    height: 50px;
+    overflow: hidden;
+    top: 25%;
+    .arrow-shaft{
+      position: relative;
+      width: 85%;
+      margin-top: 10px;
+      height: 30px;
+      background: $color-green;
+//      @include transition(all 1s);
+      @include transform(translateX(-115%));
+
+      &:after{
+        @include triangle(50px, $color-grey--med, right);
+        right: -30px;
+        top: -10px;
+      }
+    }
+
+  }
+
+  .gp_upper,
+  .gp_mid,
+  .gp_low{
+    margin: 20px 0;
+    width: 100%;
+    float: left;
+  }
+
+  .gp_upper{}
+  .gp_mid{
+    #block-waypoint-1 *{
+      @include transition(all 3s);
+    }
+    #block-waypoint-2 *{
+      @include transition(all 4s);
+    }
+    #block-waypoint-3 *{
+      @include transition(all 5s);
+    }
+    #block-waypoint-1{
+      .block-left{
+        background: $color-salmon-lt;
+      }
+    }
+    #block-waypoint-2{
+      .block-left{
+        background: $color-blue-lt;
+      }
+    }
+    #block-waypoint-3{
+      .block-left{
+        background: $color-grey--light;
+      }
+    }
+    .blocks-wrapper{
+      width: 100%;
+      position: relative;
+    }
+    .block--wrapper{
+      position: relative;
+      width: 100%;
+      float: left;
+      margin: 40px 0px;
+    }
+
+    .block-inner > div{
+     float: left;
+    }
+
+    .block-right{
+      width: 40%;
+      background: $color-orange;
+      @include transform(translateX(-150%));
+    }
+
+    .block-left{
+      margin-right: 35%;
+      width: 25%;
+      background: $color-orange;
+      @include transform(translateY(-150%));
+    }
+
+  }
+  .gp_low{
+    .blocks-wrapper{
+      background: $color-salmon-lt;
+      float: left;
+    }
+    .block--wrapper{
+      width: 33.3%;
+      .block-inner{
+        background: $color-green-lt;
+      }
+      .block-top,
+      .block-bottom{
+        float: left;
+        width: 100%;
+      }
+      .block-copy{
+        text-align: left;
+        ul{
+          padding-left: 15px;
+        }
+        li{
+          margin: 20px 0;
+        }
+      }
+    }
+    .conclusion{
+      width: 100%;
+      margin: 60px 0 0;
+    }
+    .block--wrapper-1{
+      @include transform(translateX(-150%));
+      &*{
+        @include transition(all 3s);
+      }
+    }
+    .block--wrapper-2{
+      &*{
+        @include transition(all 4s);
+      }
+      @include transform(translateX(-250%));
+    }
+    .block--wrapper-3{
+    &*{
+      @include transition(all 5s);
+    }
+      @include transform(translateX(-350%));
+    }
+    &.complete{
+      .block{
+        opacity: 1;
+      }
+      .block--wrapper-1{
+        @include transform(translateX(0));
+      }
+      .block--wrapper-2{
+        @include transform(translateX(0));
+      }
+      .block--wrapper-3{
+        @include transform(translateX(0));
+      }
+    }
+
+  }
+}
+

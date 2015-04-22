@@ -1,0 +1,77 @@
+.st-container {
+  position: static;
+}
+
+.hamburg{
+  right: 0px;
+  top: 10px;
+  background: none;
+  border: none;
+  z-index: 101;
+  float: left;
+  width: 90px;
+  height: 50px;
+  display: block;
+  &:before{
+    background: $color-green;
+  }
+}
+
+.st-menu{
+  position: fixed;
+  li{
+    position: relative;
+    z-index: 999;
+  }
+}
+
+/// Hamburg
+.box-shadow-menu {
+  position: absolute;
+  padding-right: 1.25em;
+  float: right;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  right: 1em;
+  top: 0.75em;
+  width: 3em;
+  height: 0.4em;
+  background: $color-blue;
+  box-shadow:
+  0 0.75em 0 0 $color-blue,
+  0 1.5em 0 0 $color-blue;
+}
+
+.content-page{
+  .box-shadow-menu:before {
+    background: $color-grey--med;
+    box-shadow:
+    0 0.75em 0 0 $color-grey--med,
+    0 1.5em 0 0 $color-grey--med;
+  }
+}
+
+.mobile-nav{
+  .menu__item{
+    float: left;
+    width: 100%;
+    margin-left: 0;
+    h5{
+      color: $color-white;
+    }
+    &.active{
+      border: none;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 -1px transparent;
+    }
+  }
+}
+
+
+@include media($mq-desk-up) {
+  .hamburg{
+    display: none;
+  }
+}

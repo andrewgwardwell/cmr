@@ -1,0 +1,52 @@
+.block{
+  position: relative;
+//  margin-left: 20px;
+}
+
+.page-block .st-content{
+//  margin-top: 100px;
+}
+
+.block-edit-inline, .block-edit-bean{
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  display: block;
+  top: 10px;
+  left: 25px;
+  font-size: 40px;
+  color: $color-grey--med;
+  text-align: center;
+  @include transition(color .5s);
+  span{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 80px;
+    @include transition(opacity .5s);
+    opacity:0;
+    display: inline-block;
+    position: absolute;
+  }
+  &:hover{
+    color: darken($color-orange, 30%);
+    span{
+      opacity:1;
+    }
+  }
+}
+
+.block-edit-bean{
+  margin-top: 40px;
+  span{
+    width: 100px;
+  }
+}
+
+.block-edit-inline:before{
+  content: '\2699';
+}
+
+.block-edit-bean:before{
+  content: '\270D';
+}

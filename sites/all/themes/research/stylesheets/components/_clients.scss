@@ -1,0 +1,94 @@
+.view-clients-data{
+ margin-top: 50px;
+}
+
+.clients .chunk-inner > .section__copy{
+  float: none;
+}
+
+.client_slides{
+  .slick-prev:before, .slick-next:before{
+    color: $color-grey--med;
+    font-size: 50px;
+  }
+  .slick-prev:before{
+    @include icon('triangle-left');
+    position: absolute;
+    display: block;
+  }
+  .slick-next:before{
+    @include icon('triangle-right');
+    position: absolute;
+    display: block;
+  }
+}
+
+.client-wrapper{
+  position: relative;
+  height: auto;
+  @include transition(height .5s);
+}
+.client-inner{
+  margin: 0 auto;
+  width: 85%;
+  .section__img, .section__copy{
+    width: 100%;
+    text-align: center;
+  }
+  .section__img{
+    min-height: 125px;
+    margin-bottom: 0px;
+    img{
+      margin: 0 auto;
+      //    width: 85%;
+    }
+  }
+}
+
+@include media($mq-lap-up){
+  .client-inner{
+    @include transition(height .5s);
+//    .tip-expand{
+//      cursor: pointer;
+//      display: block;
+//    }
+    .section__copy{
+      background: $color-grey--light;
+    }
+    .section__tip{
+      height: 0px;
+      @include transition(height .5s);
+      overflow: hidden;
+    }
+    @keyframes hoverx {
+      0%{
+        @include transform(rotate(0deg))
+      }
+      100%{
+        @include transform(rotate(45deg));
+      }
+    }
+//    .section__copy .tip-expand:after{
+//      pointer-events: none;
+//      @include icon('');
+//      @include transition(transform 1s);
+//      color: $color-orange;
+//      content: '+';
+//      font-weight: 600;
+//      animation-name: hoverx;
+//      animation-duration: 1s;
+//      animation-fill-mode: backwards;
+//    }
+
+    .section__copy.active{
+//      .tip-expand:after{
+//        animation-fill-mode: forwards;
+//      }
+      .section__tip{
+        height: auto;
+        min-height: 100px;
+      }
+    }
+  }
+
+}

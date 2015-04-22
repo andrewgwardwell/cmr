@@ -1,0 +1,5 @@
+name = Collaborative Marketing Research
+description = "Custom functions and utilities for Collaborative Market Research"
+package = CMR
+core = 7.x
+configure = admin/config/administration/cmr

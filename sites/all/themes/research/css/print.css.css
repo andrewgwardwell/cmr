@@ -1,0 +1,14 @@
+/* line 1, ../stylesheets/print.css.scss */
+.header {
+  display: none;
+}
+
+/* line 5, ../stylesheets/print.css.scss */
+img {
+  display: none;
+}
+
+/* line 9, ../stylesheets/print.css.scss */
+.footer {
+  display: none;
+}

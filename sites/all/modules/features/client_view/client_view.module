@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Client View feature.
+ */
+
+include_once 'client_view.features.inc';

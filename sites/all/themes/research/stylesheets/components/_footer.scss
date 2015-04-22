@@ -1,0 +1,153 @@
+#footer{
+  text-align: center;
+  background: $color-grey--light;
+  overflow: hidden;
+}
+
+.icons{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: block;
+  margin: 0 auto;
+  width: 270px;
+  ul{
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.icon{
+  float: left;
+  display: block;
+  margin: 2.5px;
+  position: relative;
+  width: 40px;
+  margin-top: 20px;
+}
+i:before{
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-size: cover;
+}
+.email:before{
+  background-image: url('../images/Social_Icons/email.png');
+}
+.facebook:before{
+  background-image: url('../images/Social_Icons/facebook.png');
+}
+.google:before{
+  background-image: url('../images/Social_Icons/goolge_plus.png');
+}
+.linkedin:before{
+  background-image: url('../images/Social_Icons/linkedin.png');
+}
+.twitter:before{
+  background-image: url('../images/Social_Icons/twitter.png');
+}
+.youtube:before{
+  background-image: url('../images/Social_Icons/youtube.png');
+}
+.computer:before{
+  background-image: url('../images/about/fun/computer.png');
+}
+.coins:before{
+  background-image: url('../images/about/hat2.png');
+}
+.gear:before{
+  background-image: url('../images/about/fun/gear.png');
+}
+.group:before{
+  background-image: url('../images/about/fun/group.png');
+}
+
+.copywrite, .menu-wrap--footer{
+  @include span-columns(12);
+  float: left;
+  text-align: center;
+  h6{
+    color: $color-grey--dark;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.footer-inner {
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  .menu--footer{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .menu__item {
+    text-align: left;
+    width: 70%;
+    padding: 10px 0;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    &:hover{
+      border: none;
+    }
+    h5{
+      color: $color-grey--dark;
+      font-size: em(10);
+    }
+  }
+}
+
+@include media($mq-lap-up) {
+  .footer-inner{
+    @include db-outer-container;
+  }
+  .staff{
+    .chunk-inner{
+      margin-bottom: 80px;
+    }
+  }
+  .footer-inner{
+    .menu-wrap{
+      .menu{
+        width: 100%;
+      }
+    }
+    .menu__item {
+      text-align: left;
+      width: auto;
+      padding: 10px 5px 15px 0;
+      float: left;
+      border: none;
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+  .nav__social, .copywrite{
+    @include span-columns(6);
+    @include omega(2n);
+    float: left;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    .icons{
+      margin: 0;
+      float: right;
+      width: auto;
+      .icon{
+        margin-top: 0;
+      }
+      i:before{
+      }
+    }
+  }
+  .copywrite{
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,39 @@
+.expertise{
+  .highlight_2{
+    display: none;
+  }
+  .headline{
+    margin-bottom: 60px;
+    @include span-columns(12);
+    h3{
+      color: $color-grey--dark;
+    }
+  }
+  .text__blob_1{
+    margin-bottom: 40px;
+    h2{
+      color: $color-grey--dark;
+      font-size: em(30);
+    }
+  }
+
+  .highlight{
+    padding-bottom: 20px;
+  }
+
+
+  @include media($mq-desk-up) {
+    .headline{
+    }
+    .text__blob_1, .blurb{
+      @include span-columns(6);
+    }
+    p{
+      padding: 0;
+      margin: 0;
+    }
+    .highlight_2 {
+      display: block;
+    }
+  }
+}

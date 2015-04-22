@@ -1,0 +1,56 @@
+.page {
+  width: 100%;
+  .content-wrap {
+    @include db-container;
+    @include db-header-clear;
+  }
+
+  .content {
+    @include fill-parent;
+    @include clearfix;
+  }
+
+  @include media($mq-lap-only) {
+
+    .content {
+
+      &.region--1 {
+        @include span-columns(12);
+
+        .region__section {
+
+          &.region__section--1 {
+            @include span-columns(12 of 12);
+          }
+
+          &.region__section--2 {
+            @include span-columns(12 of 12);
+          }
+        }
+      }
+
+    }
+  }
+
+  @include media($mq-desk-up) {
+
+    .region {
+
+      &.region--1 {
+        @include span-columns(12);
+
+        .region__section {
+
+          &.region__section--1 {
+            @include span-columns(8 of 12);
+          }
+
+          &.region__section--2 {
+            @include span-columns(4 of 12);
+          }
+        }
+      }
+
+    }
+  }
+}

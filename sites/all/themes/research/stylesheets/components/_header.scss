@@ -1,0 +1,249 @@
+.tabs.primary {
+  z-index: 9999;
+  position: absolute;
+  border-top: 1px solid #bbb;
+  margin-top: 128px;
+  border-bottom: none;
+  display: none;
+}
+
+.header {
+  @include db-outer-container;
+  width: 100%;
+  background: $color-background;
+  height: 50px;
+}
+
+.logo-wrap, .menu-wrap {
+  padding-top: 10px;
+}
+
+.logo-wrap {
+  left: 0;
+  @include span-columns(12);
+  position: absolute;
+  z-index: 100;
+}
+
+.logo__img--a,
+.logo__img--b {
+  float: left;
+  max-height: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.logo{
+  display: block;
+  float: left;
+}
+
+.comp__name{
+  max-width: 300px;
+  float: left;
+  line-height: 16px;
+  margin-top: 20px;
+}
+
+.comp__name__heading h1{
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.comp__name__sub-heading h5{
+  font-size: em(16);
+  text-align: center;
+  font-weight: 500;
+}
+
+.menu-wrap {
+  @include span-columns(11);
+  right: 0;
+  position: absolute;
+}
+
+.menu {
+  width: 90%;
+  margin: 0 auto;
+  float: right;
+  z-index: 100;
+  ul {
+    float: right;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 7px;
+  }
+}
+
+.menu__item {
+  color: $color-white;
+  @extend %font-sans-serif-light;
+  font-size: em(17);
+  display: none;
+  margin-left: 15px;
+  position: relative;
+  z-index: 100;
+  h5 {
+    font-weight: 300;
+  }
+}
+
+.mobile-nav .menu__item {
+  display: block;
+}
+
+.menu__item.active {
+  border-bottom: 2px solid $color-orange;
+}
+
+@include media($mq-lap-up) {
+  .tabs.primary {
+    display: block;
+  }
+  .header {
+    width: 95%;
+    position: relative;
+  }
+  .logo-wrap, .menu-wrap {
+    padding-top: 15px;
+  }
+  .logo__img--a,
+  .logo__img--b {
+    max-height: 50px;
+  }
+  .menu {
+    ul {
+      margin-top: 15px;
+    }
+  }
+}
+
+@include media($mq-desk-up) {
+  .menu *{
+    @include transition(all 1s);
+  }
+
+  .menu__item:hover {
+    border-bottom: 2px solid $color-orange;
+    h5 {
+
+    }
+  }
+  .mobile-nav .menu__item {
+    display: none;
+  }
+  .menu__item {
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+    margin: 0px 15px;
+    border-top: 1px solid $color-orange;
+    border-bottom: 1px solid $color-orange;
+  }
+
+  .header{
+    height: 125px;
+    @include transition(all 1s);
+    max-width: none;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .header > *{
+    @include transition(all 1s);
+  }
+
+  .hero__image{
+    margin-top: 125px;
+  }
+
+  .logo-wrap, .menu-wrap {
+    @include span-columns(12);
+    padding-top: 0px;
+    position: relative;
+    margin: 0px;
+  }
+  .logo-wrap{
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .logo__item{
+    margin-right: 5%;
+  }
+  .logo{
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 20%;
+    float: none;
+    & *{
+      @include transition(all 1s);
+    }
+  }
+  .menu{
+    text-align: center;
+    float: none;
+    ul{
+      margin-top: 0px;
+      float: none;
+    }
+  }
+
+  // state for the fixed header
+.scroll-nav .header{
+  width: 100%;
+  max-width: none;
+  background: rgba($color-grey--light, .8);
+  position: fixed;
+  height: 50px;
+  z-index: 999;
+  .logo-wrap{
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 20%;
+    margin: 0;
+  }
+  .logo{
+    width: 100%;
+    .logo__img--a{
+      max-height: 30px;
+      margin-top: 10px;
+    }
+  }
+  .menu-wrap{
+    margin: 10px 0 0;
+  }
+}
+
+
+}
+
+////////// Team Page ////////
+
+.content-page {
+  .header {
+    background: $color-white;
+    height: 50px;
+  }
+  .logo-wrap, .menu-wrap {
+    //    position: static;
+  }
+  .logo__img--b {
+    display: block;
+  }
+  .logo__img--a {
+    display: none;
+  }
+  h5 {
+  }
+  @include media($mq-lap-up) {
+    .header {
+      height: 80px;
+    }
+  }
+}

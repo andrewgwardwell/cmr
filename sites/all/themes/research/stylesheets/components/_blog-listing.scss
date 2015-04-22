@@ -1,0 +1,215 @@
+.page-node-22 {
+
+  // Blog listing view.
+  .node-wrapper > .content {
+    @include outer-container;
+
+    .view-blog-listing .view-content {
+      overflow: hidden;
+      margin: auto;
+      ul {
+        overflow: hidden;
+      }
+    }
+
+    .filter {
+      margin: 20px 0;
+    }
+
+    .filter:first-child {
+      margin-top: 0;
+    }
+
+    .views-blog-listing-sidebar {
+      h2 {
+        color: $color-grey--dark;
+        font-size: em(20);
+        font-weight: 500;
+        margin-bottom: 5px;
+        line-height: 2.0em;
+      }
+    }
+
+    .blog-listing-archive {
+      li {
+        margin: 0;
+        list-style: none;
+        font-size: 0.9em;
+        line-height: 1.7em;
+      }
+      a {
+        color: $color-orange;
+      }
+      a.highlight {
+        font-weight: bold;
+      }
+    }
+
+    .views-exposed-form {
+      .views-exposed-widgets {
+        @include outer-container;
+        position: relative;
+      }
+      .views-exposed-widget {
+        @include span-columns(12);
+        @include pad();
+        padding: 0;
+        label {
+          display: none;
+        }
+        .form-type-textfield input {
+          width: 100%;
+          padding: 10px 0 10px 45px;
+        }
+      }
+      .views-submit-button {
+        input {
+          position: absolute;
+          left: 7px;
+          top: 7px;
+          display: block;
+          width: 28px;
+          height: 28px;
+          text-indent: -9999px;
+          margin: 0;
+          background: none;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-image: url('../images/search_icon.png');
+        }
+      }
+    }
+
+    .view-tags {
+      li {
+        margin: 0;
+        display: inline-block;
+      }
+      .views-row a {
+        margin: 0 5px 8px 0;
+        padding: 3px 8px 3px 8px;
+        display: block;
+        border: 1px solid $color-orange;
+        color: $color-orange;
+        font-size: .8em;
+        @include transition(background-color .2s);
+        &:hover {
+          background-color: $color-orange;
+          color: white;
+        }
+      }
+    }
+
+    .views-exposed-form {
+      width: 100%;
+    }
+
+    .view-blog-listing .view-content .views-row {
+      margin: 0;
+      border: 1px solid #d5d5d5;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.2em;
+
+      @include span-columns(12);
+      @include omega(1n);
+
+      height: 500px;
+
+      @include transition(border-color .2s);
+
+      &:hover {
+        border-color: #aaaaaa;
+      }
+
+      .views-field-field-hero-image {
+        width: 100%;
+        a {
+          display: block;
+          font-size: 0;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .views-field-title-1 {
+        // Author team member name.
+        //        border-left: 1px solid #444;
+        //        padding-left: 5px;
+        padding-right: 15px;
+        &:before {
+          content: '|';
+          color: $color-grey--med;
+        }
+      }
+
+      .views-field-created {
+        padding-left: 15px;
+      }
+
+      .views-field-body {
+        //        font-size: .8em;
+        //        line-height: 1.0em;
+        padding: 0 15px 0 15px;
+      }
+
+      .views-field-title {
+        padding: 15px 15px 0 15px;
+        a {
+          font-weight: 400;
+        }
+      }
+
+      .views-field-view-node {
+        padding-left: 15px;
+      }
+
+      .row-inner-wrapper a {
+        font-size: em(20);
+        color: $color-grey--dark;
+      }
+
+      .views-field-view-node a {
+        font-size: em(17);
+        color: $color-orange;
+        font-weight: 300;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+
+    @media screen and (min-width: 768px) {
+      .view-blog-listing .view-content {
+        @include span-columns(9);
+        .views-row {
+          @include omega-reset(1n);
+          @include span-columns(6);
+          @include omega(2n);
+        }
+      }
+      .views-blog-listing-sidebar {
+        @include span-columns(3);
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .view-blog-listing .view-content {
+        @include span-columns(9);
+        .views-row {
+          @include omega-reset(2n);
+          @include span-columns(4);
+          @include omega(3n);
+        }
+      }
+      .views-blog-listing-sidebar {
+        @include span-columns(3);
+      }
+    }
+
+  }
+
+}

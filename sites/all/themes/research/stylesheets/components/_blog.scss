@@ -1,0 +1,50 @@
+.node-type-blog {
+  
+  .node-wrapper {
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+
+  .field-name-field-hero-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .node-blog-field-author {
+    &:before {
+      content: '|';
+      margin-right: 5px;
+    }
+  }
+
+  .node-webform {
+    border-top: 1px #ccc solid;
+    padding-top: 25px;
+    margin-top: 25px;
+    h2 {
+      font-size: 1.2em;
+    }
+    input {
+      width: 100%;
+      font-size: em(17);
+      padding: 10px 0 10px 5px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+
+    .node-wrapper {
+      @include span-columns(9);
+    }
+
+    .node-webform {
+      margin-top: 30px;
+      border: none;
+      @include span-columns(3);
+    }
+
+  }
+}

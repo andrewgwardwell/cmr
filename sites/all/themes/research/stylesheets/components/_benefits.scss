@@ -1,0 +1,152 @@
+.benefits{
+  background: $color-orange;
+  overflow: hidden;
+  position: relative;
+  .chunk-inner{
+    padding-bottom: 0px;
+  }
+}
+
+.benefits__img{
+  position: relative;
+  @include span-columns(12);
+  margin-left: -45px;
+  margin-bottom: -8px;
+  img{
+    max-width: 210px;
+  }
+}
+
+.benefits__blurb{
+  display: none;
+}
+
+.benefits__heading{
+  color: $color-white;
+  margin: 0 0 60px;
+
+}
+
+.benefits__highlight{
+  color: $color-white;
+}
+
+.benefits__text--wrapper {
+  @include db-clearfix;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.benefits__list{
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  @include db-clearfix;
+}
+
+.benefits___list--item{
+  color: $color-white;
+  @include span-columns(5.15 of 12);
+  display: block;
+  float: left;
+  margin-left: 15px;
+  @include omega(2n);
+  position: relative;
+  margin-bottom: 20px;
+  &:before{
+    left: -20px;
+    top: 5px;
+    content: '';
+    background-image: url('../images/checkmark.png');
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: block;
+  }
+
+}
+
+@include media($mq-lap-down) {
+  .benefits__highlight{
+    margin-bottom: 40px;
+  }
+  .benefits{
+    .chunk-inner{
+      padding-bottom: 0px;
+    }
+  }
+}
+
+
+@include media($mq-lap-up) {
+  .benefits{
+    min-height: 720px;
+  }
+  .benefits__blurb{
+    display: block;
+    float: left;
+  }
+  .benefits__img{
+    position: absolute;
+    margin-bottom: -30px;
+    bottom: 0;
+  }
+  .ani-ended{
+    margin-bottom: -10px !important;
+  }
+  .benefits__text--wrapper {
+  }
+}
+
+@include media($mq-desk-up) {
+  .benefits{
+    .chunk-inner{
+      padding-bottom: 10px;
+    }
+  }
+  .benefits__heading{
+    @include span-columns(12);
+  }
+  .benefits__highlight, .benefits__blurb, .benefits__list{
+    @include span-columns(6);
+  }
+
+  .benefits__text--wrapper{
+    margin-bottom: 20px;
+  }
+
+  .benefits__blurb{
+    margin: 0;
+    margin-top: 2px;
+  }
+
+  .benefits__list{
+    @include shift(6);
+    margin-top: 20px;
+  }
+
+  .benefits___list--item{
+    @include omega-reset(2n);
+    @include span-columns(12);
+    margin-bottom: 45px;
+    margin-left: 45px;
+      padding-top: 10px;
+    &:before{
+      top: 10px;
+      left: -45px;
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  .benefits__img{
+    margin-left: -79px;
+    position: absolute;
+    img{
+      max-width: 460px;
+    }
+  }
+}

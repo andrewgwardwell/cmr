@@ -1,0 +1,19 @@
+name = Research
+description = Collaborative Market Research Theme
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/all.css.css
+
+scripts[] = js/libraries/jquery-ui.min.js
+scripts[] = js/libraries/slick.min.js
+scripts[] = js/homepage.js
+
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
+
+

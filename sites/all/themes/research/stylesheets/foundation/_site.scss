@@ -1,0 +1,147 @@
+/*
+*
+*  Global Border-Box Override
+*
+*  Unnecessary if Bourbon/Neat already being loaded.
+*
+*  * {
+*    @include box-sizing(border-box);
+*  }
+*
+*/
+
+html {
+  @extend %font-sans-serif-light;
+  color:$color-text;
+  font-size:em(17);
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  background: $color-background;
+  p, span{
+    line-height: 30px;
+  }
+  @include media($mq-lap-up) {
+    font-size:em(17);
+  }
+  @include media($mq-desk-up) {
+    font-size:em(17);
+  }
+}
+
+iframe{
+  @include db-hide-element;
+}
+
+body {
+  @extend %reset-margin;
+  width:100%;
+}
+
+.main-wrapper{
+  @include db-clearfix;
+}
+
+.chunk{
+  @include span-columns(12 of 12);
+//  @include db-container;
+  @include omega(1n);
+  @include db-clearfix;
+}
+
+.chunk-inner{
+  @include db-outer-container;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dashboard{
+  @include db-outer-container;
+  margin-top: 150px;
+  button{
+    display: block;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    background: $color-orange;
+    border: none;
+    border-radius: 10px;
+    @include transition(all .5s);
+    color: $color-white;
+    &:hover{
+      background: darken($color-orange, 20%);
+    }
+  }
+}
+
+/* Overlay */
+.overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0, 0, 0, 0.3);
+  background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+  z-index:9999;
+  color:white;
+  -webkit-transition: all 200ms, background-color 300ms linear, color 200ms ease-out;
+  -moz-transition: all 200ms, background-color 300ms linear, color 200ms ease-out;
+  -o-transition: all 200ms, background-color 300ms linear, color 200ms ease-out;
+  -ms-transition: all 200ms, background-color 300ms linear, color 200ms ease-out;
+  transition: all 200ms, background-color 300ms linear, color 200ms ease-out;
+}
+
+.section{
+  &:first-child{
+    padding-top: 0;
+  }
+}
+
+.fill-parent{
+  @include fill-parent-plus;
+}
+
+.chunk-inner{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@include media($mq-lap-up) {
+  .chunk-inner{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@include media($mq-desk-up) {
+  .chunk-inner{
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+//background colors
+.orange{
+  background: $color-orange;
+}
+
+.grey{
+  background: $color-grey--light;
+}
+
+.white{
+  background: none;
+}
+
+.section--orange{
+  background: $color-orange;
+  h1, h2, h3, h4, h5, p, li, span, strong, em{
+    color: $color-white !important;
+  }
+}
+
+.section--grey{
+  background: $color-grey--light;
+  h1, h2, h3, h4, h5, p, li, span, strong, em{
+  }
+}

@@ -1,0 +1,123 @@
+
+.staff{
+  .chunk-inner {
+    position: relative;
+  }
+  .section__img {
+    img {
+      border-radius: 50%;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .section__heading {
+    text-align: center;
+  }
+  .section--staff .overlay {
+    border-radius: 50%;
+    display: none;
+  }
+  .section__img, .section__copy, .section__heading{
+    margin: 20px 0;
+  }
+}
+
+
+
+.section--staff {
+  @include span-columns(12 of 12);
+  float: left;
+  margin: 40px 0;
+}
+
+.section--staff__bio__wrapper{
+  display: none;
+}
+
+.section--staff__wrapper{
+  width: 100%;
+  float: left;
+}
+
+.section--staff__skills{
+  margin: 60px 0 20px;
+}
+
+@include media($mq-lap-up) {
+  .staff {
+    .section__img img {
+      max-width: 80%;
+    }
+    .section--staff {
+      @include span-columns(4 of 12);
+      @include omega(3n);
+      float: left;
+      margin: 60px 0;
+      h3{
+        display: inline;
+      }
+      .overlay {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        background-color: rgba(0,0,0,.4);
+        border: 2px solid transparent;
+        &:before{
+          display: block;
+        }
+
+      }
+      &:hover{
+        .section__heading h3{
+          border-bottom: 2px solid $color-orange;
+        }
+      }
+      .section__copy, .section__skills {
+        position: absolute;
+        display: none;
+        left: 0;
+      }
+    }
+    .section--staff--active {
+      .overlay{
+        background-color: rgba(0,0,0,.05);
+      }
+      .section__heading h3{
+        border-bottom: 2px solid $color-orange;
+      }
+    }
+    .section--staff:hover{
+      .overlay{
+        background-color: rgba(0,0,0,.05);
+      }
+    }
+  }
+
+  .section--staff__bio__wrapper{
+    display: block;
+    float: left;
+    background: $color-grey--light;
+    border: $color-grey--med;
+    padding: 20px;
+  }
+
+  .section--staff__bio{
+    margin: 40px 0 0;
+  }
+
+  .section--staff__skills{
+    .skill__wrapper{
+      width: 50%;
+      float: left;
+    }
+    .skill__wrapper--inner{
+//      margin: 0px auto;
+//      display: block;
+//      width: 50%;
+    }
+  }
+
+}
+
+

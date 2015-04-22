@@ -1,0 +1,214 @@
+.lt-ie9{
+  // Globals
+  .chunk{
+  }
+
+  .chunk-inner{
+    @include ie-db-outer-container;
+  }
+
+  .st-pusher{
+    padding-left: 0px;
+  }
+////*******HOMEPAGE*********//////
+////// header ///////
+
+  .header {
+    @include ie-db-outer-container;
+    width: 81%;
+    position: relative;
+  }
+  .logo-wrap, .menu-wrap {
+    padding-top: 15px;
+  }
+  .logo__img--a,
+  .logo__img--b {
+    max-height: 50px;
+  }
+  .menu {
+    ul {
+      margin-top: 15px;
+    }
+  }
+  .menu__item:hover {
+    border-bottom: 2px solid $color-orange;
+    h5 {
+
+    }
+  }
+  .menu__item {
+    display: inline-block;
+  }
+
+/// Mobile Nav ////
+
+  .mobile-nav .menu__item {
+    display: none;
+  }
+  .hamburg{
+    display: none;
+  }
+
+///// Tiles /////
+
+  .tile{
+    @include span-columns(3 of 12);
+  }
+  .tile.last {
+    margin-right: 0px;
+  }
+
+/// Benefits ///
+
+  .benefits{
+    .chunk-inner{
+      padding-bottom: 10px;
+    }
+  }
+  .benefits__heading{
+    @include span-columns(12);
+  }
+  .benefits__highlight, .benefits__blurb, .benefits__list{
+    @include span-columns(6);
+  }
+
+  .benefits__text--wrapper{
+    margin-bottom: 20px;
+  }
+
+  .benefits__blurb{
+    margin: 0;
+    margin-top: 2px;
+  }
+
+  .benefits__list{
+    @include shift(6);
+    margin-top: 20px;
+  }
+
+  .benefits___list--item{
+    @include omega-reset(2n);
+    @include span-columns(12);
+    margin-bottom: 45px;
+    margin-left: 45px;
+    padding-top: 10px;
+    &:before{
+      top: 10px;
+      left: -45px;
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  .benefits__img{
+    margin-left: -79px;
+    position: absolute;
+    img{
+      max-width: 460px;
+    }
+  }
+
+  ///// Reprise /////
+
+  .reprise, .val-prop {
+      .opening__button {
+        @include shift(4.5);
+        @include span-columns(3 of 12);
+      }
+      .hero__image {
+        padding-bottom: 500px;
+        background-attachment: fixed;
+      }
+      .hero__inner {
+        padding: 4.5em 0;
+      }
+      .hero__cta h3 {
+        font-size: em(36);
+      }
+  }
+
+///  Expertise /////
+
+  .expertise{
+    .headline{
+    }
+    .text__blob_1, .blurb{
+      @include span-columns(6);
+    }
+    .blurb{
+      margin-right: 0px;
+    }
+    p{
+      padding: 0;
+      margin: 0;
+    }
+    .highlight_2 {
+      display: block;
+    }
+  }
+
+//// Slides ////
+
+  .slides{
+    .slides__heading {
+      margin-left: auto;
+      margin-right: auto;
+      width: 65%;
+    }
+    .slides {
+      .slick-prev {
+        left: 10%;
+      }
+      .slick-next {
+        right: 10%;
+      }
+    }
+  }
+
+//// Footer ////
+  #footer{
+    @include ie-db-outer-container;
+    width: 81%;
+  }
+  .staff{
+    .chunk-inner{
+      margin-bottom: 80px;
+    }
+  }
+  .node-type-homepage .menu-wrap--footer,
+  .menu-wrap--footer{
+    .menu--footer{
+      width: 100%;
+    }
+    .menu__item--footer {
+      text-align: left;
+      width: auto;
+      padding: 10px 5px 15px 0;
+      float: left;
+    }
+  }
+  .nav__social, .copywrite{
+    @include span-columns(6);
+    float: right;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    .icons{
+      margin: 0;
+      float: right;
+      width: auto;
+      .icon{
+        margin-top: 0;
+      }
+      i:before{
+      }
+    }
+  }
+  .copywrite{
+    margin-top: 50px;
+  }
+
+////*******END_HOMEPAGE*********//////
+
+}

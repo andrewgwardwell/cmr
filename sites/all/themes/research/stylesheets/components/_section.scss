@@ -1,0 +1,32 @@
+.section__copy, .section__img{
+  width: 100%;
+  float: left;
+  margin: 20px 0;
+  img{
+    max-width: 100%;
+  }
+}
+
+@include media($mq-desk-up)  {
+  .section--center{
+
+  }
+  .section__img, .section__copy{
+    display: block;
+  }
+  .section__img{
+    position: relative;
+  }
+
+  .section--right, .section--left{
+    .section__img, .section__copy{
+      @include span-columns(6);
+    }
+  }
+  .section--left{
+    .section__img, .section__copy{
+      float: left;
+    }
+  }
+}
+

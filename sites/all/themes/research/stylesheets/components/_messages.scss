@@ -1,0 +1,4 @@
+div.messages {
+  @include outer-container;
+  margin: 0 auto 10px auto;
+}

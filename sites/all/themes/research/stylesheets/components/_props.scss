@@ -1,0 +1,65 @@
+.val-prop{
+  .headline{
+    margin-bottom: 20px;
+  }
+  .chunk-inner{
+    overflow: hidden;
+  }
+}
+
+.val-prop__image.center, .img__para{
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  img{
+    max-width: 100%;
+    margin: 10px auto 0;
+    display: block;
+  }
+}
+
+
+@include media($mq-lap-up){
+  .val-prop{
+    .val-prop__image, .copy-wrap, .half-desk{
+      @include span-columns(6);
+    }
+    .copy-wrap{
+      margin-top: 10px;
+    }
+
+    .opening__button{
+      width: 45%;
+      margin-top: 25%;
+      text-align: center;
+      span{
+        color: $color-text-invert;
+      }
+    }
+  }
+
+  .val-prop__image.image-right img{
+    float: right;
+  }
+
+  .val-prop__image.image-left img{
+    float: left;
+  }
+
+  .val-prop__image{
+    position: relative;
+    float: left;
+    min-height: 350px;
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .img__para{
+    img{
+      display: inline;
+      margin-bottom: -700px;
+    }
+  }
+
+}
