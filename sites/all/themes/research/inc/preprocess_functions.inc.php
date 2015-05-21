@@ -54,6 +54,39 @@ function research_preprocess_node(&$vars){
     // stacking block features
     $vars['theme_hook_suggestions'][] = 'node__feature_heavy';
   }
+  if($type == 'homepage'){
+      $menu_exs = $node->field_menu_blocks[LANGUAGE_NONE];
+      $links = array();
+      foreach($menu_exs as $k => $m){
+          $item = field_collection_item_load($m['value']);
+//          drupal_json_output($item);
+//          die();
+          $title = $item->field_menu_headline[LANGUAGE_NONE][0]['value'];
+          $text = $item->field_menu_text[LANGUAGE_NONE][0]['value'];
+          $link = $item->field_menu_link[LANGUAGE_NONE][0]['value'];
+          $uri = $item->field_menu_image[LANGUAGE_NONE][0]['uri'];
+          if($k == 1){
+              $classes = array('second');
+              $image = image_style_url('homepage_medium', $uri);
+          } elseif($k == 0){
+              $classes = array('first');
+              $image = image_style_url('homepage_large', $uri);
+          } else {
+              $classes = array();
+              $image = image_style_url('homepage_small', $uri);
+          }
+          $links[] = array(
+              'classes' => $classes,
+              'title' => $title,
+              'text' => $text,
+              'href' => drupal_get_path_alias($link),
+              'image' => $image,
+          );
+
+      }
+      $vars['menu_ex'] = theme('cmr_link_blocks', array('links' => $links));
+
+  }
   if($type == 'complex_page'){
     $sections = $node->field_section[$lang];
     $sec_rend = '';

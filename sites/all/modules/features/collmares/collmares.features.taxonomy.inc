@@ -36,7 +36,7 @@ function collmares_taxonomy_default_vocabularies() {
       'name' => 'Medical Device',
       'machine_name' => 'medical_device',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(
@@ -82,7 +82,7 @@ function collmares_taxonomy_default_vocabularies() {
       'name' => 'Therapy Area',
       'machine_name' => 'therapy_area',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

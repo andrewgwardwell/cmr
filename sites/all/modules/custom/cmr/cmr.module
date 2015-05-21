@@ -28,6 +28,10 @@ function cmr_block_info() {
     'info' => t('Globe 2'),
     'cache' => DRUPAL_NO_CACHE,
   );
+$blocks['contact2'] = array(
+    'info' => t('Contact 2'),
+    'cache' => DRUPAL_NO_CACHE,
+);
   $blocks['global_practices'] = array(
     'info' => t('Global Practices'),
     'cache' => DRUPAL_NO_CACHE,
@@ -41,13 +45,18 @@ function cmr_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   return $blocks;
+
 }
+
 
 /**
  *  Implements hook_block_view().
  */
 function cmr_block_view($delta = '') {
 switch ($delta){
+    case 'contact2':
+        $block['content'] = theme('cmr_contact_block');
+        break;
   case 'global_practices':
     $block['content'] = theme('cmr_global_practices');
     break;
@@ -85,43 +94,44 @@ switch ($delta){
       $a_areas = array_merge($areas, $m_areas);
       foreach($terms as $t){
         $term = taxonomy_term_load($t['tid']);
-        $c = $term->field_location[LANGUAGE_NONE][0];
-        $loc = location_load_location($c['lid']);
-        $points[] =  array(
-          'country' => $term->name,
-          'client_name' => $cl->title,
-          'therapy_areas' => $a_areas,
-          'devs' => $device_blob,
-          'exs' => $ex_blob,
-          'picture' => $pic_src,
-          'lat' => $loc['latitude'],
-          'long' => $loc['longitude'],
+//        $c = $term->field_location[LANGUAGE_NONE][0];
+//        $loc = location_load_location($c['lid']);
+        $c_code = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
+        $points[$c_code] = array(
+          'fillKey' => 'hasWorked',
+          'exp' => $a_areas
         );
+
+//        $expertise[$term->name]['countries'][] = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
+//          'therapy_areas' => array_merge($points[$term->name]['therapy_areas'], $a_areas),
+//          'devs' => array_merge($points[$term->name]['devs'], $device_blob),
+//          'exs' => $ex_blob,
+//          'picture' => $pic_src,
       }
     }
 
-    $sing_loc = array();
-    foreach ($points as $k => $p){
-      $id = $p['lat'].'/'.$p['long'];
-      $country = $sing_loc[$p['country']];
-      $la = $p['lat'];
-      $lo = $p['long'];
-          if (!empty($country)) {
-            $fin_id = make_uniq_offset($p, $country, $id, false);
-            $la = $fin_id[0];
-            $lo = $fin_id[1];
-            $n_id = $lo.'/'.$la;
-            $p['lat'] = $la;
-            $p['long'] = $lo;
-            $sing_loc[$p['country']][$n_id] = $p;
-            //}
-          } else {
-            $sing_loc[$p['country']] = array();
-            $sing_loc[$p['country']][$id] = $p;
-          }
-          $points[$k]['lat'] = $la;
-          $points[$k]['long'] = $lo;
-    }
+//    $sing_loc = array();
+//    foreach ($points as $k => $p){
+//      $id = $p['lat'].'/'.$p['long'];
+//      $country = $sing_loc[$p['country']];
+//      $la = $p['lat'];
+//      $lo = $p['long'];
+//          if (!empty($country)) {
+//            $fin_id = make_uniq_offset($p, $country, $id, false);
+//            $la = $fin_id[0];
+//            $lo = $fin_id[1];
+//            $n_id = $lo.'/'.$la;
+//            $p['lat'] = $la;
+//            $p['long'] = $lo;
+//            $sing_loc[$p['country']][$n_id] = $p;
+//            //}
+//          } else {
+//            $sing_loc[$p['country']] = array();
+//            $sing_loc[$p['country']][$id] = $p;
+//          }
+//          $points[$k]['lat'] = $la;
+//          $points[$k]['long'] = $lo;
+//    }
 
 
     $expertise['All'] = 'all';
@@ -518,6 +528,25 @@ function cmr_node_presave($node) {
  *  Implements hook_form_alter().
  */
 function cmr_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'homepage_node_form'){
+      $menu = menu_tree_all_data('menu-colmares-menu');
+      $options = array();
+      foreach($menu as $m){
+          $link = $m['link']['link_path'];
+          $link_title = $m['link']['link_title'];
+          $options[$link] = $link_title;
+
+      }
+//      $field_coll = $form['field_menu_blocks'][LANGUAGE_NONE];
+      dpm($options);
+//      foreach($field_coll as $i => $f){
+//          if(is_numeric($i)){
+//              $form['field_menu_blocks'][LANGUAGE_NONE][$i]['field_menu_link'][LANGUAGE_NONE]['#options'] = $options;
+//              $form['field_menu_blocks'][LANGUAGE_NONE][$i]['field_menu_link'][LANGUAGE_NONE]['#default_value'] = $form_state;
+//          }
+//      }
+      unset($form['body']);
+  }
   if($form_id == 'taxonomy_form_term'){
     $location = $form['field_location'];
     if(!empty($location)){

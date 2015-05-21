@@ -76,6 +76,9 @@ function research_theme(){
     'cmr_global_practices' => array(
       'template' => 'templates/global_practices',
     ),
+      'cmr_contact_block' => array(
+          'template' => 'templates/contact_block',
+      ),
     'cmr_therapy_areas' => array(
       'variables' => array(
         'data' => NULL,
@@ -88,5 +91,11 @@ function research_theme(){
       ),
       'template' => 'templates/therapy_areas_mobile',
     ),
+      'cmr_link_blocks' => array(
+          'variables' => array(
+              'links' => NULL,
+          ),
+      'template' => 'templates/link_blocks',
+      ),
 );
 }

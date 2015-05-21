@@ -19,25 +19,7 @@
         if(city == ''){
           city = data.capital;
         }
-        console.log(full_country);
-        $.ajax({
-          url: lookup2,
-          data: {
-            'address': city+full_country,
-            'sensor': false,
-            'key': key
-          }
-          }).done(function(data2) {
-          if(data2.status == "OK"){
-            var location = data2.results[0].geometry.location;
-            if(typeof location != 'undefined'){
-              $('#edit-field-location-und-0-locpick-user-latitude').val(location.lat);
-              $('#edit-field-location-und-0-locpick-user-longitude').val(location.lng);
-            }
-          } else {
-            alert('Search returned:'+data2.status);
-          }
-        });
+          $('#edit-field-alpha3code-und-0-value').val(data.alpha3Code);
       });
   }
   }
