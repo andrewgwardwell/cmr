@@ -72,43 +72,60 @@ switch ($delta){
       ->entityCondition('status', 1);
     $res = $query->execute();
     $cl_nodes = node_load_multiple(array_keys($res['node']));
+    // loop through the clients
     foreach ($cl_nodes as $cl){
+        // get the locations tagged
       $terms = $cl->field_work_location[LANGUAGE_NONE];
+        // get therapy areas
       $raw = $cl->field_therapy_areas[LANGUAGE_NONE];
+        // get medical devices
       $m_raw = $cl->field_medical_device[LANGUAGE_NONE];
-      $picture = $cl->field_client_logo[LANGUAGE_NONE][0];
-      $pic_src = image_style_url('client_logo', $picture['uri']);
-      $areas = $m_areas = $ex_blob = $device_blob = array();
+        // grab the client logos
+//      $picture = $cl->field_client_logo[LANGUAGE_NONE][0];
+//      $pic_src = image_style_url('client_logo', $picture['uri']);
+      $areas = $m_areas = $ex_blob = $device_blob = $a_areas = array();
       foreach($raw as $r){
         $th_term = taxonomy_term_load($r['tid']);
-        $areas[$r['tid']] = $r['tid'];
-        $expertise[$th_term->name] = $r['tid'];
-        $ex_blob[] = $th_term->name;
+        $a_name = $th_term->name;
+        $areas[$r['tid']] = '<li>'.$a_name.'</li>' ;
+//        $expertise[$th_term->name] = $r['tid'];
+//        $ex_blob[] = $th_term->name;
       }
       foreach($m_raw as $m_r){
         $mth_term = taxonomy_term_load($m_r['tid']);
-        $m_areas[$m_r['tid']] = $m_r['tid'];
-        $devices[$mth_term->name] = $m_r['tid'];
-        $device_blob[] = $mth_term->name;
+        $m_name = $mth_term->name;
+        $m_areas[$m_r['tid']] = '<li>'.$m_name.'</li>';
+//          $devices[$mth_term->name] = $m_r['tid'];
+//        $device_blob[] = $mth_term->name;
       }
+        // combined array of the areas addressed for this client in this country
       $a_areas = array_merge($areas, $m_areas);
+        // loop through locations
+
       foreach($terms as $t){
         $term = taxonomy_term_load($t['tid']);
 //        $c = $term->field_location[LANGUAGE_NONE][0];
 //        $loc = location_load_location($c['lid']);
         $c_code = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
-        $points[$c_code] = array(
-          'fillKey' => 'hasWorked',
-          'exp' => $a_areas
-        );
+        $name = $term->name;
+          if(!empty($points[$c_code])){
+              $pre_existing = $points[$c_code]['exp'];
+              $points[$c_code]['exp'] = array_merge($pre_existing, $a_areas);
+          } else {
+              $points[$c_code] = array(
+                  'fillKey' => 'hasWorked',
+                  'exp' => $a_areas
+              );
+          }
+          $countries[$c_code] = $name;
+        }
+    }
 
 //        $expertise[$term->name]['countries'][] = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
 //          'therapy_areas' => array_merge($points[$term->name]['therapy_areas'], $a_areas),
 //          'devs' => array_merge($points[$term->name]['devs'], $device_blob),
 //          'exs' => $ex_blob,
 //          'picture' => $pic_src,
-      }
-    }
 
 //    $sing_loc = array();
 //    foreach ($points as $k => $p){
@@ -138,8 +155,9 @@ switch ($delta){
     $devices['All'] = 'all';
 
     drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
+    $countries_markup = '<h5><strong>Countries</strong></h5><ul><li>'.implode('</li><li>', $countries).'</li></ul>';
     $block['subject'] = '';
-    $block['content'] = '<div id = "map-container"></div>';
+    $block['content'] = '<div class="map-outer"><div id = "map-container"></div></div><div class="chunk-inner" id = "countries-container">'.$countries_markup.'</div>';
     break;
   case 'global':
     drupal_add_js('http://www.webglearth.com/v2/api.js', 'external');
@@ -538,7 +556,7 @@ function cmr_form_alter(&$form, &$form_state, $form_id) {
 
       }
 //      $field_coll = $form['field_menu_blocks'][LANGUAGE_NONE];
-      dpm($options);
+//      dpm($options);
 //      foreach($field_coll as $i => $f){
 //          if(is_numeric($i)){
 //              $form['field_menu_blocks'][LANGUAGE_NONE][$i]['field_menu_link'][LANGUAGE_NONE]['#options'] = $options;

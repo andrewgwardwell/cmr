@@ -13,10 +13,10 @@
           data: JSON.parse(Drupal.settings.countriesList),
           //data: Drupal.settings.countriesList
           geographyConfig:{
+              highlightOnHover: false,
               popupTemplate: function(geography, data) {
                   if(data != null){
-                      console.log(data);
-                      return '<div class="hoverinfo">' + geography.properties.name + '<br/>Areas of Work:<br/>' + data.exp + '</div>';
+                      return '<div class="hoverinfo"><h4>' + geography.properties.name + '</h4><br/>Areas of Work:<br/><ul>' + data.exp.join('') + '</ul></div>';
                   }
               }
           }

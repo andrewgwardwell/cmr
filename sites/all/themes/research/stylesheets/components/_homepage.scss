@@ -109,7 +109,8 @@
         }
         &:hover{
           .text-wrapper{
-            height: auto;
+//            height: auto;
+            min-height: 150px;
             .menu-links__text{
               opacity: 1;
             }

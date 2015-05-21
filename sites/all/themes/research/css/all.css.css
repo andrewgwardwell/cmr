@@ -1266,33 +1266,33 @@ i:before {
   }
   /* line 111, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links:hover .text-wrapper {
-    height: auto;
+    min-height: 150px;
   }
-  /* line 113, ../stylesheets/components/_homepage.scss */
+  /* line 114, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links:hover .text-wrapper .menu-links__text {
     opacity: 1;
   }
-  /* line 119, ../stylesheets/components/_homepage.scss */
+  /* line 120, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first {
     width: 64%;
   }
-  /* line 121, ../stylesheets/components/_homepage.scss */
+  /* line 122, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first .menu-links__image {
     height: 400px;
     background-size: 110%;
   }
-  /* line 126, ../stylesheets/components/_homepage.scss */
+  /* line 127, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second {
     margin-right: 0;
   }
-  /* line 128, ../stylesheets/components/_homepage.scss */
+  /* line 129, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second .menu-links__image {
     height: 400px;
     background-size: 125%;
     background-position-x: 37.5%;
   }
 }
-/* line 139, ../stylesheets/components/_homepage.scss */
+/* line 140, ../stylesheets/components/_homepage.scss */
 .complex-page-nav {
   width: 40px;
   position: fixed;
@@ -1300,7 +1300,7 @@ i:before {
   z-index: 99;
   right: 20px;
 }
-/* line 145, ../stylesheets/components/_homepage.scss */
+/* line 146, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item {
   margin: 10px;
   display: block;
@@ -1312,7 +1312,7 @@ i:before {
   height: 25px;
   position: relative;
 }
-/* line 156, ../stylesheets/components/_homepage.scss */
+/* line 157, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item__title {
   right: -5px;
   top: -12px;
@@ -1330,11 +1330,11 @@ i:before {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 171, ../stylesheets/components/_homepage.scss */
+/* line 172, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item:hover, .complex-page-nav .cp-nav__item--active {
   background: rgba(15, 65, 95, 0.5);
 }
-/* line 175, ../stylesheets/components/_homepage.scss */
+/* line 176, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item:hover .cp-nav__item__title {
   visibility: visible;
   opacity: 1;
@@ -2033,7 +2033,7 @@ i:before {
 @media screen and (min-width: 62.5em) {
   /* line 229, ../stylesheets/components/_hero.scss */
   .hero.left-aligned .hero__inner {
-    top: 30%;
+    margin-top: 15%;
   }
   /* line 232, ../stylesheets/components/_hero.scss */
   .hero.left-aligned .hero__image {
@@ -3500,19 +3500,440 @@ video#home-video {
     min-height: 100px;
   }
 }
-/* line 344, ../stylesheets/components/_globe.scss */
+/* line 120, ../stylesheets/components/_globe.scss */
+.global_prac .block {
+  opacity: 1;
+  display: block;
+  float: left;
+  padding: 20px;
+  background: #FFD8A9;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  text-align: center;
+}
+/* line 131, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid #block-waypoint-1 .block-left {
+  background: #FFBEA9;
+}
+/* line 136, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid #block-waypoint-2 .block-left {
+  background: #86ADC4;
+}
+/* line 141, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid #block-waypoint-3 .block-left {
+  background: #F7F7F7;
+}
+/* line 145, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid .block-inner > div {
+  float: left;
+}
+/* line 149, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid .block-right {
+  width: 100%;
+  background: #d89a4d;
+}
+/* line 154, ../stylesheets/components/_globe.scss */
+.global_prac .gp_mid .block-left {
+  width: 100%;
+  background: #d89a4d;
+}
+/* line 162, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .blocks-wrapper {
+  background: #FFBEA9;
+  float: left;
+}
+/* line 166, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper {
+  width: 100%;
+}
+/* line 168, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper .block-inner {
+  background: #89CFAB;
+}
+/* line 171, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper .block-top,
+.global_prac .gp_low .block--wrapper .block-bottom {
+  float: left;
+  width: 100%;
+}
+/* line 176, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper .block-copy {
+  text-align: left;
+}
+/* line 178, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper .block-copy ul {
+  padding-left: 15px;
+}
+/* line 181, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .block--wrapper .block-copy li {
+  margin: 20px 0;
+}
+/* line 186, ../stylesheets/components/_globe.scss */
+.global_prac .gp_low .conclusion {
+  width: 100%;
+  margin: 60px 0 0;
+}
+/* line 191, ../stylesheets/components/_globe.scss */
+.global_prac .block-hor {
+  display: none;
+}
+/* line 194, ../stylesheets/components/_globe.scss */
+.global_prac .block-left, .global_prac .block-right {
+  width: 100%;
+  float: left;
+}
+/* line 198, ../stylesheets/components/_globe.scss */
+.global_prac .down-arrow {
+  display: none;
+}
+
+@media screen and (min-width: 62.5em) {
+  /* line 207, ../stylesheets/components/_globe.scss */
+  .global_prac .block {
+    display: block;
+    float: left;
+    padding: 20px;
+    opacity: 0;
+    background: #FFD8A9;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    text-align: center;
+  }
+  /* line 217, ../stylesheets/components/_globe.scss */
+  .global_prac .block-copy p {
+    text-align: left;
+  }
+  /* line 222, ../stylesheets/components/_globe.scss */
+  .global_prac .arrow:before, .global_prac .arrow:after {
+    position: absolute;
+    content: '';
+    display: block;
+  }
+  /* line 231, ../stylesheets/components/_globe.scss */
+  .global_prac .complete .down-arrow .arrow-shaft {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  /* line 235, ../stylesheets/components/_globe.scss */
+  .global_prac .complete .block-hor .arrow-shaft {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 238, ../stylesheets/components/_globe.scss */
+  .global_prac .complete .block {
+    opacity: 1;
+  }
+  /* line 242, ../stylesheets/components/_globe.scss */
+  .global_prac .complete.gp_mid .block-right {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  /* line 246, ../stylesheets/components/_globe.scss */
+  .global_prac .complete.gp_mid .block-left {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  /* line 252, ../stylesheets/components/_globe.scss */
+  .global_prac .down-arrow {
+    width: 10%;
+    height: 620px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 9.5%;
+    overflow: hidden;
+  }
+  /* line 260, ../stylesheets/components/_globe.scss */
+  .global_prac .down-arrow .arrow-shaft {
+    position: relative;
+    width: 42.5%;
+    margin-left: 25%;
+    height: 83.5%;
+    opacity: 0;
+    -webkit-transform: translateY(-84%);
+    -moz-transform: translateY(-84%);
+    -ms-transform: translateY(-84%);
+    -o-transform: translateY(-84%);
+    transform: translateY(-84%);
+    background: #666666;
+    -webkit-transition: all 4s;
+    -moz-transition: all 4s;
+    transition: all 4s;
+  }
+  /* line 269, ../stylesheets/components/_globe.scss */
+  .global_prac .down-arrow .arrow-shaft:after {
+    height: 0;
+    width: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 35px solid #666666;
+    bottom: -40px;
+    left: -25%;
+  }
+  /* line 277, ../stylesheets/components/_globe.scss */
+  .global_prac .block-hor {
+    display: block;
+    position: absolute;
+    left: 30%;
+    width: 30%;
+    height: 50px;
+    overflow: hidden;
+    top: 25%;
+  }
+  /* line 285, ../stylesheets/components/_globe.scss */
+  .global_prac .block-hor .arrow-shaft {
+    position: relative;
+    width: 85%;
+    margin-top: 10px;
+    height: 30px;
+    background: #666666;
+    -webkit-transform: translateX(-115%);
+    -moz-transform: translateX(-115%);
+    -ms-transform: translateX(-115%);
+    -o-transform: translateX(-115%);
+    transform: translateX(-115%);
+  }
+  /* line 294, ../stylesheets/components/_globe.scss */
+  .global_prac .block-hor .arrow-shaft:after {
+    height: 0;
+    width: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid #666666;
+    right: -30px;
+    top: -10px;
+  }
+  /* line 303, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_upper,
+  .global_prac .gp_mid,
+  .global_prac .gp_low {
+    margin: 20px 0;
+    width: 100%;
+    float: left;
+  }
+  /* line 313, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid #block-waypoint-1 * {
+    -webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    transition: all 3s;
+  }
+  /* line 316, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid #block-waypoint-2 * {
+    -webkit-transition: all 4s;
+    -moz-transition: all 4s;
+    transition: all 4s;
+  }
+  /* line 319, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid #block-waypoint-3 * {
+    -webkit-transition: all 5s;
+    -moz-transition: all 5s;
+    transition: all 5s;
+  }
+  /* line 323, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid .blocks-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  /* line 327, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid .block--wrapper {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 40px 0px;
+  }
+  /* line 334, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid .block-inner > div {
+    float: left;
+  }
+  /* line 338, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid .block-right {
+    width: 40%;
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  /* line 343, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_mid .block-left {
+    margin-right: 35%;
+    width: 25%;
+    -webkit-transform: translateY(-150%);
+    -moz-transform: translateY(-150%);
+    -ms-transform: translateY(-150%);
+    -o-transform: translateY(-150%);
+    transform: translateY(-150%);
+  }
+  /* line 351, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .blocks-wrapper {
+    background: #FFBEA9;
+    float: left;
+  }
+  /* line 355, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper {
+    width: 33.3%;
+  }
+  /* line 357, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper .block-inner {
+    background: #89CFAB;
+  }
+  /* line 360, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper .block-top,
+  .global_prac .gp_low .block--wrapper .block-bottom {
+    float: left;
+    width: 100%;
+  }
+  /* line 365, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper .block-copy {
+    text-align: left;
+  }
+  /* line 367, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper .block-copy ul {
+    padding-left: 15px;
+  }
+  /* line 370, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper .block-copy li {
+    margin: 20px 0;
+  }
+  /* line 375, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .conclusion {
+    width: 100%;
+    margin: 60px 0 0;
+  }
+  /* line 379, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-1 {
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  /* line 381, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-1* {
+    -webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    transition: all 3s;
+  }
+  /* line 385, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-2 {
+    -webkit-transform: translateX(-250%);
+    -moz-transform: translateX(-250%);
+    -ms-transform: translateX(-250%);
+    -o-transform: translateX(-250%);
+    transform: translateX(-250%);
+  }
+  /* line 386, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-2* {
+    -webkit-transition: all 4s;
+    -moz-transition: all 4s;
+    transition: all 4s;
+  }
+  /* line 391, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-3 {
+    -webkit-transform: translateX(-350%);
+    -moz-transform: translateX(-350%);
+    -ms-transform: translateX(-350%);
+    -o-transform: translateX(-350%);
+    transform: translateX(-350%);
+  }
+  /* line 392, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low .block--wrapper-3* {
+    -webkit-transition: all 5s;
+    -moz-transition: all 5s;
+    transition: all 5s;
+  }
+  /* line 398, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low.complete .block {
+    opacity: 1;
+  }
+  /* line 401, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low.complete .block--wrapper-1 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 404, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low.complete .block--wrapper-2 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 407, ../stylesheets/components/_globe.scss */
+  .global_prac .gp_low.complete .block--wrapper-3 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 417, ../stylesheets/components/_globe.scss */
 #map-container {
   height: 100vw;
   width: 100vw;
   margin: 0 auto;
 }
 
+/* line 423, ../stylesheets/components/_globe.scss */
+#countries-container ul {
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+  padding-left: 0;
+}
+/* line 426, ../stylesheets/components/_globe.scss */
+#countries-container ul li {
+  margin: 0 20px;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari */
+  page-break-inside: avoid;
+  /* Theoretically FF 20+ */
+  break-inside: avoid-column;
+  /* IE 11 */
+  display: grid;
+  /* Actually FF 20+ */
+}
+
 @media screen and (min-width: 46.875em) {
-  /* line 351, ../stylesheets/components/_globe.scss */
+  /* line 437, ../stylesheets/components/_globe.scss */
   #map-container {
     height: 50vw;
     width: 75vw;
     margin: 0 auto;
+  }
+
+  /* line 442, ../stylesheets/components/_globe.scss */
+  #countries-container {
+    top: 10%;
+    position: absolute;
+    left: 20px;
+    padding: 0px;
+    width: 150px;
+  }
+  /* line 448, ../stylesheets/components/_globe.scss */
+  #countries-container ul {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
   }
 }
 /* line 1, ../stylesheets/components/_therapy_areas.scss */

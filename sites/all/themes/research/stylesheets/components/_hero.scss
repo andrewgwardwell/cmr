@@ -227,7 +227,7 @@
   }
   @include media($mq-desk-up) {
     .hero__inner {
-      top: 30%;
+      margin-top: 15%;
     }
     .hero__image {
       padding-bottom: 50%;
