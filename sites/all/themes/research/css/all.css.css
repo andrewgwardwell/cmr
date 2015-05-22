@@ -1146,15 +1146,17 @@ i:before {
   float: left;
   margin-top: 20px;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 11, ../stylesheets/components/_homepage.scss */
+/* line 12, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .menu-links .menu-links__image {
   width: 100%;
   height: 150px;
   background-size: 100%;
   background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 17, ../stylesheets/components/_homepage.scss */
+/* line 19, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .menu-links .text-wrapper {
   display: block;
   width: 100%;
@@ -1167,12 +1169,12 @@ i:before {
   -moz-transition: all 1s;
   transition: all 1s;
 }
-/* line 26, ../stylesheets/components/_homepage.scss */
+/* line 28, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .menu-links .text-wrapper .menu-links__title, .chunk-home-menu .menu-links .text-wrapper .menu-links__text {
   color: white;
   padding: 10px;
 }
-/* line 30, ../stylesheets/components/_homepage.scss */
+/* line 32, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .menu-links .text-wrapper .menu-links__text {
   opacity: 1;
   -webkit-transition: all 1s;
@@ -1180,67 +1182,67 @@ i:before {
   transition: all 1s;
   padding: 10px;
 }
-/* line 38, ../stylesheets/components/_homepage.scss */
+/* line 40, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .first .menu-links__image, .chunk-home-menu .second .menu-links__image {
   height: 350px;
   width: 100%;
   margin: 0 auto;
   display: block;
 }
-/* line 45, ../stylesheets/components/_homepage.scss */
+/* line 47, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .first .menu-links__image {
   background-size: 220%;
   background-position: 50% 0;
 }
-/* line 49, ../stylesheets/components/_homepage.scss */
+/* line 51, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .second {
   margin-right: 0;
 }
-/* line 51, ../stylesheets/components/_homepage.scss */
+/* line 53, ../stylesheets/components/_homepage.scss */
 .chunk-home-menu .second .menu-links__image {
   height: 300px;
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 60, ../stylesheets/components/_homepage.scss */
+  /* line 62, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu {
     position: relative;
   }
-  /* line 62, ../stylesheets/components/_homepage.scss */
+  /* line 64, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .chunk-inner {
     padding-top: 110px;
   }
-  /* line 65, ../stylesheets/components/_homepage.scss */
+  /* line 67, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links {
     width: 31%;
   }
-  /* line 67, ../stylesheets/components/_homepage.scss */
+  /* line 69, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links .text-wrapper {
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     transition: all 1s;
   }
-  /* line 71, ../stylesheets/components/_homepage.scss */
+  /* line 73, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first {
     width: 64%;
   }
-  /* line 73, ../stylesheets/components/_homepage.scss */
+  /* line 75, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first .menu-links__image {
     height: 300px;
     background-size: 100%;
   }
-  /* line 78, ../stylesheets/components/_homepage.scss */
+  /* line 80, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second {
     margin-right: 0;
   }
-  /* line 80, ../stylesheets/components/_homepage.scss */
+  /* line 82, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second .menu-links__image {
     height: 300px;
     background-size: 110%;
   }
 }
 @media screen and (min-width: 62.5em) {
-  /* line 91, ../stylesheets/components/_homepage.scss */
+  /* line 93, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links .text-wrapper {
     height: 50px;
     display: block;
@@ -1251,12 +1253,12 @@ i:before {
     top: inherit;
     min-height: 50px;
   }
-  /* line 100, ../stylesheets/components/_homepage.scss */
+  /* line 102, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links .text-wrapper .menu-links__title, .chunk-home-menu .menu-links .text-wrapper .menu-links__text {
     color: white;
     padding: 0 10px;
   }
-  /* line 104, ../stylesheets/components/_homepage.scss */
+  /* line 106, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links .text-wrapper .menu-links__text {
     opacity: 0;
     -webkit-transition: all 1s;
@@ -1264,35 +1266,35 @@ i:before {
     transition: all 1s;
     padding: 10px;
   }
-  /* line 111, ../stylesheets/components/_homepage.scss */
+  /* line 113, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links:hover .text-wrapper {
     min-height: 150px;
   }
-  /* line 114, ../stylesheets/components/_homepage.scss */
+  /* line 116, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .menu-links:hover .text-wrapper .menu-links__text {
     opacity: 1;
   }
-  /* line 120, ../stylesheets/components/_homepage.scss */
+  /* line 122, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first {
     width: 64%;
   }
-  /* line 122, ../stylesheets/components/_homepage.scss */
+  /* line 124, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .first .menu-links__image {
     height: 400px;
     background-size: 110%;
   }
-  /* line 127, ../stylesheets/components/_homepage.scss */
+  /* line 129, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second {
     margin-right: 0;
   }
-  /* line 129, ../stylesheets/components/_homepage.scss */
+  /* line 131, ../stylesheets/components/_homepage.scss */
   .chunk-home-menu .second .menu-links__image {
     height: 400px;
     background-size: 125%;
     background-position-x: 37.5%;
   }
 }
-/* line 140, ../stylesheets/components/_homepage.scss */
+/* line 142, ../stylesheets/components/_homepage.scss */
 .complex-page-nav {
   width: 40px;
   position: fixed;
@@ -1300,7 +1302,7 @@ i:before {
   z-index: 99;
   right: 20px;
 }
-/* line 146, ../stylesheets/components/_homepage.scss */
+/* line 148, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item {
   margin: 10px;
   display: block;
@@ -1312,7 +1314,7 @@ i:before {
   height: 25px;
   position: relative;
 }
-/* line 157, ../stylesheets/components/_homepage.scss */
+/* line 159, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item__title {
   right: -5px;
   top: -12px;
@@ -1330,11 +1332,11 @@ i:before {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 172, ../stylesheets/components/_homepage.scss */
+/* line 174, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item:hover, .complex-page-nav .cp-nav__item--active {
   background: rgba(15, 65, 95, 0.5);
 }
-/* line 176, ../stylesheets/components/_homepage.scss */
+/* line 178, ../stylesheets/components/_homepage.scss */
 .complex-page-nav .cp-nav__item:hover .cp-nav__item__title {
   visibility: visible;
   opacity: 1;

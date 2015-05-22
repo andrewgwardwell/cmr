@@ -8,11 +8,13 @@
     float: left;
     margin-top: 20px;
     position: relative;
+    background-color: rgba(0,0,0,.5);
     .menu-links__image{
       width: 100%;
       height: 150px;
       background-size: 100%;
       background-repeat: no-repeat;
+      background-color: rgba(0,0,0,.5);
     }
     .text-wrapper{
       display: block;
