@@ -3886,21 +3886,69 @@ video#home-video {
     transform: translateX(0);
   }
 }
-/* line 417, ../stylesheets/components/_globe.scss */
+/* line 416, ../stylesheets/components/_globe.scss */
+.map-outer {
+  position: relative;
+  width: 100%;
+}
+
+/* line 421, ../stylesheets/components/_globe.scss */
 #map-container {
   height: 100vw;
   width: 100vw;
   margin: 0 auto;
 }
 
-/* line 423, ../stylesheets/components/_globe.scss */
+/* line 427, ../stylesheets/components/_globe.scss */
+#areas-container {
+  position: absolute;
+  top: 10%;
+  height: 100%;
+  overflow-y: scroll;
+  transform: translateX(170%);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  background: #FFF;
+  width: 70%;
+  box-shadow: -20px 150px 160px 0px rgba(0, 0, 0, 0.2);
+}
+/* line 437, ../stylesheets/components/_globe.scss */
+#areas-container.open {
+  transform: translateX(60%);
+}
+/* line 440, ../stylesheets/components/_globe.scss */
+#areas-container .areas-inner {
+  padding: 20px;
+}
+/* line 442, ../stylesheets/components/_globe.scss */
+#areas-container .areas-inner ul {
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+  padding-left: 0;
+}
+/* line 445, ../stylesheets/components/_globe.scss */
+#areas-container .areas-inner ul li {
+  margin: 0 20px;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari */
+  page-break-inside: avoid;
+  /* Theoretically FF 20+ */
+  break-inside: avoid-column;
+  /* IE 11 */
+  display: grid;
+  /* Actually FF 20+ */
+}
+
+/* line 459, ../stylesheets/components/_globe.scss */
 #countries-container ul {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
   padding-left: 0;
 }
-/* line 426, ../stylesheets/components/_globe.scss */
+/* line 462, ../stylesheets/components/_globe.scss */
 #countries-container ul li {
   margin: 0 20px;
   -webkit-column-break-inside: avoid;
@@ -3914,14 +3962,14 @@ video#home-video {
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 437, ../stylesheets/components/_globe.scss */
+  /* line 473, ../stylesheets/components/_globe.scss */
   #map-container {
     height: 50vw;
     width: 75vw;
     margin: 0 auto;
   }
 
-  /* line 442, ../stylesheets/components/_globe.scss */
+  /* line 478, ../stylesheets/components/_globe.scss */
   #countries-container {
     top: 10%;
     position: absolute;
@@ -3929,7 +3977,7 @@ video#home-video {
     padding: 0px;
     width: 150px;
   }
-  /* line 448, ../stylesheets/components/_globe.scss */
+  /* line 484, ../stylesheets/components/_globe.scss */
   #countries-container ul {
     -webkit-columns: 1;
     -moz-columns: 1;
@@ -4005,23 +4053,19 @@ video#home-video {
 .therapy-areas .node text:hover {
   fill: #D89A4D;
 }
-/* line 61, ../stylesheets/components/_therapy_areas.scss */
-.therapy-areas .node text.active-term {
-  fill: #D89A4D;
-}
-/* line 66, ../stylesheets/components/_therapy_areas.scss */
+/* line 63, ../stylesheets/components/_therapy_areas.scss */
 .therapy-areas .link {
   fill: none;
   stroke: #FFBEA9;
   stroke-width: 1.5px;
 }
 
-/* line 73, ../stylesheets/components/_therapy_areas.scss */
+/* line 70, ../stylesheets/components/_therapy_areas.scss */
 .therapy-areas--mobile {
   background: #FFFFFF;
 }
 
-/* line 77, ../stylesheets/components/_therapy_areas.scss */
+/* line 74, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info {
   position: fixed;
   -webkit-transform: translateX(250%);
@@ -4036,24 +4080,24 @@ video#home-video {
   background: #F7F7F7;
   z-index: 2147483;
 }
-/* line 86, ../stylesheets/components/_therapy_areas.scss */
+/* line 83, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info .bump {
   width: 100%;
   float: left;
   margin-bottom: 20px;
 }
-/* line 91, ../stylesheets/components/_therapy_areas.scss */
+/* line 88, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info .section__title {
   text-decoration: underline;
 }
 
-/* line 96, ../stylesheets/components/_therapy_areas.scss */
+/* line 93, ../stylesheets/components/_therapy_areas.scss */
 .hide-inner .therapy-info--inner {
   opacity: 0;
   display: none;
 }
 
-/* line 101, ../stylesheets/components/_therapy_areas.scss */
+/* line 98, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
@@ -4065,88 +4109,88 @@ video#home-video {
   background: #FFFFFF;
   overflow: hidden;
 }
-/* line 110, ../stylesheets/components/_therapy_areas.scss */
+/* line 107, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .staff, .therapy-info--inner .therapy-info--clients {
   width: 100%;
 }
-/* line 112, ../stylesheets/components/_therapy_areas.scss */
+/* line 109, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .staff .staff-wrapper, .therapy-info--inner .staff .client-wrapper, .therapy-info--inner .therapy-info--clients .staff-wrapper, .therapy-info--inner .therapy-info--clients .client-wrapper {
   width: 48%;
   float: left;
   padding: 1%;
 }
-/* line 117, ../stylesheets/components/_therapy_areas.scss */
+/* line 114, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .staff .section__img, .therapy-info--inner .therapy-info--clients .section__img {
   float: left;
   margin: 0 0;
 }
-/* line 120, ../stylesheets/components/_therapy_areas.scss */
+/* line 117, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .staff .section__img img, .therapy-info--inner .therapy-info--clients .section__img img {
   max-width: 40%;
 }
-/* line 125, ../stylesheets/components/_therapy_areas.scss */
+/* line 122, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .therapy-info--clients,
 .therapy-info--inner .therapy-info--staff {
   float: left;
   width: 100%;
 }
-/* line 131, ../stylesheets/components/_therapy_areas.scss */
+/* line 128, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .therapy-info--clients .client-wrapper {
   text-align: center;
 }
-/* line 135, ../stylesheets/components/_therapy_areas.scss */
+/* line 132, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .therapy-info--clients .section__img img {
   max-width: 50%;
   display: block;
   margin: 0 auto;
 }
-/* line 142, ../stylesheets/components/_therapy_areas.scss */
+/* line 139, ../stylesheets/components/_therapy_areas.scss */
 .therapy-info--inner .therapy-info--clients--inner,
 .therapy-info--inner .therapy-info--staff--inner {
   padding: 20px 0;
 }
 
-/* line 148, ../stylesheets/components/_therapy_areas.scss */
+/* line 145, ../stylesheets/components/_therapy_areas.scss */
 .extra-info {
   color: #D89A4D;
   font-size: 0.75em;
   padding: 5px;
 }
 
-/* line 156, ../stylesheets/components/_therapy_areas.scss */
+/* line 153, ../stylesheets/components/_therapy_areas.scss */
 .close-button {
   width: 30px;
   height: 30px;
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0px;
+  left: 0px;
   border-radius: 50%;
   background: white;
 }
-/* line 165, ../stylesheets/components/_therapy_areas.scss */
+/* line 162, ../stylesheets/components/_therapy_areas.scss */
 .close-button:before {
   content: '\00D7';
   display: block;
   position: absolute;
   top: -8px;
   left: 5px;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 176, ../stylesheets/components/_therapy_areas.scss */
+  /* line 173, ../stylesheets/components/_therapy_areas.scss */
   .therapy-areas--mobile {
     display: none;
   }
 
-  /* line 179, ../stylesheets/components/_therapy_areas.scss */
+  /* line 176, ../stylesheets/components/_therapy_areas.scss */
   .therapy-areas {
     display: block;
   }
 
-  /* line 182, ../stylesheets/components/_therapy_areas.scss */
+  /* line 179, ../stylesheets/components/_therapy_areas.scss */
   .therapy-info {
     background: none;
     width: 40%;
@@ -4158,13 +4202,13 @@ video#home-video {
     position: relative;
   }
 
-  /* line 189, ../stylesheets/components/_therapy_areas.scss */
+  /* line 186, ../stylesheets/components/_therapy_areas.scss */
   .hide-inner .therapy-info--inner {
     opacity: 0;
     display: none;
   }
 
-  /* line 194, ../stylesheets/components/_therapy_areas.scss */
+  /* line 191, ../stylesheets/components/_therapy_areas.scss */
   .therapy-info--inner {
     opacity: 1;
     display: block;

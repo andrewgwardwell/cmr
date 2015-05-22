@@ -32,7 +32,7 @@
 
     mobExtraInfo : function(e){
       e.stopPropagation();
-      window.location.hash = $(this).data('extra-info');
+      //window.location.hash = $(this).data('extra-info');
     },
 
     mobileCollapse : function(e){
@@ -51,38 +51,38 @@
     if(item.length > 0){
       item = item.replace('#','');
       $('#block-cmr-therapy-area').removeClass('term-open').addClass('hide-inner');
-      $.ajax({
-        url: 'ajax/get/therapy_areas',
-        data: {
-          'id': item
-        }
-      }).done(function(data) {
-          var info = JSON.parse(data);
-          var template = $('#therapyTpl').html();
-          var html = Mustache.to_html(template, info);
-          if (mobile){
-            $('body').addClass('fixed-body');
-          } else {
-            var top = $('#block-cmr-therapy-area').offset().top;
-            $('html, body').stop().animate({
-              scrollTop: top-150
-            }, 1000, 'easeInOutExpo');
-          }
-          //  $('#area-'+item).html(html);
-          //  $('#block-cmr-therapy-area').addClass('term-open');
-          //  setTimeout(function(){
-          //    $('#block-cmr-therapy-area').removeClass('hide-inner');
-          //  }, 1200);
-          //} else {
-            $('.therapy-info').html(html);
-            $('#block-cmr-therapy-area').addClass('term-open');
-            setTimeout(function(){
-              $('#block-cmr-therapy-area').removeClass('hide-inner');
-            }, 1200);
-            //$('.close-button').on('click', this.closeInfo);
-            $('.close-button').on('click', Drupal.behaviors.dataVizblock.closeInfo);
-        }
-      );
+      //$.ajax({
+      //  url: 'ajax/get/therapy_areas',
+      //  data: {
+      //    'id': item
+      //  }
+      //}).done(function(data) {
+      //    var info = JSON.parse(data);
+      //    var template = $('#therapyTpl').html();
+      //    var html = Mustache.to_html(template, info);
+      //    if (mobile){
+      //      $('body').addClass('fixed-body');
+      //    } else {
+      //      var top = $('#block-cmr-therapy-area').offset().top;
+      //      $('html, body').stop().animate({
+      //        scrollTop: top-150
+      //      }, 1000, 'easeInOutExpo');
+      //    }
+      //    //  $('#area-'+item).html(html);
+      //    //  $('#block-cmr-therapy-area').addClass('term-open');
+      //    //  setTimeout(function(){
+      //    //    $('#block-cmr-therapy-area').removeClass('hide-inner');
+      //    //  }, 1200);
+      //    //} else {
+      //      $('.therapy-info').html(html);
+      //      $('#block-cmr-therapy-area').addClass('term-open');
+      //      setTimeout(function(){
+      //        $('#block-cmr-therapy-area').removeClass('hide-inner');
+      //      }, 1200);
+      //      //$('.close-button').on('click', this.closeInfo);
+      //      $('.close-button').on('click', Drupal.behaviors.dataVizblock.closeInfo);
+      //  }
+      //);
     }
   },
 
@@ -131,17 +131,19 @@
         root.x0 = height / 2;
         root.y0 = 0;
 
-        function collapse(d) {
-          if (d.children) {
-            d._children = d.children;
-            d._children.forEach(collapse);
-            d.children = null;
-          }
-        }
+
 
         root.children.forEach(collapse);
         update(root);
       };
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
 
       d3.select(self.frameElement).style("height", "800px");
 
@@ -194,9 +196,6 @@
 
         var text = svg.selectAll("g.node text")
           .on('click', function(d){
-            d3.selectAll('text.active-term').attr('class', '');
-            window.location.hash = $(this).data('info');
-            d3.select(this).attr('class', 'active-term');
           });
 
         window.onhashchange = Drupal.behaviors.dataVizblock.createView;
@@ -269,14 +268,18 @@
 
 // Toggle children on click.
       function click(d) {
-        if (d.children) {
+          if(d._children){
+              root.children.forEach(collapse);
+          }
+          if (d.children) {
           d._children = d.children;
           d.children = null;
         } else {
-          d.children = d._children;
-          d._children = null;
+            d.children = d._children;
+            d._children = null;
         }
-        update(d);
+          //firstFlare(null, flare);
+          update(d);
       }
 
       firstFlare(null, flare);

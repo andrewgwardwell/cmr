@@ -12,13 +12,27 @@
           },
           data: JSON.parse(Drupal.settings.countriesList),
           //data: Drupal.settings.countriesList
-          geographyConfig:{
+          geographyConfig: {
               highlightOnHover: false,
-              popupTemplate: function(geography, data) {
-                  if(data != null){
-                      return '<div class="hoverinfo"><h4>' + geography.properties.name + '</h4><br/>Areas of Work:<br/><ul>' + data.exp.join('') + '</ul></div>';
+              popupTemplate: function (geography, data) {
+                  if (data != null) {
+                      return '<div class="hoverinfo"><h4>' + geography.properties.name + '</h4><br/>Click to see Areas of Work.<br/></div>';
                   }
               }
+          },
+          done: function (datamap) {
+              datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                  $('.open').removeClass('open');
+                  // $('#areas-container').on('transitionend', function(){
+                     var country = geography.properties.name;
+                     var inner = Drupal.settings.countriesList2[geography.id]['exp'].join('');
+                     var output = $('#areas-container').addClass('open').find('.areas-inner').html('<h4>'+country+'</h4><ul>'+inner+'</ul>');
+                  // });
+                     $('.close-button').on('click', function(e){
+                        $('.open').removeClass('open')
+                      });
+                  //<div class="hoverinfo"><h4>' + geography.properties.name + '</h4><br/>Areas of Work:<br/><ul>' + data.exp.join('') + '</ul></div>';
+              });
           }
       });
         return map;

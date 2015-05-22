@@ -88,6 +88,8 @@ switch ($delta){
         $th_term = taxonomy_term_load($r['tid']);
         $a_name = $th_term->name;
         $areas[$r['tid']] = '<li>'.$a_name.'</li>' ;
+        // $areas[$a_name] = '<li>'.$a_name.'</li>' ;
+        // $areas[$r['tid']] = '<li>'.$r['tid'].'</li>' ;
 //        $expertise[$th_term->name] = $r['tid'];
 //        $ex_blob[] = $th_term->name;
       }
@@ -95,9 +97,15 @@ switch ($delta){
         $mth_term = taxonomy_term_load($m_r['tid']);
         $m_name = $mth_term->name;
         $m_areas[$m_r['tid']] = '<li>'.$m_name.'</li>';
+        // $m_areas[$m_name] = '<li>'.$m_name.'</li>';
+        // $m_areas[$m_r['tid']] = '<li>'.$m_r['tid'].'</li>';
 //          $devices[$mth_term->name] = $m_r['tid'];
 //        $device_blob[] = $mth_term->name;
       }
+      // drupal_json_output($m_areas);
+      // die();
+      // $areas = array_unique($areas);
+      // $m_areas = array_unique($m_areas);
         // combined array of the areas addressed for this client in this country
       $a_areas = array_merge($areas, $m_areas);
         // loop through locations
@@ -155,9 +163,13 @@ switch ($delta){
     $devices['All'] = 'all';
 
     drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
+    drupal_add_js(array('countriesList2' => $points), 'setting');
     $countries_markup = '<h5><strong>Countries</strong></h5><ul><li>'.implode('</li><li>', $countries).'</li></ul>';
     $block['subject'] = '';
-    $block['content'] = '<div class="map-outer"><div id = "map-container"></div></div><div class="chunk-inner" id = "countries-container">'.$countries_markup.'</div>';
+    $output = '<div id = "map-container"></div>';
+    $output .= '<div class="chunk-inner" id = "countries-container">'.$countries_markup.'</div>';
+      $output .= '<div id = "areas-container"><div class = "close-button"></div><div class="areas-inner"></div></div>';
+      $block['content'] = '<div class="map-outer">'.$output.'</div>';
     break;
   case 'global':
     drupal_add_js('http://www.webglearth.com/v2/api.js', 'external');
@@ -282,10 +294,23 @@ switch ($delta){
     $voc = taxonomy_vocabulary_machine_name_load('therapy_area');
 //    $terms = taxonomy_get_nested_tree($voc->vid, 10);
     $terms = taxonomy_get_nested_tree($voc->vid, 10);
-//    var_dump($terms);
-    $dr_terms['name'] = 'Therapy Areas';
-    array_walk($terms, 'cmr_to_arrays');
-    $dr_terms['children'] = $terms;
+    $alpha_terms = array();
+        foreach($terms as $t){
+          $alpha_terms[$t->name] = $t;
+            if (!empty($t->children)){
+                foreach($t->children as $k => $c){
+                    $t->children[$c->name] = $c;
+                    unset($t->children[$k]);
+                }
+                ksort($t->children);
+            }
+        }
+    ksort($alpha_terms);
+//    drupal_json_output($alpha_terms);
+//    die();
+      $dr_terms['name'] = 'Therapy Areas';
+      array_walk($alpha_terms, 'cmr_to_arrays');
+      $dr_terms['children'] = $alpha_terms;
 //    drupal_add_js("http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js");
 //    drupal_add_js("http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone.js");
     drupal_add_js(array('therapy_terms' => $dr_terms), 'setting');
