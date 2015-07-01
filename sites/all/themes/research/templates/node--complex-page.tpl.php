@@ -1,6 +1,6 @@
 <?php if (!empty($body)): ?>
   <div class="hero hero--complex left-aligned section " id="section-0">
-<!--    <div class = "hero__image hero--complex" style="background-image: url('--><?php //print file_create_url($field_hero_image[0]['uri']);?><!--/*')"></div>*/-->
+<div class = "hero__image hero--complex" style="background-image: url('<?php print file_create_url($field_hero_image[0]['uri']);?>')"></div>
     <div class="hero__inner">
       <div class="hero__cta">
         <div class="hero__caption--header">

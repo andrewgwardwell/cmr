@@ -15,7 +15,7 @@
         //console.log(id+' '+scrollDist);
         $this.scrollDist[id] = scrollDist;
       });
-      $('.hero__image').css('padding-bottom', win_ht*.5);
+      $('.hero__image').css('padding-bottom', win_ht*.35);
     },
     clickNav: function(e){
         var $anchor = $(this);

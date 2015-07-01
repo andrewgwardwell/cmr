@@ -88,8 +88,8 @@
 
     init: function() {
       var margin = {top: 20, right: 120, bottom: 20, left: 120},
-        width = 760 - margin.right - margin.left,
-        height = 1600 - margin.top - margin.bottom;
+        width = 1400 - margin.right - margin.left,
+        height = 1000 - margin.top - margin.bottom;
 
       var i = 0,
         duration = 750,
@@ -155,7 +155,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function(d) {
-          d.y = d.depth * 180;
+          d.y = d.depth * 380;
         });
 
         // Update the nodes…
@@ -268,6 +268,9 @@
 
 // Toggle children on click.
       function click(d) {
+          if(d.id == 23){
+              return;
+          }
           if(d._children){
               root.children.forEach(collapse);
           }

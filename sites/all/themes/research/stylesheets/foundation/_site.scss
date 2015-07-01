@@ -93,7 +93,7 @@ body {
 
 .section{
   &:first-child{
-    padding-top: 0;
+    padding-top: 40px;
   }
 }
 
@@ -102,21 +102,21 @@ body {
 }
 
 .chunk-inner{
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 @include media($mq-lap-up) {
   .chunk-inner{
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
 @include media($mq-desk-up) {
   .chunk-inner{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 

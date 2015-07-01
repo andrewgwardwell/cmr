@@ -46,6 +46,12 @@ function research_theme(){
       ),
       'template' => 'templates/clients',
     ),
+      'clients2' => array(
+          'variables' => array(
+              'clients' => NULL
+          ),
+          'template' => 'templates/clients2',
+      ),
     'dashboard' => array(
       'variables' => array(
         'items' => NULL

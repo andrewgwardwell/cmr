@@ -2,12 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fceeefb-d9da-4241-85d7-0ab987a1e92f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_therapy_areas.scssc" afterPath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_therapy_areas.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_therapy_areas.scss" afterPath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_therapy_areas.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_35dxMksLJp5TNOhA3yh44VxFID9T5LXtV3ymhBmirGQ.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_35dxMksLJp5TNOhA3yh44VxFID9T5LXtV3ymhBmirGQ.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_AFNnEjvDR5CvJkNKTljzBrlXpHTR2BYWPNnWbH1OEx4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_AFNnEjvDR5CvJkNKTljzBrlXpHTR2BYWPNnWbH1OEx4.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_IV8zQYBIkcKIc-dVqJK_y0dt8ECONI5Vzj0HR-6pz0w.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_IV8zQYBIkcKIc-dVqJK_y0dt8ECONI5Vzj0HR-6pz0w.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_LS9OUalDR9-d_lCAvF3yUWjNU6yF8ZBm84jEPRvoyuQ.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_LS9OUalDR9-d_lCAvF3yUWjNU6yF8ZBm84jEPRvoyuQ.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_SWycYZo0Ypdi--2AEe7ArZfKuXpaihKLz2aEOX71bq8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_SWycYZo0Ypdi--2AEe7ArZfKuXpaihKLz2aEOX71bq8.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_T0fIlNHWvpyHMn4K6gc-v0XHlxUSKXZOnYYHwvzsYF4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_T0fIlNHWvpyHMn4K6gc-v0XHlxUSKXZOnYYHwvzsYF4.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_TsVRTbLFUpEZAfw-_bWPJu840QT523CPjUVJ5MRWfyk.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_TsVRTbLFUpEZAfw-_bWPJu840QT523CPjUVJ5MRWfyk.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_o_f7q5PIe3rMy7Mu4zsn36ljyLqpOp_uBWrz-tp-puQ.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_o_f7q5PIe3rMy7Mu4zsn36ljyLqpOp_uBWrz-tp-puQ.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/gmap_markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_CmztUBM8kuF-wciKZ--hRnloJvzzvEhlyky4RSE5zRM.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_CmztUBM8kuF-wciKZ--hRnloJvzzvEhlyky4RSE5zRM.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_GcdiEKoT6lrfqCmnDFI0nmKne1YlZBUIf2-SNeaS0WQ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_GcdiEKoT6lrfqCmnDFI0nmKne1YlZBUIf2-SNeaS0WQ.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_GnyMSYvtYlez1iEbKHA8JuUBd5Tkh0exDTxaKgpxzpQ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_GnyMSYvtYlez1iEbKHA8JuUBd5Tkh0exDTxaKgpxzpQ.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_KCd8rbJYUruV1tRJnh4um34UYvyhlrSVCPR1jNko2h8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_KCd8rbJYUruV1tRJnh4um34UYvyhlrSVCPR1jNko2h8.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_L-jiyCA6gsKvkJ4IMy-h4CPZcHPFUwjn8N7r_zQ_Apw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_L-jiyCA6gsKvkJ4IMy-h4CPZcHPFUwjn8N7r_zQ_Apw.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_QuwQT7CGY_PFlXO8YghF2aq8ffUcE79sD7W5f5QaMhk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_QuwQT7CGY_PFlXO8YghF2aq8ffUcE79sD7W5f5QaMhk.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_R9UbiVw2xuTUI0GZoaqMDOdX0lrZtgX-ono8RVOUEVc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_R9UbiVw2xuTUI0GZoaqMDOdX0lrZtgX-ono8RVOUEVc.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_UFHlcjKmdA3_2yRpwEeMeApv2LMZ2XiGzfZG62RN_p4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_UFHlcjKmdA3_2yRpwEeMeApv2LMZ2XiGzfZG62RN_p4.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js__DH07TfdOQHn_N_Yq2muNPjnlaVMWV5K7F6bjQeceU4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js__DH07TfdOQHn_N_Yq2muNPjnlaVMWV5K7F6bjQeceU4.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_g3cd0f5qkKxAZTG0zpyXCxh3w2bTd0ugCvsNfeDZXFw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_g3cd0f5qkKxAZTG0zpyXCxh3w2bTd0ugCvsNfeDZXFw.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_ihcXZ-u6zmQ_zuvNB2DaJ8LglkGPBVog6JwGzLddnzE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_ihcXZ-u6zmQ_zuvNB2DaJ8LglkGPBVog6JwGzLddnzE.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_kpRk7ewlXgK3SB068zg3ApmnZKBiK7NEpKSLmy1JELY.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_kpRk7ewlXgK3SB068zg3ApmnZKBiK7NEpKSLmy1JELY.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_mo4IGK3ABx8YpGpfcveF3voLeS8cWdwGU2qmKe-MvZ4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_mo4IGK3ABx8YpGpfcveF3voLeS8cWdwGU2qmKe-MvZ4.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_msINVwYiq7kEZkaeIYk5guGTDZ5_U5BY2FGZauRCaCw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_msINVwYiq7kEZkaeIYk5guGTDZ5_U5BY2FGZauRCaCw.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_omwQODMNDv8WqSHV20dXUcCE7LMXEtUdDZhYyAH3AKI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_omwQODMNDv8WqSHV20dXUcCE7LMXEtUdDZhYyAH3AKI.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_q4QJbQC-cVGZxbIPuJ1DSzQxPIPv9PzSVxDAwwW9suw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_q4QJbQC-cVGZxbIPuJ1DSzQxPIPv9PzSVxDAwwW9suw.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_rv_BKYv7yieH0IgHddhWHDC-bWGan8yiJbusyOpr0mw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_rv_BKYv7yieH0IgHddhWHDC-bWGan8yiJbusyOpr0mw.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_ziOU7AoR1SJB3B1vgk9h3hcJz21mTwqMRCTbkYMS2IA.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/local_dev/files/js/js_ziOU7AoR1SJB3B1vgk9h3hcJz21mTwqMRCTbkYMS2IA.js.gz" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_clients.scssc" afterPath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_clients.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_globe.scssc" afterPath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_globe.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_staff.scssc" afterPath="$PROJECT_DIR$/sites/all/themes/research/.sass-cache/5ccd06ded2498b0508f205fb3a36916889944627/_staff.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_clients.scss" afterPath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_clients.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss" afterPath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_staff.scss" afterPath="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_staff.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/css/all.css.css" afterPath="$PROJECT_DIR$/sites/all/themes/research/css/all.css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js" afterPath="$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js" afterPath="$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/templates/footer.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/research/templates/footer.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/templates/node--feature-heavy.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/research/templates/node--feature-heavy.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/templates/staff.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/research/templates/staff.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php" afterPath="$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cmr.iws" />
@@ -39,61 +106,105 @@
       <file leaf-file-name="cmr.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="2190" max-vertical-offset="9075">
-              <caret line="156" column="77" selection-start-line="156" selection-start-column="77" selection-end-line="156" selection-end-column="77" />
+            <state vertical-scroll-proportion="-6.5833335" vertical-offset="1627" max-vertical-offset="9045">
+              <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
               <folding>
-                <marker date="1432302455000" expanded="true" signature="16157:16217" placeholder="SELECT COUNT..." />
+                <marker date="1435297126000" expanded="true" signature="16361:16421" placeholder="SELECT COUNT..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_wysiwyg.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_wysiwyg.scss">
+      <file leaf-file-name="theme_functions.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="965" max-vertical-offset="1680">
-              <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1620">
+              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preprocess_functions.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/inc/preprocess_functions.inc.php">
+      <file leaf-file-name="clients2.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/clients2.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="2850">
-              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+            <state vertical-scroll-proportion="-16.125" vertical-offset="123" max-vertical-offset="780">
+              <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_clients.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_clients.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.083333" vertical-offset="682" max-vertical-offset="1545">
+              <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_homepage.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_homepage.scss">
+      <file leaf-file-name="clients.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/clients.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2850">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="630">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="44" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_hero.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_hero.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3081" max-vertical-offset="3660">
-              <caret line="224" column="7" selection-start-line="224" selection-start-column="7" selection-end-line="224" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmr_globe2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cmr_globe2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45094937" vertical-offset="75" max-vertical-offset="930">
-              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1035">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d3.test.2.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4704861" vertical-offset="1094" max-vertical-offset="4440">
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_globe.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.875" vertical-offset="2955" max-vertical-offset="7590">
+              <caret line="207" column="18" selection-start-line="207" selection-start-column="18" selection-end-line="207" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_triangle.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/dependencies/bourbon/addons/_triangle.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1380">
+              <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node--feature-heavy.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--feature-heavy.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="405">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+              <folding>
+                <element signature="e#6#33#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,16 +220,19 @@
         <option value="$PROJECT_DIR$/sites/all/themes/research/js/global_lookup.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/templates/contact_block.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/templates/node--homepage.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/inc/preprocess_functions.inc.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/templates/link_blocks.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_homepage.scss" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_hero.scss" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_therapy_areas.scss" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_clients.scss" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/templates/clients2.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/templates/node--feature-heavy.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss" />
         <option value="$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_therapy_areas.scss" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module" />
-        <option value="$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js" />
       </list>
     </option>
   </component>
@@ -160,6 +274,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -500,7 +615,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,19 +678,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25347507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26573998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -600,7 +714,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module</url>
-          <line>565</line>
+          <line>555</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -609,37 +723,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--homepage.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="165">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2132" max-vertical-offset="8820">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding>
-            <marker date="1432302455000" expanded="true" signature="16157:16217" placeholder="SELECT COUNT..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6234" max-vertical-offset="6885">
-          <caret line="448" column="26" selection-start-line="448" selection-start-column="26" selection-end-line="448" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4395">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="3090">
           <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="2850">
           <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="165">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +802,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8550">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1432302455000" expanded="true" signature="16157:16217" placeholder="SELECT COUNT..." />
+            <marker date="1435297126000" expanded="true" signature="16361:16421" placeholder="SELECT COUNT..." />
           </folding>
         </state>
       </provider>
@@ -727,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="2850">
           <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,20 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45801526" vertical-offset="0" max-vertical-offset="655">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.416666" vertical-offset="845" max-vertical-offset="1530">
-          <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/link_blocks.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="345">
@@ -879,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="165">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="658" max-vertical-offset="2850">
           <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,27 +989,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6234" max-vertical-offset="6885">
-          <caret line="448" column="26" selection-start-line="448" selection-start-column="26" selection-end-line="448" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="4395">
-          <caret line="269" column="25" selection-start-line="269" selection-start-column="25" selection-end-line="269" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2713816" vertical-offset="7860" max-vertical-offset="15255">
           <caret line="535" column="63" selection-start-line="535" selection-start-column="63" selection-end-line="535" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.75" vertical-offset="540" max-vertical-offset="3090">
           <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,24 +1007,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="605">
           <caret line="0" column="10505" selection-start-line="0" selection-start-column="10492" selection-end-line="0" selection-end-column="10505" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/inc/theme_functions.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1620">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/clients.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="630">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="44" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/cmr/cmr.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="2190" max-vertical-offset="9075">
-          <caret line="156" column="77" selection-start-line="156" selection-start-column="77" selection-end-line="156" selection-end-column="77" />
+        <state vertical-scroll-proportion="-6.5833335" vertical-offset="1627" max-vertical-offset="9045">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
           <folding>
-            <marker date="1432302455000" expanded="true" signature="16157:16217" placeholder="SELECT COUNT..." />
+            <marker date="1435297126000" expanded="true" signature="16361:16421" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49342105" vertical-offset="0" max-vertical-offset="608">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--complex-page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="632">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/node--feature-heavy.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="405">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#6#33#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/dependencies/bourbon/addons/_triangle.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_clients.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.083333" vertical-offset="682" max-vertical-offset="1545">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/templates/clients2.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.125" vertical-offset="123" max-vertical-offset="780">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/cmr_globe2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45094937" vertical-offset="75" max-vertical-offset="930">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1035">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/stylesheets/components/_globe.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875" vertical-offset="2955" max-vertical-offset="7590">
+          <caret line="207" column="18" selection-start-line="207" selection-start-column="18" selection-end-line="207" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/research/js/d3.test.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4704861" vertical-offset="1094" max-vertical-offset="4440">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
           <folding />
         </state>
       </provider>

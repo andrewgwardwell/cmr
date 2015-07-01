@@ -11,7 +11,7 @@
                 <i class="email"></i>
               </li>
             </a>
-            <a target="_blank" href="">
+<!--             <a target="_blank" href="">
               <li class = "icon icon__icons">
                 <i class = "google"></i>
               </li>
@@ -20,22 +20,22 @@
               <li class = "icon icon__icons">
                 <i class = "facebook"></i>
               </li>
-            </a>
-            <a target="_blank" href="">
+            </a> -->
+<!--             <a target="_blank" href="">
               <li class = "icon icon__icons">
                 <i class = "youtube"></i>
               </li>
-            </a>
-            <a target="_blank" href="">
+            </a> -->
+            <a target="_blank" href="https://www.linkedin.com/company/collaborative-marketing-research">
               <li class = "icon icon__icons">
                 <i class = "linkedin"></i>
               </li>
             </a>
-            <a target="_blank" href="">
+<!--             <a target="_blank" href="">
               <li class = "icon icon__icons">
                 <i class = "twitter"></i>
               </li>
-            </a>
+            </a> -->
           </ul>
         </div>
       </div>

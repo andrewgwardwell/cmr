@@ -46,21 +46,47 @@
 
 @include media($mq-lap-up) {
   .staff {
-    .section__img img {
-      max-width: 80%;
+    .section--staff__wrapper{
+      &.two{
+      .section--staff {
+      @include span-columns(6 of 12);
+      @include omega(2n);
+        .section__img img {
+            max-width: 56%;
+        }
+        .overlay{
+          max-width: 56%;
+        }
+      }
     }
-    .section--staff {
+      &.three{
+      .section--staff {
       @include span-columns(4 of 12);
       @include omega(3n);
+        .section__img img {
+            max-width: 80%;
+        }
+        .overlay{
+          max-width: 80%;
+        }
+      }
+    }
+
+    }
+    .section--staff {
       float: left;
       margin: 60px 0;
       h3{
         display: inline;
       }
+      .section__heading span{
+        display: block;
+        width: 100%;
+        margin-top:10px;
+      }
       .overlay {
         display: block;
         margin: 0 auto;
-        max-width: 80%;
         background-color: rgba(0,0,0,.4);
         border: 2px solid transparent;
         &:before{

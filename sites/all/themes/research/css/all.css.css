@@ -402,7 +402,7 @@ body {
 
 /* line 95, ../stylesheets/foundation/_site.scss */
 .section:first-child {
-  padding-top: 0;
+  padding-top: 40px;
 }
 
 /* line 100, ../stylesheets/foundation/_site.scss */
@@ -425,22 +425,22 @@ body {
 
 /* line 104, ../stylesheets/foundation/_site.scss */
 .chunk-inner {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 @media screen and (min-width: 46.875em) {
   /* line 110, ../stylesheets/foundation/_site.scss */
   .chunk-inner {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 @media screen and (min-width: 62.5em) {
   /* line 117, ../stylesheets/foundation/_site.scss */
   .chunk-inner {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 /* line 124, ../stylesheets/foundation/_site.scss */
@@ -2568,71 +2568,110 @@ h5.slide__heading em {
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 49, ../stylesheets/components/_staff.scss */
-  .staff .section__img img {
-    max-width: 80%;
+  /* line 51, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.two .section--staff {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 48.82117%;
   }
-  /* line 52, ../stylesheets/components/_staff.scss */
-  .staff .section--staff {
+  /* line 33, ../stylesheets/dependencies/neat/grid/_span-columns.scss */
+  .staff .section--staff__wrapper.two .section--staff:last-child {
+    margin-right: 0;
+  }
+  /* line 70, ../stylesheets/dependencies/neat/grid/_omega.scss */
+  .staff .section--staff__wrapper.two .section--staff:nth-child(2n) {
+    margin-right: 0;
+  }
+  /* line 75, ../stylesheets/dependencies/neat/grid/_omega.scss */
+  .staff .section--staff__wrapper.two .section--staff:nth-child(2n+1) {
+    clear: left;
+  }
+  /* line 54, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.two .section--staff .section__img img {
+    max-width: 56%;
+  }
+  /* line 57, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.two .section--staff .overlay {
+    max-width: 56%;
+  }
+  /* line 63, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.three .section--staff {
     display: block;
     float: left;
     margin-right: 2.35765%;
     width: 31.76157%;
-    float: left;
-    margin: 60px 0;
   }
   /* line 33, ../stylesheets/dependencies/neat/grid/_span-columns.scss */
-  .staff .section--staff:last-child {
+  .staff .section--staff__wrapper.three .section--staff:last-child {
     margin-right: 0;
   }
   /* line 70, ../stylesheets/dependencies/neat/grid/_omega.scss */
-  .staff .section--staff:nth-child(3n) {
+  .staff .section--staff__wrapper.three .section--staff:nth-child(3n) {
     margin-right: 0;
   }
   /* line 75, ../stylesheets/dependencies/neat/grid/_omega.scss */
-  .staff .section--staff:nth-child(3n+1) {
+  .staff .section--staff__wrapper.three .section--staff:nth-child(3n+1) {
     clear: left;
   }
-  /* line 57, ../stylesheets/components/_staff.scss */
+  /* line 66, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.three .section--staff .section__img img {
+    max-width: 80%;
+  }
+  /* line 69, ../stylesheets/components/_staff.scss */
+  .staff .section--staff__wrapper.three .section--staff .overlay {
+    max-width: 80%;
+  }
+  /* line 76, ../stylesheets/components/_staff.scss */
+  .staff .section--staff {
+    float: left;
+    margin: 60px 0;
+  }
+  /* line 79, ../stylesheets/components/_staff.scss */
   .staff .section--staff h3 {
     display: inline;
   }
-  /* line 60, ../stylesheets/components/_staff.scss */
+  /* line 82, ../stylesheets/components/_staff.scss */
+  .staff .section--staff .section__heading span {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+  /* line 87, ../stylesheets/components/_staff.scss */
   .staff .section--staff .overlay {
     display: block;
     margin: 0 auto;
-    max-width: 80%;
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid transparent;
   }
-  /* line 66, ../stylesheets/components/_staff.scss */
+  /* line 92, ../stylesheets/components/_staff.scss */
   .staff .section--staff .overlay:before {
     display: block;
   }
-  /* line 72, ../stylesheets/components/_staff.scss */
+  /* line 98, ../stylesheets/components/_staff.scss */
   .staff .section--staff:hover .section__heading h3 {
     border-bottom: 2px solid #D89A4D;
   }
-  /* line 76, ../stylesheets/components/_staff.scss */
+  /* line 102, ../stylesheets/components/_staff.scss */
   .staff .section--staff .section__copy, .staff .section--staff .section__skills {
     position: absolute;
     display: none;
     left: 0;
   }
-  /* line 83, ../stylesheets/components/_staff.scss */
+  /* line 109, ../stylesheets/components/_staff.scss */
   .staff .section--staff--active .overlay {
     background-color: rgba(0, 0, 0, 0.05);
   }
-  /* line 86, ../stylesheets/components/_staff.scss */
+  /* line 112, ../stylesheets/components/_staff.scss */
   .staff .section--staff--active .section__heading h3 {
     border-bottom: 2px solid #D89A4D;
   }
-  /* line 91, ../stylesheets/components/_staff.scss */
+  /* line 117, ../stylesheets/components/_staff.scss */
   .staff .section--staff:hover .overlay {
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  /* line 97, ../stylesheets/components/_staff.scss */
+  /* line 123, ../stylesheets/components/_staff.scss */
   .section--staff__bio__wrapper {
     display: block;
     float: left;
@@ -2641,12 +2680,12 @@ h5.slide__heading em {
     padding: 20px;
   }
 
-  /* line 105, ../stylesheets/components/_staff.scss */
+  /* line 131, ../stylesheets/components/_staff.scss */
   .section--staff__bio {
     margin: 40px 0 0;
   }
 
-  /* line 110, ../stylesheets/components/_staff.scss */
+  /* line 136, ../stylesheets/components/_staff.scss */
   .section--staff__skills .skill__wrapper {
     width: 50%;
     float: left;
@@ -3454,25 +3493,42 @@ video#home-video {
 /* line 38, ../stylesheets/components/_clients.scss */
 .client-inner .section__img {
   min-height: 125px;
+  max-height: 125px;
   margin-bottom: 0px;
 }
-/* line 41, ../stylesheets/components/_clients.scss */
+/* line 42, ../stylesheets/components/_clients.scss */
 .client-inner .section__img img {
   margin: 0 auto;
 }
 
+/* line 50, ../stylesheets/components/_clients.scss */
+.client-grid .client-wrapper {
+  width: 50%;
+  float: left;
+}
+
 @media screen and (min-width: 46.875em) {
-  /* line 49, ../stylesheets/components/_clients.scss */
+  /* line 58, ../stylesheets/components/_clients.scss */
+  .client-grid .client-wrapper {
+    width: 7%;
+    margin: 0 1.5%;
+  }
+  /* line 61, ../stylesheets/components/_clients.scss */
+  .client-grid .client-wrapper:hover {
+    cursor: pointer;
+  }
+
+  /* line 66, ../stylesheets/components/_clients.scss */
   .client-inner {
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
     transition: height 0.5s;
   }
-  /* line 55, ../stylesheets/components/_clients.scss */
+  /* line 72, ../stylesheets/components/_clients.scss */
   .client-inner .section__copy {
     background: #F7F7F7;
   }
-  /* line 58, ../stylesheets/components/_clients.scss */
+  /* line 75, ../stylesheets/components/_clients.scss */
   .client-inner .section__tip {
     height: 0px;
     -webkit-transition: height 0.5s;
@@ -3496,13 +3552,13 @@ video#home-video {
       transform: rotate(45deg);
     }
   }
-  /* line 87, ../stylesheets/components/_clients.scss */
+  /* line 92, ../stylesheets/components/_clients.scss */
   .client-inner .section__copy.active .section__tip {
     height: auto;
     min-height: 100px;
   }
 }
-/* line 120, ../stylesheets/components/_globe.scss */
+/* line 3, ../stylesheets/components/_globe.scss */
 .global_prac .block {
   opacity: 1;
   display: block;
@@ -3514,84 +3570,101 @@ video#home-video {
   transition: all 1s;
   text-align: center;
 }
-/* line 131, ../stylesheets/components/_globe.scss */
+/* line 13, ../stylesheets/components/_globe.scss */
+.global_prac .gp_upper:after {
+  height: 0;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #666666;
+}
+/* line 19, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid #block-waypoint-1 .block-left {
   background: #FFBEA9;
 }
-/* line 136, ../stylesheets/components/_globe.scss */
+/* line 24, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid #block-waypoint-2 .block-left {
   background: #86ADC4;
 }
-/* line 141, ../stylesheets/components/_globe.scss */
+/* line 29, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid #block-waypoint-3 .block-left {
   background: #F7F7F7;
 }
-/* line 145, ../stylesheets/components/_globe.scss */
+/* line 33, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid .block-inner > div {
   float: left;
 }
-/* line 149, ../stylesheets/components/_globe.scss */
+/* line 37, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid .block-right {
   width: 100%;
   background: #d89a4d;
 }
-/* line 154, ../stylesheets/components/_globe.scss */
+/* line 42, ../stylesheets/components/_globe.scss */
 .global_prac .gp_mid .block-left {
   width: 100%;
   background: #d89a4d;
 }
-/* line 162, ../stylesheets/components/_globe.scss */
+/* line 50, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .blocks-wrapper {
   background: #FFBEA9;
   float: left;
 }
-/* line 166, ../stylesheets/components/_globe.scss */
+/* line 54, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper {
   width: 100%;
 }
-/* line 168, ../stylesheets/components/_globe.scss */
+/* line 56, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper .block-inner {
   background: #89CFAB;
 }
-/* line 171, ../stylesheets/components/_globe.scss */
+/* line 59, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper .block-top,
 .global_prac .gp_low .block--wrapper .block-bottom {
   float: left;
   width: 100%;
 }
-/* line 176, ../stylesheets/components/_globe.scss */
+/* line 64, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper .block-copy {
   text-align: left;
 }
-/* line 178, ../stylesheets/components/_globe.scss */
+/* line 66, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper .block-copy ul {
   padding-left: 15px;
 }
-/* line 181, ../stylesheets/components/_globe.scss */
+/* line 69, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .block--wrapper .block-copy li {
   margin: 20px 0;
 }
-/* line 186, ../stylesheets/components/_globe.scss */
+/* line 74, ../stylesheets/components/_globe.scss */
 .global_prac .gp_low .conclusion {
   width: 100%;
   margin: 60px 0 0;
 }
-/* line 191, ../stylesheets/components/_globe.scss */
+/* line 79, ../stylesheets/components/_globe.scss */
 .global_prac .block-hor {
   display: none;
 }
-/* line 194, ../stylesheets/components/_globe.scss */
+/* line 82, ../stylesheets/components/_globe.scss */
 .global_prac .block-left, .global_prac .block-right {
   width: 100%;
   float: left;
 }
-/* line 198, ../stylesheets/components/_globe.scss */
+/* line 86, ../stylesheets/components/_globe.scss */
 .global_prac .down-arrow {
   display: none;
 }
 
+/* line 92, ../stylesheets/components/_globe.scss */
+.chunk-9 .chunk-inner, .chunk-7 .chunk-inner {
+  padding-bottom: 0px;
+}
+
 @media screen and (min-width: 62.5em) {
-  /* line 207, ../stylesheets/components/_globe.scss */
+  /* line 101, ../stylesheets/components/_globe.scss */
+  .global_prac .chunk-inner {
+    padding-top: 40px;
+  }
+  /* line 104, ../stylesheets/components/_globe.scss */
   .global_prac .block {
     display: block;
     float: left;
@@ -3603,17 +3676,17 @@ video#home-video {
     transition: all 1s;
     text-align: center;
   }
-  /* line 217, ../stylesheets/components/_globe.scss */
+  /* line 114, ../stylesheets/components/_globe.scss */
   .global_prac .block-copy p {
     text-align: left;
   }
-  /* line 222, ../stylesheets/components/_globe.scss */
+  /* line 119, ../stylesheets/components/_globe.scss */
   .global_prac .arrow:before, .global_prac .arrow:after {
     position: absolute;
     content: '';
     display: block;
   }
-  /* line 231, ../stylesheets/components/_globe.scss */
+  /* line 128, ../stylesheets/components/_globe.scss */
   .global_prac .complete .down-arrow .arrow-shaft {
     opacity: 1;
     -webkit-transform: translateY(40px);
@@ -3622,7 +3695,7 @@ video#home-video {
     -o-transform: translateY(40px);
     transform: translateY(40px);
   }
-  /* line 235, ../stylesheets/components/_globe.scss */
+  /* line 132, ../stylesheets/components/_globe.scss */
   .global_prac .complete .block-hor .arrow-shaft {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -3630,11 +3703,11 @@ video#home-video {
     -o-transform: translateX(0);
     transform: translateX(0);
   }
-  /* line 238, ../stylesheets/components/_globe.scss */
+  /* line 135, ../stylesheets/components/_globe.scss */
   .global_prac .complete .block {
     opacity: 1;
   }
-  /* line 242, ../stylesheets/components/_globe.scss */
+  /* line 139, ../stylesheets/components/_globe.scss */
   .global_prac .complete.gp_mid .block-right {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
@@ -3642,7 +3715,7 @@ video#home-video {
     -o-transform: translateX(0px);
     transform: translateX(0px);
   }
-  /* line 246, ../stylesheets/components/_globe.scss */
+  /* line 143, ../stylesheets/components/_globe.scss */
   .global_prac .complete.gp_mid .block-left {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -3650,7 +3723,7 @@ video#home-video {
     -o-transform: translateY(0px);
     transform: translateY(0px);
   }
-  /* line 252, ../stylesheets/components/_globe.scss */
+  /* line 149, ../stylesheets/components/_globe.scss */
   .global_prac .down-arrow {
     width: 10%;
     height: 620px;
@@ -3660,7 +3733,7 @@ video#home-video {
     left: 9.5%;
     overflow: hidden;
   }
-  /* line 260, ../stylesheets/components/_globe.scss */
+  /* line 157, ../stylesheets/components/_globe.scss */
   .global_prac .down-arrow .arrow-shaft {
     position: relative;
     width: 42.5%;
@@ -3677,7 +3750,7 @@ video#home-video {
     -moz-transition: all 4s;
     transition: all 4s;
   }
-  /* line 269, ../stylesheets/components/_globe.scss */
+  /* line 166, ../stylesheets/components/_globe.scss */
   .global_prac .down-arrow .arrow-shaft:after {
     height: 0;
     width: 0;
@@ -3687,7 +3760,7 @@ video#home-video {
     bottom: -40px;
     left: -25%;
   }
-  /* line 277, ../stylesheets/components/_globe.scss */
+  /* line 174, ../stylesheets/components/_globe.scss */
   .global_prac .block-hor {
     display: block;
     position: absolute;
@@ -3697,7 +3770,7 @@ video#home-video {
     overflow: hidden;
     top: 25%;
   }
-  /* line 285, ../stylesheets/components/_globe.scss */
+  /* line 182, ../stylesheets/components/_globe.scss */
   .global_prac .block-hor .arrow-shaft {
     position: relative;
     width: 85%;
@@ -3710,7 +3783,7 @@ video#home-video {
     -o-transform: translateX(-115%);
     transform: translateX(-115%);
   }
-  /* line 294, ../stylesheets/components/_globe.scss */
+  /* line 191, ../stylesheets/components/_globe.scss */
   .global_prac .block-hor .arrow-shaft:after {
     height: 0;
     width: 0;
@@ -3720,7 +3793,7 @@ video#home-video {
     right: -30px;
     top: -10px;
   }
-  /* line 303, ../stylesheets/components/_globe.scss */
+  /* line 200, ../stylesheets/components/_globe.scss */
   .global_prac .gp_upper,
   .global_prac .gp_mid,
   .global_prac .gp_low {
@@ -3728,41 +3801,41 @@ video#home-video {
     width: 100%;
     float: left;
   }
-  /* line 313, ../stylesheets/components/_globe.scss */
+  /* line 210, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid #block-waypoint-1 * {
     -webkit-transition: all 3s;
     -moz-transition: all 3s;
     transition: all 3s;
   }
-  /* line 316, ../stylesheets/components/_globe.scss */
+  /* line 213, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid #block-waypoint-2 * {
     -webkit-transition: all 4s;
     -moz-transition: all 4s;
     transition: all 4s;
   }
-  /* line 319, ../stylesheets/components/_globe.scss */
+  /* line 216, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid #block-waypoint-3 * {
     -webkit-transition: all 5s;
     -moz-transition: all 5s;
     transition: all 5s;
   }
-  /* line 323, ../stylesheets/components/_globe.scss */
+  /* line 220, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid .blocks-wrapper {
     width: 100%;
     position: relative;
   }
-  /* line 327, ../stylesheets/components/_globe.scss */
+  /* line 224, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid .block--wrapper {
     position: relative;
     width: 100%;
     float: left;
     margin: 40px 0px;
   }
-  /* line 334, ../stylesheets/components/_globe.scss */
+  /* line 231, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid .block-inner > div {
     float: left;
   }
-  /* line 338, ../stylesheets/components/_globe.scss */
+  /* line 235, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid .block-right {
     width: 40%;
     -webkit-transform: translateX(-150%);
@@ -3771,7 +3844,7 @@ video#home-video {
     -o-transform: translateX(-150%);
     transform: translateX(-150%);
   }
-  /* line 343, ../stylesheets/components/_globe.scss */
+  /* line 240, ../stylesheets/components/_globe.scss */
   .global_prac .gp_mid .block-left {
     margin-right: 35%;
     width: 25%;
@@ -3781,43 +3854,43 @@ video#home-video {
     -o-transform: translateY(-150%);
     transform: translateY(-150%);
   }
-  /* line 351, ../stylesheets/components/_globe.scss */
+  /* line 248, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .blocks-wrapper {
     background: #FFBEA9;
     float: left;
   }
-  /* line 355, ../stylesheets/components/_globe.scss */
+  /* line 252, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper {
     width: 33.3%;
   }
-  /* line 357, ../stylesheets/components/_globe.scss */
+  /* line 254, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper .block-inner {
     background: #89CFAB;
   }
-  /* line 360, ../stylesheets/components/_globe.scss */
+  /* line 257, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper .block-top,
   .global_prac .gp_low .block--wrapper .block-bottom {
     float: left;
     width: 100%;
   }
-  /* line 365, ../stylesheets/components/_globe.scss */
+  /* line 262, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper .block-copy {
     text-align: left;
   }
-  /* line 367, ../stylesheets/components/_globe.scss */
+  /* line 264, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper .block-copy ul {
     padding-left: 15px;
   }
-  /* line 370, ../stylesheets/components/_globe.scss */
+  /* line 267, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper .block-copy li {
     margin: 20px 0;
   }
-  /* line 375, ../stylesheets/components/_globe.scss */
+  /* line 272, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .conclusion {
     width: 100%;
     margin: 60px 0 0;
   }
-  /* line 379, ../stylesheets/components/_globe.scss */
+  /* line 276, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-1 {
     -webkit-transform: translateX(-150%);
     -moz-transform: translateX(-150%);
@@ -3825,13 +3898,13 @@ video#home-video {
     -o-transform: translateX(-150%);
     transform: translateX(-150%);
   }
-  /* line 381, ../stylesheets/components/_globe.scss */
+  /* line 278, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-1* {
     -webkit-transition: all 3s;
     -moz-transition: all 3s;
     transition: all 3s;
   }
-  /* line 385, ../stylesheets/components/_globe.scss */
+  /* line 282, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-2 {
     -webkit-transform: translateX(-250%);
     -moz-transform: translateX(-250%);
@@ -3839,13 +3912,13 @@ video#home-video {
     -o-transform: translateX(-250%);
     transform: translateX(-250%);
   }
-  /* line 386, ../stylesheets/components/_globe.scss */
+  /* line 283, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-2* {
     -webkit-transition: all 4s;
     -moz-transition: all 4s;
     transition: all 4s;
   }
-  /* line 391, ../stylesheets/components/_globe.scss */
+  /* line 288, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-3 {
     -webkit-transform: translateX(-350%);
     -moz-transform: translateX(-350%);
@@ -3853,17 +3926,17 @@ video#home-video {
     -o-transform: translateX(-350%);
     transform: translateX(-350%);
   }
-  /* line 392, ../stylesheets/components/_globe.scss */
+  /* line 289, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low .block--wrapper-3* {
     -webkit-transition: all 5s;
     -moz-transition: all 5s;
     transition: all 5s;
   }
-  /* line 398, ../stylesheets/components/_globe.scss */
+  /* line 295, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low.complete .block {
     opacity: 1;
   }
-  /* line 401, ../stylesheets/components/_globe.scss */
+  /* line 298, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low.complete .block--wrapper-1 {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -3871,7 +3944,7 @@ video#home-video {
     -o-transform: translateX(0);
     transform: translateX(0);
   }
-  /* line 404, ../stylesheets/components/_globe.scss */
+  /* line 301, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low.complete .block--wrapper-2 {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -3879,7 +3952,7 @@ video#home-video {
     -o-transform: translateX(0);
     transform: translateX(0);
   }
-  /* line 407, ../stylesheets/components/_globe.scss */
+  /* line 304, ../stylesheets/components/_globe.scss */
   .global_prac .gp_low.complete .block--wrapper-3 {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -3888,50 +3961,67 @@ video#home-video {
     transform: translateX(0);
   }
 }
-/* line 416, ../stylesheets/components/_globe.scss */
+/* line 313, ../stylesheets/components/_globe.scss */
 .map-outer {
   position: relative;
   width: 100%;
 }
 
-/* line 421, ../stylesheets/components/_globe.scss */
+/* line 318, ../stylesheets/components/_globe.scss */
 #map-container {
   height: 100vw;
   width: 100vw;
   margin: 0 auto;
 }
 
-/* line 427, ../stylesheets/components/_globe.scss */
+/* line 324, ../stylesheets/components/_globe.scss */
 #areas-container {
   position: absolute;
-  top: 10%;
+  top: 0%;
   height: 100%;
   overflow-y: scroll;
-  transform: translateX(170%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   transition: all 1s;
   background: #FFF;
-  width: 70%;
   box-shadow: -20px 150px 160px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
-/* line 437, ../stylesheets/components/_globe.scss */
+/* line 330, ../stylesheets/components/_globe.scss */
 #areas-container.open {
-  transform: translateX(60%);
+  -webkit-transform: translateX(80%);
+  -moz-transform: translateX(80%);
+  -ms-transform: translateX(80%);
+  -o-transform: translateX(80%);
+  transform: translateX(80%);
 }
-/* line 440, ../stylesheets/components/_globe.scss */
+/* line 337, ../stylesheets/components/_globe.scss */
 #areas-container .areas-inner {
   padding: 20px;
+  width: 20%;
 }
-/* line 442, ../stylesheets/components/_globe.scss */
-#areas-container .areas-inner ul {
+/* line 342, ../stylesheets/components/_globe.scss */
+#areas-container.two-column.open {
+  transform: translateX(65%);
+}
+/* line 345, ../stylesheets/components/_globe.scss */
+#areas-container.two-column .areas-inner {
+  width: 35%;
+}
+/* line 347, ../stylesheets/components/_globe.scss */
+#areas-container.two-column .areas-inner ul {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
   padding-left: 0;
 }
-/* line 445, ../stylesheets/components/_globe.scss */
-#areas-container .areas-inner ul li {
+/* line 350, ../stylesheets/components/_globe.scss */
+#areas-container.two-column .areas-inner ul li {
   margin: 0 20px;
   -webkit-column-break-inside: avoid;
   /* Chrome, Safari */
@@ -3943,14 +4033,14 @@ video#home-video {
   /* Actually FF 20+ */
 }
 
-/* line 459, ../stylesheets/components/_globe.scss */
+/* line 363, ../stylesheets/components/_globe.scss */
 #countries-container ul {
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  columns: 2;
+  -webkit-columns: 1;
+  -moz-columns: 1;
+  columns: 1;
   padding-left: 0;
 }
-/* line 462, ../stylesheets/components/_globe.scss */
+/* line 366, ../stylesheets/components/_globe.scss */
 #countries-container ul li {
   margin: 0 20px;
   -webkit-column-break-inside: avoid;
@@ -3964,22 +4054,29 @@ video#home-video {
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 473, ../stylesheets/components/_globe.scss */
+  /* line 377, ../stylesheets/components/_globe.scss */
+  .map-outer {
+    overflow: hidden;
+    margin-top: 80px;
+  }
+
+  /* line 381, ../stylesheets/components/_globe.scss */
   #map-container {
     height: 50vw;
     width: 75vw;
     margin: 0 auto;
+    margin-top: -15%;
   }
 
-  /* line 478, ../stylesheets/components/_globe.scss */
+  /* line 387, ../stylesheets/components/_globe.scss */
   #countries-container {
-    top: 10%;
+    top: 0%;
     position: absolute;
     left: 20px;
     padding: 0px;
     width: 150px;
   }
-  /* line 484, ../stylesheets/components/_globe.scss */
+  /* line 393, ../stylesheets/components/_globe.scss */
   #countries-container ul {
     -webkit-columns: 1;
     -moz-columns: 1;

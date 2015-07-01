@@ -40,6 +40,10 @@ $blocks['contact2'] = array(
     'info' => t('Clients'),
     'cache' => DRUPAL_NO_CACHE,
   );
+    $blocks['clients_2'] = array(
+        'info' => t('Clients Grid'),
+        'cache' => DRUPAL_NO_CACHE,
+    );
   $blocks['therapy_area'] = array(
     'info' => t('Therapy Areas'),
     'cache' => DRUPAL_NO_CACHE,
@@ -76,92 +80,44 @@ switch ($delta){
     foreach ($cl_nodes as $cl){
         // get the locations tagged
       $terms = $cl->field_work_location[LANGUAGE_NONE];
-        // get therapy areas
-      $raw = $cl->field_therapy_areas[LANGUAGE_NONE];
-        // get medical devices
-      $m_raw = $cl->field_medical_device[LANGUAGE_NONE];
-        // grab the client logos
-//      $picture = $cl->field_client_logo[LANGUAGE_NONE][0];
-//      $pic_src = image_style_url('client_logo', $picture['uri']);
       $areas = $m_areas = $ex_blob = $device_blob = $a_areas = array();
-      foreach($raw as $r){
-        $th_term = taxonomy_term_load($r['tid']);
-        $a_name = $th_term->name;
-        $areas[$r['tid']] = '<li>'.$a_name.'</li>' ;
-        // $areas[$a_name] = '<li>'.$a_name.'</li>' ;
-        // $areas[$r['tid']] = '<li>'.$r['tid'].'</li>' ;
-//        $expertise[$th_term->name] = $r['tid'];
-//        $ex_blob[] = $th_term->name;
-      }
-      foreach($m_raw as $m_r){
-        $mth_term = taxonomy_term_load($m_r['tid']);
-        $m_name = $mth_term->name;
-        $m_areas[$m_r['tid']] = '<li>'.$m_name.'</li>';
-        // $m_areas[$m_name] = '<li>'.$m_name.'</li>';
-        // $m_areas[$m_r['tid']] = '<li>'.$m_r['tid'].'</li>';
-//          $devices[$mth_term->name] = $m_r['tid'];
-//        $device_blob[] = $mth_term->name;
-      }
-      // drupal_json_output($m_areas);
-      // die();
-      // $areas = array_unique($areas);
-      // $m_areas = array_unique($m_areas);
-        // combined array of the areas addressed for this client in this country
-      $a_areas = array_merge($areas, $m_areas);
-        // loop through locations
-
       foreach($terms as $t){
+        $areas = $m_areas = array();
         $term = taxonomy_term_load($t['tid']);
-//        $c = $term->field_location[LANGUAGE_NONE][0];
-//        $loc = location_load_location($c['lid']);
         $c_code = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
         $name = $term->name;
-          if(!empty($points[$c_code])){
-              $pre_existing = $points[$c_code]['exp'];
-              $points[$c_code]['exp'] = array_merge($pre_existing, $a_areas);
-          } else {
+          // get therapy areas
+          $raw = $term->field_therapy_areas[LANGUAGE_NONE];
+          // get medical devices
+          $m_raw = $term->field_medical_device[LANGUAGE_NONE];
+          /// Therapy areas and medical devices
+          foreach($raw as $r){
+              $th_term = taxonomy_term_load($r['tid']);
+              $a_name = $th_term->name;
+              $areas[$r['tid']] = '<li>'.$a_name.'</li>' ;
+          }
+          foreach($m_raw as $m_r){
+              $mth_term = taxonomy_term_load($m_r['tid']);
+              $m_name = $mth_term->name;
+              $m_areas[$m_r['tid']] = '<li>'.$m_name.'</li>';
+          }
+          $a_areas = array_merge($areas, $m_areas);
+          $countries[$c_code] = $name;
+          if(empty($points[$c_code])){
               $points[$c_code] = array(
                   'fillKey' => 'hasWorked',
                   'exp' => $a_areas
               );
           }
-          $countries[$c_code] = $name;
+
         }
     }
-
-//        $expertise[$term->name]['countries'][] = $term->field_alpha3code[LANGUAGE_NONE][0]['value'];
-//          'therapy_areas' => array_merge($points[$term->name]['therapy_areas'], $a_areas),
-//          'devs' => array_merge($points[$term->name]['devs'], $device_blob),
-//          'exs' => $ex_blob,
-//          'picture' => $pic_src,
-
-//    $sing_loc = array();
-//    foreach ($points as $k => $p){
-//      $id = $p['lat'].'/'.$p['long'];
-//      $country = $sing_loc[$p['country']];
-//      $la = $p['lat'];
-//      $lo = $p['long'];
-//          if (!empty($country)) {
-//            $fin_id = make_uniq_offset($p, $country, $id, false);
-//            $la = $fin_id[0];
-//            $lo = $fin_id[1];
-//            $n_id = $lo.'/'.$la;
-//            $p['lat'] = $la;
-//            $p['long'] = $lo;
-//            $sing_loc[$p['country']][$n_id] = $p;
-//            //}
-//          } else {
-//            $sing_loc[$p['country']] = array();
-//            $sing_loc[$p['country']][$id] = $p;
-//          }
-//          $points[$k]['lat'] = $la;
-//          $points[$k]['long'] = $lo;
-//    }
 
 
     $expertise['All'] = 'all';
     $devices['All'] = 'all';
-
+// what a terrible mess ...
+    asort($countries);
     drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
     drupal_add_js(array('countriesList2' => $points), 'setting');
     $countries_markup = '<h5><strong>Countries</strong></h5><ul><li>'.implode('</li><li>', $countries).'</li></ul>';
@@ -255,7 +211,7 @@ switch ($delta){
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'staff')
-      ->entityCondition('status', 1);
+      ->propertyCondition('status', 1);
     $res = $query->execute();
     if(count($res['node']) > 0) {
       $staff = node_load_multiple(array_keys($res['node']));
@@ -263,6 +219,7 @@ switch ($delta){
         $p_w = entity_metadata_wrapper('node', $person->nid);
         $title = $person->title;
         $body = $p_w->body->value();
+        $job_title = $p_w->field_job_title->value();
         $picture = $p_w->field_staff_image->value();
         $pic_src = image_style_url('headshot_image', $picture['uri']);
         $ms = $p_w->field_medical_device->value();
@@ -281,7 +238,8 @@ switch ($delta){
           'name' => $title,
           'pic' => $pic_src,
           'copy' => $body['value'],
-          'skills' => $a_skills.$m_skills
+          'skills' => $a_skills.$m_skills,
+          'job_title' => $job_title
         );
       }
       drupal_add_js(drupal_get_path('theme', 'research').'/js/staff.js');
@@ -354,6 +312,40 @@ switch ($delta){
     }
 
     break;
+    case 'clients_2';
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'clients')
+            ->entityCondition('status', 1);
+        $res = $query->execute();
+        if(count($res['node']) > 0){
+            $cl = node_load_multiple(array_keys($res['node']));
+            $clients = array();
+            foreach($cl as $cli){
+                $lang = $cli->language;
+                $name = $cli->title;
+                $body = $cli->body[$lang][0]['value'];
+                $link = $cli->field_website_link[$lang][0]['value'];
+                $loc = empty($cli->field_work_location) ? '' : taxonomy_term_load($cli->field_work_location[$lang][0]['value']);
+                $therapy = empty($cli->field_therapy_areas) ? '' : taxonomy_term_load($cli->field_therapy_areas[$lang][0]['value']);
+                $dev = empty($cli->field_medical_device) ? '' : taxonomy_term_load($cli->field_medical_device[$lang][0]['value']);
+                $picture = $cli->field_client_logo[$lang][0];
+                $pic_src = image_style_url('client_logo', $picture['uri']);
+                $clients[] = array(
+                    'name' => $name,
+                    'pic' => $pic_src,
+                    'link' => $link,
+                    'body' => $body,
+                    'loc' => $loc->name,
+                    'therapy' => $therapy->name,
+                    'dev' => $dev->name,
+                );
+            }
+            $block['subject'] = '';
+            $block['content'] = theme('clients2', array('clients' => $clients));
+        }
+
+        break;
 };
 return $block;
 }
@@ -423,6 +415,12 @@ function _cmr_dashboard_build(){
       'description' => 'Edit and Add information about '.$u->title,
     );
   }
+
+  $items['Main Menu Edit']= array(
+    'link' => 'admin/structure/menu/manage/menu-colmares-menu',
+    'name' => 'Main Menu Edit',
+    'description' => 'Edit menu links and menu.'
+  );
 
   $items['Locations Vocab']= array(
     'link' => 'admin/structure/taxonomy/location',

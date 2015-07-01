@@ -3,7 +3,7 @@
  */
  ?>
 <?php if (!empty($title)): ?>
-  <div class="chunk">
+  <div class="chunk <?php print 'chunk-'.$nid; ?>">
   <div class="chunk-inner">
   <div class="feature-heading--wrapper">
     <div class="feature--heading">

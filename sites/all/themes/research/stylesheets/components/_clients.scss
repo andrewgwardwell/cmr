@@ -37,6 +37,7 @@
   }
   .section__img{
     min-height: 125px;
+    max-height: 125px;
     margin-bottom: 0px;
     img{
       margin: 0 auto;
@@ -45,7 +46,23 @@
   }
 }
 
+.client-grid{
+  .client-wrapper{
+    width: 50%;
+    float: left;
+  }
+}
+
 @include media($mq-lap-up){
+  .client-grid{
+    .client-wrapper{
+      width: 7%;
+      margin: 0 1.5%;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
   .client-inner{
     @include transition(height .5s);
 //    .tip-expand{
@@ -68,18 +85,6 @@
         @include transform(rotate(45deg));
       }
     }
-//    .section__copy .tip-expand:after{
-//      pointer-events: none;
-//      @include icon('');
-//      @include transition(transform 1s);
-//      color: $color-orange;
-//      content: '+';
-//      font-weight: 600;
-//      animation-name: hoverx;
-//      animation-duration: 1s;
-//      animation-fill-mode: backwards;
-//    }
-
     .section__copy.active{
 //      .tip-expand:after{
 //        animation-fill-mode: forwards;
