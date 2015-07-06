@@ -229,10 +229,17 @@
     .hero__inner {
       margin-top: 15%;
     }
+
     .hero__image {
       padding-bottom: 50%;
       background-attachment: fixed;
       z-index: 0;
     }
   }
+  &.hero-present{
+    .hero__inner {
+      margin-top: 0%;
+    }
+  }
 }
+

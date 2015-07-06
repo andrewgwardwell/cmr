@@ -103,5 +103,11 @@ function research_theme(){
           ),
       'template' => 'templates/link_blocks',
       ),
+    'section_nav' => array(
+      'variables' => array(
+        'section_nav' => NULL,
+      ),
+      'template' => 'templates/section_nav',
+    ),
 );
 }

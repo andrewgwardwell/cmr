@@ -91,6 +91,10 @@ function research_preprocess_node(&$vars){
     $sections = $node->field_section[$lang];
     $sec_rend = '';
     $i = 1;
+    $sec_nav = array();
+    $build_nav = !empty($node->field_in_page_nav[$lang][0]) ? true : false;
+    $state_classes = array();
+
     foreach($sections as $section){
       $sec = entity_metadata_wrapper('field_collection_item', $section['value']);
       $s['title'] = $sec->field_section_title->value();
@@ -116,8 +120,18 @@ function research_preprocess_node(&$vars){
       $s['key'] = $i;
       $vars['section_count'][$i]['title'] = truncate_utf8($sec->field_section_title->value(), 144, true);
       $vars['section_count'][$i]['anchor'] = '#section-'.$i;
+      if($build_nav){
+        $nav_img = $sec->field_nav_image->value();
+        $sec_nav[$i] = array(
+          'title' => $s['title'],
+          'img' => file_create_url($nav_img['uri']),
+          'link' => $vars['section_count'][$i]['anchor']
+        );
+      }
+
       $i++;
       $sec_rend .= theme('comp_page_sec', array('section' => $s));
+
     }
     $blocks = block_list('content');
     foreach($blocks as $k => $b){
@@ -132,6 +146,15 @@ function research_preprocess_node(&$vars){
     $vars['section_count'][0]['anchor'] = '#st-container';
     ksort($vars['section_count']);
     $vars['sections'] = $sec_rend;
+    if($build_nav){
+      $vars['section_nav'] = theme('section_nav', array('section_nav' => $sec_nav));
+      $state_class[] = 'nav-present'; 
+    }
+    if(!empty($field_hero_image[0])){
+      $state_class[] = 'hero-present'; 
+    }
+    $vars['state_class'] = implode(' ', $state_class);
+
     if(!empty($class)){
       if($class == 'home') {
     }

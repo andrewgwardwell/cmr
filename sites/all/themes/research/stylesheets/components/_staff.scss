@@ -4,6 +4,7 @@
     position: relative;
   }
   .section__img {
+    position: relative;
     img {
       border-radius: 50%;
       max-width: 100%;
@@ -56,6 +57,7 @@
         }
         .overlay{
           max-width: 56%;
+          display: block;
         }
       }
     }
@@ -67,6 +69,7 @@
             max-width: 80%;
         }
         .overlay{
+          display: block;
           max-width: 80%;
         }
       }
@@ -85,7 +88,6 @@
         margin-top:10px;
       }
       .overlay {
-        display: block;
         margin: 0 auto;
         background-color: rgba(0,0,0,.4);
         border: 2px solid transparent;
@@ -144,6 +146,17 @@
     }
   }
 
+}
+
+@include media($mq-desk-up) {
+  .staff{
+    .two .section--staff .overlay{
+        max-width: 56%;
+    }
+    .three .section--staff .overlay{
+        max-width: 80%;
+    }
+  }
 }
 
 

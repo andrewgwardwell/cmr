@@ -1,6 +1,8 @@
 <?php if (!empty($body)): ?>
-  <div class="hero hero--complex left-aligned section " id="section-0">
-<div class = "hero__image hero--complex" style="background-image: url('<?php print file_create_url($field_hero_image[0]['uri']);?>')"></div>
+  <div class="hero hero--complex left-aligned section <?php print $state_class; ?>" id="section-0">
+  <?php if(!empty($field_hero_image[0])):?>
+    <div class = "hero__image hero--complex" style="background-image: url('<?php print file_create_url($field_hero_image[0]['uri']);?>')"></div>
+  <?php endif; ?>
     <div class="hero__inner">
       <div class="hero__cta">
         <div class="hero__caption--header">
@@ -12,9 +14,17 @@
           <?php print strip_tags($body[0]['value']); ?>
         </div>
       </div>
+        <?php if(!empty($section_nav)): ?>
+          <div class="chunk chunk-section-nav">
+            <div class="chunk-inner">
+              <?php print $section_nav; ?>
+            </div>
+          </div>
+        <?php endif; ?>
     </div>
   </div>
 <?php endif; ?>
+
 
 <div class = "sections">
   <?php print $sections; ?>

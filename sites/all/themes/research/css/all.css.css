@@ -499,16 +499,65 @@ body {
 
 @media screen and (min-width: 62.5em) {
   /* line 14, ../stylesheets/components/_section.scss */
+  .section_nav--item {
+    display: block;
+    margin: 20px 3.333% 20px 0px;
+    overflow: hidden;
+    width: 22.5%;
+    float: left;
+    max-width: 25%;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-color: #666666;
+    background-size: auto 100%;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+  }
+  /* line 27, ../stylesheets/components/_section.scss */
+  .section_nav--item:hover {
+    background-size: auto 120%;
+    background-color: #333333;
+  }
+  /* line 30, ../stylesheets/components/_section.scss */
+  .section_nav--item:hover .section_nav--title {
+    background: rgba(51, 51, 51, 0.1);
+  }
+  /* line 34, ../stylesheets/components/_section.scss */
+  .section_nav--item .section_nav--title {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    background: rgba(51, 51, 51, 0.6);
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+  }
+  /* line 42, ../stylesheets/components/_section.scss */
+  .section_nav--item .section_nav--title h4 {
+    color: #FFFFFF;
+    font-size: 1.5em;
+  }
+
+  /* line 50, ../stylesheets/components/_section.scss */
+  .chunk-section-nav .chunk-inner .section_nav--link:nth-child(4n) .section_nav--item {
+    margin-right: 0;
+  }
+
+  /* line 58, ../stylesheets/components/_section.scss */
   .section__img, .section__copy {
     display: block;
   }
 
-  /* line 17, ../stylesheets/components/_section.scss */
+  /* line 61, ../stylesheets/components/_section.scss */
   .section__img {
     position: relative;
   }
 
-  /* line 22, ../stylesheets/components/_section.scss */
+  /* line 66, ../stylesheets/components/_section.scss */
   .section--right .section__img, .section--right .section__copy, .section--left .section__img, .section--left .section__copy {
     display: block;
     float: left;
@@ -520,9 +569,18 @@ body {
     margin-right: 0;
   }
 
-  /* line 27, ../stylesheets/components/_section.scss */
+  /* line 70, ../stylesheets/components/_section.scss */
+  .section--right .section__img img {
+    float: left;
+  }
+
+  /* line 75, ../stylesheets/components/_section.scss */
   .section--left .section__img, .section--left .section__copy {
     float: left;
+  }
+  /* line 77, ../stylesheets/components/_section.scss */
+  .section--left .section__img img, .section--left .section__copy img {
+    float: right;
   }
 }
 /* Slider */
@@ -2037,12 +2095,16 @@ i:before {
   .hero.left-aligned .hero__inner {
     margin-top: 15%;
   }
-  /* line 232, ../stylesheets/components/_hero.scss */
+  /* line 233, ../stylesheets/components/_hero.scss */
   .hero.left-aligned .hero__image {
     padding-bottom: 50%;
     background-attachment: fixed;
     z-index: 0;
   }
+}
+/* line 240, ../stylesheets/components/_hero.scss */
+.hero.left-aligned.hero-present .hero__inner {
+  margin-top: 0%;
 }
 
 /* line 1, ../stylesheets/components/_tiles.scss */
@@ -2516,28 +2578,32 @@ h5.slide__heading em {
 .staff .chunk-inner {
   position: relative;
 }
-/* line 7, ../stylesheets/components/_staff.scss */
+/* line 6, ../stylesheets/components/_staff.scss */
+.staff .section__img {
+  position: relative;
+}
+/* line 8, ../stylesheets/components/_staff.scss */
 .staff .section__img img {
   border-radius: 50%;
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 14, ../stylesheets/components/_staff.scss */
+/* line 15, ../stylesheets/components/_staff.scss */
 .staff .section__heading {
   text-align: center;
 }
-/* line 17, ../stylesheets/components/_staff.scss */
+/* line 18, ../stylesheets/components/_staff.scss */
 .staff .section--staff .overlay {
   border-radius: 50%;
   display: none;
 }
-/* line 21, ../stylesheets/components/_staff.scss */
+/* line 22, ../stylesheets/components/_staff.scss */
 .staff .section__img, .staff .section__copy, .staff .section__heading {
   margin: 20px 0;
 }
 
-/* line 28, ../stylesheets/components/_staff.scss */
+/* line 29, ../stylesheets/components/_staff.scss */
 .section--staff {
   display: block;
   float: left;
@@ -2551,24 +2617,24 @@ h5.slide__heading em {
   margin-right: 0;
 }
 
-/* line 34, ../stylesheets/components/_staff.scss */
+/* line 35, ../stylesheets/components/_staff.scss */
 .section--staff__bio__wrapper {
   display: none;
 }
 
-/* line 38, ../stylesheets/components/_staff.scss */
+/* line 39, ../stylesheets/components/_staff.scss */
 .section--staff__wrapper {
   width: 100%;
   float: left;
 }
 
-/* line 43, ../stylesheets/components/_staff.scss */
+/* line 44, ../stylesheets/components/_staff.scss */
 .section--staff__skills {
   margin: 60px 0 20px;
 }
 
 @media screen and (min-width: 46.875em) {
-  /* line 51, ../stylesheets/components/_staff.scss */
+  /* line 52, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.two .section--staff {
     display: block;
     float: left;
@@ -2587,15 +2653,16 @@ h5.slide__heading em {
   .staff .section--staff__wrapper.two .section--staff:nth-child(2n+1) {
     clear: left;
   }
-  /* line 54, ../stylesheets/components/_staff.scss */
+  /* line 55, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.two .section--staff .section__img img {
     max-width: 56%;
   }
-  /* line 57, ../stylesheets/components/_staff.scss */
+  /* line 58, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.two .section--staff .overlay {
     max-width: 56%;
+    display: block;
   }
-  /* line 63, ../stylesheets/components/_staff.scss */
+  /* line 65, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.three .section--staff {
     display: block;
     float: left;
@@ -2614,64 +2681,64 @@ h5.slide__heading em {
   .staff .section--staff__wrapper.three .section--staff:nth-child(3n+1) {
     clear: left;
   }
-  /* line 66, ../stylesheets/components/_staff.scss */
+  /* line 68, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.three .section--staff .section__img img {
     max-width: 80%;
   }
-  /* line 69, ../stylesheets/components/_staff.scss */
+  /* line 71, ../stylesheets/components/_staff.scss */
   .staff .section--staff__wrapper.three .section--staff .overlay {
+    display: block;
     max-width: 80%;
   }
-  /* line 76, ../stylesheets/components/_staff.scss */
+  /* line 79, ../stylesheets/components/_staff.scss */
   .staff .section--staff {
     float: left;
     margin: 60px 0;
   }
-  /* line 79, ../stylesheets/components/_staff.scss */
+  /* line 82, ../stylesheets/components/_staff.scss */
   .staff .section--staff h3 {
     display: inline;
   }
-  /* line 82, ../stylesheets/components/_staff.scss */
+  /* line 85, ../stylesheets/components/_staff.scss */
   .staff .section--staff .section__heading span {
     display: block;
     width: 100%;
     margin-top: 10px;
   }
-  /* line 87, ../stylesheets/components/_staff.scss */
+  /* line 90, ../stylesheets/components/_staff.scss */
   .staff .section--staff .overlay {
-    display: block;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid transparent;
   }
-  /* line 92, ../stylesheets/components/_staff.scss */
+  /* line 94, ../stylesheets/components/_staff.scss */
   .staff .section--staff .overlay:before {
     display: block;
   }
-  /* line 98, ../stylesheets/components/_staff.scss */
+  /* line 100, ../stylesheets/components/_staff.scss */
   .staff .section--staff:hover .section__heading h3 {
     border-bottom: 2px solid #D89A4D;
   }
-  /* line 102, ../stylesheets/components/_staff.scss */
+  /* line 104, ../stylesheets/components/_staff.scss */
   .staff .section--staff .section__copy, .staff .section--staff .section__skills {
     position: absolute;
     display: none;
     left: 0;
   }
-  /* line 109, ../stylesheets/components/_staff.scss */
+  /* line 111, ../stylesheets/components/_staff.scss */
   .staff .section--staff--active .overlay {
     background-color: rgba(0, 0, 0, 0.05);
   }
-  /* line 112, ../stylesheets/components/_staff.scss */
+  /* line 114, ../stylesheets/components/_staff.scss */
   .staff .section--staff--active .section__heading h3 {
     border-bottom: 2px solid #D89A4D;
   }
-  /* line 117, ../stylesheets/components/_staff.scss */
+  /* line 119, ../stylesheets/components/_staff.scss */
   .staff .section--staff:hover .overlay {
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  /* line 123, ../stylesheets/components/_staff.scss */
+  /* line 125, ../stylesheets/components/_staff.scss */
   .section--staff__bio__wrapper {
     display: block;
     float: left;
@@ -2680,15 +2747,25 @@ h5.slide__heading em {
     padding: 20px;
   }
 
-  /* line 131, ../stylesheets/components/_staff.scss */
+  /* line 133, ../stylesheets/components/_staff.scss */
   .section--staff__bio {
     margin: 40px 0 0;
   }
 
-  /* line 136, ../stylesheets/components/_staff.scss */
+  /* line 138, ../stylesheets/components/_staff.scss */
   .section--staff__skills .skill__wrapper {
     width: 50%;
     float: left;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  /* line 153, ../stylesheets/components/_staff.scss */
+  .staff .two .section--staff .overlay {
+    max-width: 56%;
+  }
+  /* line 156, ../stylesheets/components/_staff.scss */
+  .staff .three .section--staff .overlay {
+    max-width: 80%;
   }
 }
 /* line 2, ../stylesheets/components/_expertise.scss */

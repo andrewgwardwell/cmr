@@ -30,7 +30,9 @@
                          var output = $('#areas-container').addClass('open').find('.areas-inner').html('<h4>'+country+'</h4><ul>'+inner+'</ul>');
                          if (exp_count > 40){
                            $('#areas-container').addClass('two-column');
-                         } 
+                         } else {
+                           $('#areas-container').removeClass('two-column');
+                         }
                          $('.close-button').on('click', function(e){
                              $('.open').removeClass('open');
                          });
