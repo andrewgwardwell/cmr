@@ -6,11 +6,16 @@
     max-width: 100%;
   }
 }
+ .chunk-section-nav{
+  display: none;
+ }
 
 
 
 @include media($mq-desk-up)  {
-  
+   .chunk-section-nav{
+      display: block;
+    }
   .section_nav--item{
     display: block;
     margin: 20px 3.333% 20px 0px;
@@ -28,7 +33,7 @@
       background-size: auto 120%;
       background-color: $color-grey--dark;
       .section_nav--title{
-        background: rgba($color-grey--dark, .1);
+        background: rgba($color-grey--dark, .05);
       }
     }
     .section_nav--title{
@@ -41,6 +46,7 @@
       @include transition(all 1s);
       h4{
          color: $color-white;
+         text-shadow: 2px 2px 2px #000;
          font-size: em(24);
       }
     }

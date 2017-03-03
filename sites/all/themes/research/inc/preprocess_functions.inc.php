@@ -42,6 +42,10 @@ function research_preprocess_page(&$vars){
   unset($vars['page']['content']['system_main']);
   //  Dirty swap because block weighting isn't working well.
   $vars['page']['first_content'] = $page_content;
+  $currentPath = current_path();
+  if($currentPath === 'user/register'){
+    drupal_goto('');
+  }
 }
 
 
@@ -65,14 +69,17 @@ function research_preprocess_node(&$vars){
           $text = $item->field_menu_text[LANGUAGE_NONE][0]['value'];
           $link = $item->field_menu_link[LANGUAGE_NONE][0]['value'];
           $uri = $item->field_menu_image[LANGUAGE_NONE][0]['uri'];
+          $classes = array();
           if($k == 1){
-              $classes = array('second');
+              $classes[] = 'second';
               $image = image_style_url('homepage_medium', $uri);
           } elseif($k == 0){
-              $classes = array('first');
+              $classes[] = 'first';
               $image = image_style_url('homepage_large', $uri);
           } else {
-              $classes = array();
+              if ($k + 1 == count($menu_exs)){
+                $classes[] = 'last';
+              }
               $image = image_style_url('homepage_small', $uri);
           }
           $links[] = array(
@@ -92,7 +99,7 @@ function research_preprocess_node(&$vars){
     $sec_rend = '';
     $i = 1;
     $sec_nav = array();
-    $build_nav = !empty($node->field_in_page_nav[$lang][0]) ? true : false;
+    $build_nav = $node->field_in_page_nav[$lang][0]['value'] == 1 ? true : false;
     $state_classes = array();
 
     foreach($sections as $section){

@@ -1,398 +1,431 @@
-
-  .global_prac{
-    .block{
-      opacity: 1;
-      display: block;
-      float: left;
-      padding: 20px;
-      background: $color-orange-lt;
-      @include transition(all 1s);
-      text-align: center;
+    [data-avail="true"] {
+        @include transition(all .5s);
+        border-radius: 5px;
+        background: rgba($color-orange-lt, .5);
+        &:hover {
+            background: rgba($color-orange-lt, 1);
+            cursor: pointer;
+        }
+        &.active-country-list-item {
+            background: rgba($color-orange-lt, 1);
+            
+        }
     }
-    .gp_upper{
-      &:after{
-        @include triangle(50px, $color-grey--med, 'down');
-      }
+    
+    .global_prac {
+        .block {
+            opacity: 1;
+            display: block;
+            float: left;
+            padding: 20px;
+            background: none;
+            @include transition(all 1s);
+            text-align: center;
+        }
+        .gp_upper {
+            &:after {
+                @include triangle(50px, $color-grey--med, 'down');
+            }
+        }
+        .gp_mid {
+            #block-waypoint-1 {
+                .block-left {
+                    background: rgba($color-salmon-lt, 1);
+                }
+            }
+            #block-waypoint-2 {
+                .block-left {
+                    background: rgba($color-blue-lt, 1);
+                }
+            }
+            #block-waypoint-3 {
+                .block-left {
+                    background: rgba($color-green-lt, 1);
+                }
+            }
+            .block-inner > div {
+                float: left;
+            }
+            .block-right {
+                width: 100%;
+                background: rgba($color-orange-lt, .8);
+            }
+            .block-left {
+                //      margin-right: 35%;
+                width: 100%;
+                background: rgb(216, 154, 77);
+            }
+        }
+        .gp_low {
+            .blocks-wrapper {
+                background: $color-salmon-lt;
+                float: left;
+            }
+            .block--wrapper {
+                width: 100%;
+                .block-inner {
+                    background: $color-green-lt;
+                }
+                .block-top,
+                .block-bottom {
+                    float: left;
+                    width: 100%;
+                }
+                .block-copy {
+                    text-align: left;
+                    ul {
+                        padding-left: 15px;
+                    }
+                    li {
+                        margin: 20px 0;
+                    }
+                }
+            }
+            .conclusion {
+                width: 100%;
+                margin: 60px 0 0;
+            }
+        }
+        .block-hor {
+            display: none;
+        }
+        .block-left,
+        .block-right {
+            width: 100%;
+            float: left;
+        }
+        .down-arrow {
+            display: none;
+        }
     }
-  .gp_mid{
-    #block-waypoint-1{
-      .block-left{
-        background: $color-salmon-lt;
-      }
+    
+    .chunk-9,
+    .chunk-7 {
+        .chunk-inner {
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
     }
-    #block-waypoint-2{
-      .block-left{
-        background: $color-blue-lt;
-      }
+    
+    @include media($mq-desk-up) {
+        .global_prac {
+            .chunk-inner {
+                padding-top: 40px;
+            }
+            .block {
+                display: block;
+                float: left;
+                padding: 20px;
+                opacity: 0;
+                @include transition(all 1s);
+                text-align: center;
+            }
+            .block-copy p {
+                text-align: left;
+            }
+            .arrow {
+                &:before,
+                &:after {
+                    position: absolute;
+                    content: '';
+                    display: block
+                }
+            }
+            // Complete state
+            .complete {
+                .down-arrow .arrow-shaft {
+                    opacity: 1;
+                    @include transform(translateY(40px));
+                }
+                .block-hor .arrow-shaft {
+                    @include transform(translateX(0));
+                }
+                .block {
+                    opacity: 1;
+                }
+                &.gp_mid {
+                    .block-right {
+                        @include transform(translateX(0px));
+                    }
+                    .block-left {
+                        @include transform(translateY(0px));
+                    }
+                }
+            }
+            .down-arrow {
+                width: 10%;
+                height: 450px;
+                position: absolute;
+                display: block;
+                top: 175px;
+                left: 9.35%;
+                .arrow-shaft {
+                    position: relative;
+                    width: 42.5%;
+                    margin-left: 25%;
+                    height: 83.5%;
+                    opacity: 0;
+                    @include transform(translateY(-84%));
+                    background: $color-grey--med;
+                    @include transition(all 4s);
+                    &:after {
+                        @include triangle(70px, $color-grey--med, down);
+                        bottom: -40px;
+                        left: -25%;
+                    }
+                }
+            }
+            .block-hor {
+                display: block;
+                position: absolute;
+                left: 30%;
+                width: 30%;
+                height: 50px;
+                overflow: hidden;
+                top: 25%;
+                .arrow-shaft {
+                    position: relative;
+                    width: 85%;
+                    margin-top: 10px;
+                    height: 30px;
+                    background: $color-grey--med;
+                    //      @include transition(all 1s);
+                    @include transform(translateX(-115%));
+                    &:after {
+                        @include triangle(50px, $color-grey--med, right);
+                        right: -30px;
+                        top: -10px;
+                    }
+                }
+            }
+            .gp_upper,
+            .gp_mid,
+            .gp_low {
+                margin: 20px 0;
+                width: 100%;
+                float: left;
+            }
+            .gp_upper {}
+            .gp_mid {
+                #block-waypoint-1 * {
+                    @include transition(all 3s);
+                }
+                #block-waypoint-2 * {
+                    @include transition(all 4s);
+                }
+                #block-waypoint-3 * {
+                    @include transition(all 5s);
+                }
+                .blocks-wrapper {
+                    width: 100%;
+                    position: relative;
+                }
+                .block--wrapper {
+                    position: relative;
+                    width: 100%;
+                    float: left;
+                    margin: 40px 0px;
+                }
+                .block-inner > div {
+                    float: left;
+                }
+                .block-right {
+                    width: 40%;
+                    @include transform(translateX(-150%));
+                }
+                .block-left {
+                    margin-right: 35%;
+                    width: 25%;
+                    @include transform(translateY(-150%));
+                }
+            }
+            .gp_low {
+                .blocks-wrapper {
+                    background: $color-salmon-lt;
+                    float: left;
+                }
+                .block--wrapper {
+                    width: 33.3%;
+                    .block-inner {
+                        background: $color-green-lt;
+                    }
+                    .block-top,
+                    .block-bottom {
+                        float: left;
+                        width: 100%;
+                    }
+                    .block-copy {
+                        text-align: left;
+                        ul {
+                            padding-left: 15px;
+                        }
+                        li {
+                            margin: 20px 0;
+                        }
+                    }
+                }
+                .conclusion {
+                    width: 100%;
+                    margin: 60px 0 0;
+                }
+                .block--wrapper-1 {
+                    @include transform(translateX(-150%));
+                    &* {
+                        @include transition(all 3s);
+                    }
+                }
+                .block--wrapper-2 {
+                    &* {
+                        @include transition(all 4s);
+                    }
+                    @include transform(translateX(-250%));
+                }
+                .block--wrapper-3 {
+                    &* {
+                        @include transition(all 5s);
+                    }
+                    @include transform(translateX(-350%));
+                }
+                &.complete {
+                    .block {
+                        opacity: 1;
+                    }
+                    .block--wrapper-1 {
+                        @include transform(translateX(0));
+                    }
+                    .block--wrapper-2 {
+                        @include transform(translateX(0));
+                    }
+                    .block--wrapper-3 {
+                        @include transform(translateX(0));
+                    }
+                }
+            }
+        }
     }
-    #block-waypoint-3{
-      .block-left{
-        background: $color-grey--light;
-      }
-    }
-    .block-inner > div{
-      float: left;
-    }
-
-    .block-right{
-      width: 100%;
-      background: rgb(216, 154, 77);
-    }
-
-    .block-left{
-//      margin-right: 35%;
-      width: 100%;
-      background: rgb(216, 154, 77);
-    }
-
-    }
-    .gp_low{
-      .blocks-wrapper{
-        background: $color-salmon-lt;
-        float: left;
-      }
-      .block--wrapper{
+    
+    .map-outer {
+        position: relative;
         width: 100%;
-        .block-inner{
-          background: $color-green-lt;
-        }
-        .block-top,
-        .block-bottom{
-          float: left;
-          width: 100%;
-        }
-        .block-copy{
-          text-align: left;
-          ul{
-            padding-left: 15px;
-          }
-          li{
-            margin: 20px 0;
-          }
-        }
-      }
-      .conclusion{
-        width: 100%;
-        margin: 60px 0 0;
-      }
+        overflow: hidden;
     }
-    .block-hor{
-      display: none;
+    
+    #map-container {
+        height: 250px;
+        width: 100vw;
+        margin: 0 auto;
+        height: 50vw;
     }
-    .block-left, .block-right{
-      width: 100%;
-      float: left;
-    }
-    .down-arrow{
-      display: none;
-    }
-  }
-
-.chunk-9, .chunk-7{
-  .chunk-inner{
-    padding-bottom: 0px;
-  }
-}
-
-
-
-@include media($mq-desk-up){
-  .global_prac{
-    .chunk-inner{
-      padding-top: 40px;
-    }
-    .block{
-      display: block;
-      float: left;
-      padding: 20px;
-      opacity: 0;
-      background: $color-orange-lt;
-      @include transition(all 1s);
-      text-align: center;
-    }
-
-    .block-copy p{
-      text-align: left;
-    }
-
-    .arrow{
-      &:before,
-      &:after{
+    
+    #areas-container {
         position: absolute;
-        content: '';
-        display: block
-      }
-    }
-    // Complete state
-    .complete{
-      .down-arrow .arrow-shaft{
-        opacity: 1;
-        @include transform(translateY(40px));
-      }
-      .block-hor .arrow-shaft{
-        @include transform(translateX(0));
-      }
-      .block{
-        opacity: 1;
-      }
-      &.gp_mid{
-        .block-right{
-          @include transform(translateX(0px));
+        top: 230px;
+        height: 100%;
+        overflow-y: auto;
+        @include transform(translateX(100%));
+        &.open {
+            @include transform(translateX(0%));
         }
-
-        .block-left{
-          @include transform(translateY(0px));
-        }
-      }
-    }
-
-    .down-arrow{
-      width: 10%;
-      height: 620px;
-      position: absolute;
-      display: block;
-      top: 0px;
-      left: 9.5%;
-      overflow: hidden;
-      .arrow-shaft{
-        position: relative;
-        width: 42.5%;
-        margin-left: 25%;
-        height: 83.5%;
-        opacity: 0;
-        @include transform(translateY(-84%));
-        background: $color-grey--med;
-        @include transition(all 4s);
-        &:after{
-          @include triangle(70px, $color-grey--med, down);
-          bottom: -40px;
-          left: -25%;
-        }
-      }
-    }
-
-    .block-hor{
-      display: block;
-      position: absolute;
-      left: 30%;
-      width: 30%;
-      height: 50px;
-      overflow: hidden;
-      top: 25%;
-      .arrow-shaft{
-        position: relative;
-        width: 85%;
-        margin-top: 10px;
-        height: 30px;
-        background: $color-grey--med;
-        //      @include transition(all 1s);
-        @include transform(translateX(-115%));
-
-        &:after{
-          @include triangle(50px, $color-grey--med, right);
-          right: -30px;
-          top: -10px;
-        }
-      }
-
-    }
-
-    .gp_upper,
-    .gp_mid,
-    .gp_low{
-      margin: 20px 0;
-      width: 100%;
-      float: left;
-    }
-
-    .gp_upper{}
-    .gp_mid{
-      #block-waypoint-1 *{
-        @include transition(all 3s);
-      }
-      #block-waypoint-2 *{
-        @include transition(all 4s);
-      }
-      #block-waypoint-3 *{
-        @include transition(all 5s);
-      }
-
-      .blocks-wrapper{
+        @include transition(all 1s);
+        background: #FFF;
+        box-shadow: -20px 150px 160px 0px rgba(0, 0, 0, 0.2);
         width: 100%;
-        position: relative;
-      }
-      .block--wrapper{
-        position: relative;
-        width: 100%;
-        float: left;
-        margin: 40px 0px;
-      }
-
-      .block-inner > div{
-        float: left;
-      }
-
-      .block-right{
-        width: 40%;
-        @include transform(translateX(-150%));
-      }
-
-      .block-left{
-        margin-right: 35%;
-        width: 25%;
-        @include transform(translateY(-150%));
-      }
-
+        .areas-inner {
+            padding: 20px;
+            width: 100%;
+        }
+        &.two-column {
+            .areas-inner {
+                ul {
+                    @include columns(2);
+                    padding-left: 0;
+                    li {
+                        margin: 0 20px;
+                        -webkit-column-break-inside: avoid;
+                        /* Chrome, Safari */
+                        page-break-inside: avoid;
+                        /* Theoretically FF 20+ */
+                        break-inside: avoid-column;
+                        /* IE 11 */
+                        display: grid;
+                        /* Actually FF 20+ */
+                    }
+                }
+            }
+        }
     }
-    .gp_low{
-      .blocks-wrapper{
-        background: $color-salmon-lt;
-        float: left;
-      }
-      .block--wrapper{
-        width: 33.3%;
-        .block-inner{
-          background: $color-green-lt;
-        }
-        .block-top,
-        .block-bottom{
-          float: left;
-          width: 100%;
-        }
-        .block-copy{
-          text-align: left;
-          ul{
-            padding-left: 15px;
-          }
-          li{
-            margin: 20px 0;
-          }
-        }
-      }
-      .conclusion{
-        width: 100%;
-        margin: 60px 0 0;
-      }
-      .block--wrapper-1{
-        @include transform(translateX(-150%));
-        &*{
-          @include transition(all 3s);
-        }
-      }
-      .block--wrapper-2{
-        &*{
-          @include transition(all 4s);
-        }
-        @include transform(translateX(-250%));
-      }
-      .block--wrapper-3{
-        &*{
-          @include transition(all 5s);
-        }
-        @include transform(translateX(-350%));
-      }
-      &.complete{
-        .block{
-          opacity: 1;
-        }
-        .block--wrapper-1{
-          @include transform(translateX(0));
-        }
-        .block--wrapper-2{
-          @include transform(translateX(0));
-        }
-        .block--wrapper-3{
-          @include transform(translateX(0));
-        }
-      }
-
-    }
-  }
-}
-
-.map-outer{
-  position: relative;
-  width: 100%;
-}
-
-#map-container{
-  height: 100vw;
-  width: 100vw;
-  margin: 0 auto;
-}
-
-#areas-container {
-  position: absolute;
-  top: 0%;
-  height: 100%;
-  overflow-y: scroll;
-  @include transform(translateX(100%));
-    &.open{
-      @include transform(translateX(80%));
-    }
-  @include transition(all 1s);
-  background: #FFF;
-  box-shadow: -20px 150px 160px 0px rgba(0, 0, 0, 0.2);
-  width: 100%;
-   .areas-inner{
-    padding: 20px;
-    width: 20%;
-   }
-   &.two-column{
-        &.open{
-            transform: translateX(65%);
-        }
-       .areas-inner{
-          width: 35%;
-          ul{
+    
+    #countries-container {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        .count-inner {}
+        ul {
             @include columns(2);
             padding-left: 0;
-            li{
-              margin:0 20px;
-              -webkit-column-break-inside: avoid; /* Chrome, Safari */
-              page-break-inside: avoid;           /* Theoretically FF 20+ */
-              break-inside: avoid-column;         /* IE 11 */
-              display: grid;                      /* Actually FF 20+ */
+            li {
+                margin: 10px 20px;
+                -webkit-column-break-inside: avoid;
+                /* Chrome, Safari */
+                page-break-inside: avoid;
+                /* Theoretically FF 20+ */
+                break-inside: avoid-column;
+                /* IE 11 */
+                display: grid;
+                /* Actually FF 20+ */
             }
-          }
-       }
-   }
-}
-
-#countries-container{
-  ul{
-    @include columns(1);
-    padding-left: 0;
-    li{
-      margin:0 20px;
-      -webkit-column-break-inside: avoid; /* Chrome, Safari */
-      page-break-inside: avoid;           /* Theoretically FF 20+ */
-      break-inside: avoid-column;         /* IE 11 */
-      display: grid;                      /* Actually FF 20+ */
+        }
     }
-  }
-}
-
-@include media($mq-lap-up){
-  .map-outer{
-    overflow: hidden;
-    margin-top: 80px;
-  }
-  #map-container{
-    height: 50vw;
-    width: 75vw;
-    margin: 0 auto;
-    margin-top: -15%;
-  }
-  #countries-container{
-    top: 0%;
-    position: absolute;
-    left: 20px;
-    padding: 0px;
-    width: 150px;
-    ul{
-      @include columns(1);
+    
+    @include media($mq-lap-up) {
+        .chunk-9,
+        .chunk-7 {
+            .chunk-inner {
+                padding-top: 40px;
+            }
+        }
+        .map-outer {
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        #areas-container {
+            top: 0;
+            @include transform(translateX(100%));
+            .areas-inner{
+              width: 20%;
+            }
+            &.open {
+                @include transform(translateX(80%));
+            }
+            &.two-column {
+               .areas-inner {
+                width: 35%;
+              }
+                &.open {
+                    transform: translateX(65%);
+                }
+            }
+        }
+        #map-container {
+            height: 50vw;
+            width: 75vw;
+            margin: 0 auto;
+            margin-top: -15%;
+        }
+        #countries-container {
+            top: 0%;
+            position: absolute;
+            left: 20px;
+            padding: 0px;
+            width: 150px;
+            ul {
+                @include columns(1);
+                li {
+                    padding: 5px 0 5px 10px;
+                    margin: 0 20px 0 0;
+                    list-style-position: inside;
+                    list-style-type: none;
+                }
+            }
+        }
     }
-  }
-
-}

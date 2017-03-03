@@ -16,6 +16,21 @@
         $this.scrollDist[id] = scrollDist;
       });
       $('.hero__image').css('padding-bottom', win_ht*.35);
+      var contact = $('<li class="menu__item contact-us closed"><a href="/"><h5>Contact us</h5></a> </li>').on('click', this.openContactForm);
+      $('.menu > ul').append(contact);
+    },
+
+    openContactForm: function(e){
+      e.preventDefault();
+      var el = $(this);
+      var closed = el.hasClass('closed');
+      if (closed){
+        $('.contact-bar').removeClass('hidden');
+        el.removeClass('closed');
+      } else {
+        $('.contact-bar').addClass('hidden');
+        el.addClass('closed');
+      }
     },
 
     clickNav: function(e){
@@ -94,7 +109,8 @@
       clients.init();
       $('.section_nav--link').bind('click', sections.clickNav);
       $(document).on('scroll', function(e){
-        if(window.scrollY > 160){
+        var scroll = $(document).scrollTop();
+        if(scroll > 160){
           $('body').addClass('scroll-nav');
         } else {
           $('body').removeClass('scroll-nav');

@@ -91,6 +91,7 @@
         margin: 0 auto;
         background-color: rgba(0,0,0,.4);
         border: 2px solid transparent;
+        width: 100%;
         &:before{
           display: block;
         }
@@ -158,5 +159,21 @@
     }
   }
 }
+
+@include media($mq-wall) {
+  .staff{
+    .section--staff__wrapper{
+    &.two .section--staff .overlay{
+        max-width: 53%;
+    }
+    &.three .section--staff .overlay{
+        max-width: 80%;
+    }
+  }
+}
+}
+
+
+
 
 

@@ -2,6 +2,10 @@
     <div class="region region-footer">
       <div class="copywrite">
         <h6>&#169; 2014 Collaborative Market Research. All rights reserved.</h6>
+        <h6><strong>Email:</strong> dmoore@colmares.com</h6>
+        <h6><strong>Fax:</strong> 215.885.7643</h6>
+        <h6><strong>Mobile:</strong> 215.570.0552</h6>
+        <h6><strong>Address:</strong> 127 Walnut Street, Jenkintown, PA 19046</h6>
       </div>
       <div class = "nav nav__social">
         <div class = "icons">

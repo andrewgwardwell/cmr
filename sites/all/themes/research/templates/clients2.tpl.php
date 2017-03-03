@@ -17,15 +17,9 @@
                 <?php foreach ($clients as $s): ?>
                     <div class = "client-wrapper">
                         <div class = "client-inner">
-                            <?php if(!empty($s['link'])):?>
-                            <a target="_blank" href="<?php print $s['link'];?>">
-                                <?php endif; ?>
                                 <div class = "section__img">
-                                    <img src="<?php print $s['pic']; ?>"/>
+                                    <img alt = "<?php print $s['name']; ?>" src="<?php print $s['pic']; ?>"/>
                                 </div>
-                                <?php if(!empty($s['link'])):?>
-                            </a>
-                        <?php endif; ?>
                             <div class = "section__copy rte">
 <!--                                <h2 class = "tip-expand">-->
 <!--                                    --><?php //print $s['name']; ?>

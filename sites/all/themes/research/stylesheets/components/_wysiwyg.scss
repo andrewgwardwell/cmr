@@ -1,7 +1,7 @@
 .rte{
   p{
     font-size: em(17);
-//    padding: 20px 0;
+
   }
   h1{
     font-size: em(35);
@@ -26,6 +26,9 @@
   ul{
     list-style: circle;
   }
+  strong{
+    font-weight: bold;
+  }
   li{
 //    border-bottom: 1px solid $color-grey--bord-bott;
     margin: 10px 0;
@@ -49,6 +52,7 @@
     height: auto !important;
   }
   table{
+    width: 100%;
 
   }
 
@@ -56,8 +60,13 @@
     vertical-align: top;
     padding-right: 10px;
     font-weight: 500;
+    display: block;
+    width: 100%;
     p{
       margin-top: 0px;
+      display: inline-block;
+      max-width: 90%;
+
     }
   }
 
@@ -73,6 +82,12 @@
 }
 
   @include media($mq-lap-up) {
+    .rte{
+        td{
+          display: table-cell;
+          width: auto;
+        }
+      }
     .center .rte{
       ul{
         @include columns(4);

@@ -120,10 +120,20 @@ switch ($delta){
     asort($countries);
     drupal_add_js(array('countriesList' => json_encode($points)), 'setting');
     drupal_add_js(array('countriesList2' => $points), 'setting');
-    $countries_markup = '<h5><strong>Countries</strong></h5><ul><li>'.implode('</li><li>', $countries).'</li></ul>';
+    $c_list = array();
+    foreach($countries as $code => $name){
+        $exp = $points[$code]['exp'];
+        if (count($exp) > 0){
+            $avail = 'true';
+        } else {
+            $avail = 'false';
+        }
+        $c_list[] = '<li class = "country-list-item" data-avail = "'.$avail.'" data-code="'.$code.'">'.$name.'</li>';
+    }
+    $countries_markup = '<h5><strong>Countries</strong></h5><ul>'.implode('', $c_list).'</ul>';
     $block['subject'] = '';
     $output = '<div id = "map-container"></div>';
-    $output .= '<div class="chunk-inner" id = "countries-container">'.$countries_markup.'</div>';
+    $output .= '<div class="chunk-inner" id = "countries-container"><div class="count-inner">'.$countries_markup.'</div></div>';
       $output .= '<div id = "areas-container"><div class = "close-button"></div><div class="areas-inner"></div></div>';
       $block['content'] = '<div class="map-outer">'.$output.'</div>';
     break;

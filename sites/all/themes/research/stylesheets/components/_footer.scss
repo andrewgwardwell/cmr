@@ -62,6 +62,9 @@ i:before{
 .group:before{
   background-image: url('../images/about/fun/group.png');
 }
+.phone:before{
+  background-image: url('../images/Social_Icons/phone.png');
+}
 
 .copywrite, .menu-wrap--footer{
   @include span-columns(12);

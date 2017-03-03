@@ -87,8 +87,10 @@
   },
 
     init: function() {
+      var wind_wd = $('body').width();
+      console.log(width);
       var margin = {top: 20, right: 120, bottom: 20, left: 120},
-        width = 1400 - margin.right - margin.left,
+        width = wind_wd - margin.right - margin.left,
         height = 1000 - margin.top - margin.bottom;
 
       var i = 0,
@@ -155,7 +157,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function(d) {
-          d.y = d.depth * 380;
+          d.y = d.depth * (wind_wd/3);
         });
 
         // Update the nodes…

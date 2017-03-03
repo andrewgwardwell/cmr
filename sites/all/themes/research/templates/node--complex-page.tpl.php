@@ -17,7 +17,7 @@
         <?php if(!empty($section_nav)): ?>
           <div class="chunk chunk-section-nav">
             <div class="chunk-inner">
-              <?php print $section_nav; ?>
+              <?php print $section_nav;?>
             </div>
           </div>
         <?php endif; ?>

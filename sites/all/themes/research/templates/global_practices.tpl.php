@@ -95,7 +95,7 @@
       </div>
       </div>
     </div>
-    <div class="gp_low">
+<!--     <div class="gp_low">
       <div class="block blocks-wrapper">
         <div class = "down-arrow"></div>
         <div class="block block--wrapper block--wrapper-1">
@@ -150,7 +150,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
   </div>

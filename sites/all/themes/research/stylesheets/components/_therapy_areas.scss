@@ -1,200 +1,263 @@
-.fixed-body{
-  position: fixed;
-  & * {
-    z-index: 0;
-  }
-}
-
-#block-cmr-therapy-area{
-  background: $color-grey--light;
-  overflow: hidden;
-  &.term-open{
-    .therapy-info{
-        @include transform(translateX(0%));
+.fixed-body {
+    position: fixed;
+    & * {
+        z-index: 0;
     }
-    .therapy-areas{
-      width:60%;
+}
+
+.therapy-areas--mobile {
+    padding: 20px 0 40px;
+}
+
+.therapy-areas--mobile > .mob-therapy-wrap {
+    -webkit-margin-before: 0px;
+    width: 90%;
+    margin: 0 auto;
+    -webkit-padding-start: 0px;
+    list-style: none;
+    border: 1px solid $color-grey--med;
+    background: rgba($color-grey--light, 1);
+    & > span {
+        font-size: em(18);
+        font-weight: 700;
+        display: none;
     }
-  }
-}
-
-.therapy-areas, .therapy-info{
-  float: left;
-  @include transition(all 1s);
-}
-
-.therapy-areas--mobile{
-  .mob-therapy-wrap .children li{
-    display: none;
-  }
-  .children.open > ul li{
-    display: inline;
-//    .children li{
-//      display: inline;
-//    .children li{
-//      display: inline;
-//      }
-//    }
-  }
-}
-
-.therapy-areas{
-  display: none;
-  width: 100%;
-  background: $color-white;
-  .node {
-    cursor: pointer;
-  }
-
-  .node circle {
-    fill: $color-orange;
-    stroke: $color-blue-drk;
-    stroke-width: 1.5px;
-  }
-
-  .node text {
-    font-size: .87em;
-    fill: $color-blue-drk;
-    &:hover{
-      fill: $color-orange;
+    & > li {
+        & > ul {
+          border-bottom: 2px solid $color-grey--med;
+            li > ul {
+                span {
+                   // color: white;
+                }
+                background: rgba($color-orange-lt, .4);
+            }
+        }
+        &> span {
+            font-size: em(18);
+            font-weight: 700;
+        }
     }
-  }
-
-  .link {
-    fill: none;
-    stroke: $color-salmon-lt;
-    stroke-width: 1.5px;
-  }
 }
 
-.therapy-areas--mobile{
-  background: $color-white;
+#block-cmr-therapy-area {
+    background: $color-grey--light;
+    overflow: hidden;
+    &.term-open {
+        .therapy-info {
+            @include transform(translateX(0%));
+        }
+        .therapy-areas {
+            width: 60%;
+        }
+    }
 }
 
-.therapy-info{
-  position: fixed;
-  @include transform(translateX(250%));
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  background: $color-grey--light;
-  z-index: 2147483;
-  .bump{
-    width: 100%;
+.therapy-areas,
+.therapy-info {
     float: left;
-    margin-bottom: 20px;
-  }
-  .section__title{
-    text-decoration: underline;
-  }
+    @include transition(all 1s);
 }
-.hide-inner{
-  .therapy-info--inner{
-    opacity: 0;
-    display: none;
-  }
-}
-.therapy-info--inner{
-  @include transition(all 1s);
-  opacity: 1;
-  display: block;
-  padding: 20px;
-  margin: 20px;
-  background: $color-white;
-  overflow: hidden;
-  // staff stuff
-  .staff, .therapy-info--clients{
-    width: 100%;
-    .staff-wrapper, .client-wrapper{
-      width: 48%;
-      float: left;
-      padding: 1%;
+
+.therapy-areas--mobile {
+    .mob-therapy-wrap .children li {
+        max-height: 0;
+        opacity: 0;
+        //display: inline;
+        @include transition(max-height .7s ease-in-out, opacity .25s ease-in-out);
+        overflow-y: hidden;
     }
-    .section__img{
-      float: left;
-      margin: 0 0;
-      img{
-        max-width: 40%;
-      }
+    ul {
+        -webkit-padding-start: 20px;
     }
-  }
-  .therapy-info--clients,
-  .therapy-info--staff{
-    float: left;
-    width: 100%;
-  }
-  .therapy-info--clients{
-    .client-wrapper {
-      text-align: center;
+    .children.open > ul > span {
+        font-weight: 700;
     }
-    .section__img {
-      img {
-        max-width: 50%;
+    .children > ul > .extra-info:after {
         display: block;
-        margin: 0 auto;
-      }
+        content: '\2304';
+        position: absolute;
+        top: -4px;
+        right: -11px;
+        font-size: 24px;
+        font-weight: 600;
     }
-  }
-  .therapy-info--clients--inner,
-  .therapy-info--staff--inner{
-    padding: 20px 0;
-  }
+    .children.open > ul > .extra-info:after {
+        content: '\2303';
+        top: 0px;
+        right: -11px;
+        font-size: 16px;
+    }
+    .children {
+        .extra-info {
+            position: relative;
+            display: none;
+        }
+    }
+    .children.open > .mob-therapy-wrap{
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
+    .children.open > ul li {
+        max-height: 910px;
+        opacity: 1;
+    }
 }
 
-.extra-info{
-//  background: $color-orange;
-  color: $color-orange;
-//  color: $color-white;
-  font-size: em(12);
-  padding: 5px;
-}
-
-.close-button{
-  @include size(30px);
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 50%;
-  background: white;
-  &:before{
-    content: '\00D7';
-    display: block;
-    position: absolute;
-    top: -8px;
-    left: 5px;
-    font-size: em(24);
-  }
-}
-
-@include media($mq-lap-up){
-  .therapy-areas--mobile{
+.therapy-areas {
     display: none;
-  }
-  .therapy-areas{
-    display: block;
-  }
-  .therapy-info{
-    background: none;
-    width: 40%;
-    @include transform(translateX(250%));
-    position: relative;
-  }
-  .hide-inner{
-    .therapy-info--inner{
-      opacity: 0;
-      display: none;
+    width: 100%;
+    background: $color-white;
+    .node {
+        cursor: pointer;
     }
-  }
-  .therapy-info--inner{
+    .node circle {
+        fill: $color-orange;
+        stroke: $color-blue-drk;
+        stroke-width: 1.5px;
+    }
+    .node text {
+        font-size: .87em;
+        fill: $color-blue-drk;
+        &:hover {
+            fill: $color-orange;
+        }
+    }
+    .link {
+        fill: none;
+        stroke: $color-salmon-lt;
+        stroke-width: 1.5px;
+    }
+}
+
+.therapy-areas--mobile {
+    background: $color-white;
+}
+
+.therapy-info {
+    position: fixed;
+    @include transform(translateX(250%));
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background: $color-grey--light;
+    z-index: 2147483;
+    .bump {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    .section__title {
+        text-decoration: underline;
+    }
+}
+
+.hide-inner {
+    .therapy-info--inner {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.therapy-info--inner {
+    @include transition(all 1s);
     opacity: 1;
     display: block;
     padding: 20px;
     margin: 20px;
-  }
+    background: $color-white;
+    overflow: hidden;
+    // staff stuff
+    .staff,
+    .therapy-info--clients {
+        width: 100%;
+        .staff-wrapper,
+        .client-wrapper {
+            width: 48%;
+            float: left;
+            padding: 1%;
+        }
+        .section__img {
+            float: left;
+            margin: 0 0;
+            img {
+                max-width: 40%;
+            }
+        }
+    }
+    .therapy-info--clients,
+    .therapy-info--staff {
+        float: left;
+        width: 100%;
+    }
+    .therapy-info--clients {
+        .client-wrapper {
+            text-align: center;
+        }
+        .section__img {
+            img {
+                max-width: 50%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    .therapy-info--clients--inner,
+    .therapy-info--staff--inner {
+        padding: 20px 0;
+    }
 }
 
+.extra-info {
+    //  background: $color-orange;
+    color: $color-orange;
+    //  color: $color-white;
+    font-size: em(12);
+    padding: 5px;
+}
 
+.close-button {
+    @include size(30px);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: white;
+    &:before {
+        content: '\00D7';
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: 5px;
+        font-size: em(24);
+    }
+}
 
+@include media($mq-lap-up) {
+    .therapy-areas--mobile {
+        display: none;
+    }
+    .therapy-areas {
+        display: block;
+    }
+    .therapy-info {
+        background: none;
+        width: 40%;
+        @include transform(translateX(250%));
+        position: relative;
+    }
+    .hide-inner {
+        .therapy-info--inner {
+            opacity: 0;
+            display: none;
+        }
+    }
+    .therapy-info--inner {
+        opacity: 1;
+        display: block;
+        padding: 20px;
+        margin: 20px;
+    }
+}

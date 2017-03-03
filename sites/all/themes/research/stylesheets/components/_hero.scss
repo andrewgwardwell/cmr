@@ -1,245 +1,255 @@
 .hero {
-  z-index: 0;
-  @include fill-parent;
-  position: relative;
+    z-index: 0;
+    @include fill-parent;
+    position: relative;
+}
+
+.no-hero {
+    display: none;
 }
 
 .hero__image {
-  @include fill-parent;
-  padding-bottom: 92.5%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: scroll;
-  position: relative;
+    @include fill-parent;
+    padding-bottom: 92.5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    position: relative;
 }
 
 .hero__inner {
-  top: 20%;
-  left: 0;
-  h3 {
-    font-size: em(17);
-    margin-bottom: 0px;
-  }
-  p {
-    font-size: em(12);
-    margin-top: 0px;
-  }
+    top: 20%;
+    left: 0;
+    h3 {
+        font-size: em(17);
+        margin-bottom: 0px;
+    }
+    p {
+        font-size: em(12);
+        margin-top: 0px;
+    }
 }
 
 .hero--main .hero__inner {
-  position: static;
+    position: static;
 }
 
 .hero__cta {
-  z-index: 5;
-  @include db-outer-container;
-  width: 95%;
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 40px;
-  border: 1px solid $color-orange;
-  border-left: none;
-  border-right: none;
-  position: relative;
-  a,
-  a:visited {
-    text-decoration: none;
-    color: white;
-  }
-  .hero__caption--header{
+    z-index: 5;
+    @include db-outer-container;
+    width: 95%;
+    display: block;
     text-align: center;
-    width: 100%;
-    top: -27px;
-    zoom: 1;
-    display: block;
-    position: absolute;
-    h3{
-      display: inline;
-      padding: 0px 20px;
-      background: $color-white;
-    }
-  }
-  .hero__caption--copy {
-    display: block;
-    width: auto;
-    margin: 0px auto;
-    float: none;
-    max-width: 95%;
-    font-size: em(25);
+    padding: 10px 0;
     margin-top: 40px;
-    margin-bottom: 40px;
-  }
+    border: 1px solid $color-orange;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    a,
+    a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    .hero__caption--header {
+        text-align: center;
+        width: 100%;
+        zoom: 1;
+        display: block;
+        h3 {
+            display: inline;
+            padding: 0px 0px;
+            background: $color-white;
+        }
+    }
+    .hero__caption--copy {
+        display: block;
+        width: auto;
+        margin: 0px auto;
+        float: none;
+        max-width: 95%;
+        font-size: em(25);
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 }
 
 .opening__button {
-  background: $color-orange;
-  @include span-columns(4 of 12);
-  padding: 10px;
-  display: block;
-  margin-top: 40px;
-  @extend %font-sans-serif-bold;
-  font-size: em(12);
-  @include border-top-radius(10px);
-  @include border-right-radius(10px);
-  @include border-bottom-radius(10px);
-  @include border-left-radius(10px);
-  text-align: center;
-  span {
-    color: $color-white;
-  }
+    background: $color-orange;
+    @include span-columns(4 of 12);
+    padding: 10px;
+    display: block;
+    margin-top: 40px;
+    @extend %font-sans-serif-bold;
+    font-size: em(12);
+    @include border-top-radius(10px);
+    @include border-right-radius(10px);
+    @include border-bottom-radius(10px);
+    @include border-left-radius(10px);
+    text-align: center;
+    span {
+        color: $color-white;
+    }
 }
 
 .opening__button--a {
-  @include shift(4);
+    @include shift(4);
 }
+
 .opening__button--b {
-  display: none;
+    display: none;
 }
 
 .hero__heading {
-  color: white;
-  @include span-columns(12);
+    color: white;
+    @include span-columns(12);
 }
 
 @include media($mq-lap-up) {
-  .hero__image {
-    padding-bottom: 65%;
-  }
-  .hero__cta {
-    text-align: center;
-    width: 50%;
-  }
-  .hero__inner {
-    margin: auto;
-    h3 {
-      font-size: em(35);
+    .no-hero {
+        display: block;
     }
-    p {
-      font-size: em(26);
+    .hero__image {
+        padding-bottom: 65%;
     }
-  }
+    .hero__cta {
+        text-align: center;
+        width: 50%;
+        .hero__caption--header {
+            top: -27px;
+            zoom: 1;
+            display: block;
+            position: absolute;
+            h3 {
+                padding: 0px 20px;
+            }
+        }
+    }
+    .hero__inner {
+        margin: auto;
+        h3 {
+            font-size: em(35);
+        }
+        p {
+            font-size: em(26);
+        }
+    }
 }
 
 @include media($mq-desk-up) {
-  .hero__image {
-    padding-bottom: 40%;
-    background-attachment: fixed;
-  }
-  .hero__inner {
-    h3 {
-      font-size: em(46);
+    .hero__image {
+        padding-bottom: 40%;
+        background-attachment: fixed;
     }
-  }
-  .hero--main .hero__inner {
-    position: absolute;
-  }
-  .opening__button {
-    @include span-columns(3 of 12);
-    padding: 20px;
-    font-size: em(20);
-    &:hover {
-      cursor: pointer;
-      background: darken($color-orange, 10%);
+    .hero__inner {
+        h3 {
+            font-size: em(46);
+        }
     }
-  }
-  .opening__button--a {
-    @include shift(3);
-  }
-  .opening__button--b {
-    @include shift(1);
-  }
+    .hero--main .hero__inner {
+        position: absolute;
+    }
+    .opening__button {
+        @include span-columns(3 of 12);
+        padding: 20px;
+        font-size: em(20);
+        &:hover {
+            cursor: pointer;
+            background: darken($color-orange, 10%);
+        }
+    }
+    .opening__button--a {
+        @include shift(3);
+    }
+    .opening__button--b {
+        @include shift(1);
+    }
 }
 
 //  @include media($mq-desk-up) {
-
 ////// Reprise Hero /////
-
-.reprise, .val-prop {
-  .opening__button {
-    @include shift(3);
-    @include span-columns(6 of 12);
-  }
-  .hero__image {
-    padding-bottom: 300px;
-  }
-  @include media($mq-lap-up) {
-    .hero__image {
-      padding-bottom: 400px;
-    }
-    .hero__inner {
-      top: 18%;
-    }
+.reprise,
+.val-prop {
     .opening__button {
-      @include shift(4.5);
-      @include span-columns(3 of 12);
+        @include shift(3);
+        @include span-columns(6 of 12);
     }
-  }
-  @include media($mq-desk-up) {
     .hero__image {
-      padding-bottom: 500px;
-      background-attachment: fixed;
+        padding-bottom: 300px;
     }
-    .hero__inner {
-      padding: 4.5em 0;
+    @include media($mq-lap-up) {
+        .hero__image {
+            padding-bottom: 400px;
+        }
+        .hero__inner {
+            top: 18%;
+        }
+        .opening__button {
+            @include shift(4.5);
+            @include span-columns(3 of 12);
+        }
     }
-    .hero__cta h3 {
-      font-size: em(36);
+    @include media($mq-desk-up) {
+        .hero__image {
+            padding-bottom: 500px;
+            background-attachment: fixed;
+        }
+        .hero__inner {
+            padding: 4.5em 0;
+        }
+        .hero__cta h3 {
+            font-size: em(36);
+        }
     }
-  }
 }
 
 ////////// Team Page ////////
-
 .hero.left-aligned {
-  .hero__image {
-    padding-bottom: 31.3%;
-    background-attachment: scroll;
-    background-position: top center;
-  }
-  .hero__cta {
-//    @include db-outer-container;
-    float: none;
-    text-align: left;
-    line-height: em(46);
-    h3 {
-      font-size: em(30);
-    }
-    p {
-      font-size: em(20);
-      display: none;
-    }
-  }
-
-  @include media($mq-lap-up) {
     .hero__image {
-      background-position: top center;
+        padding-bottom: 31.3%;
+        background-attachment: scroll;
+        background-position: top center;
     }
     .hero__cta {
-      h3 {
-        font-size: em(36);
-      }
-      p {
-        display: block;
-      }
+        //    @include db-outer-container;
+        float: none;
+        text-align: left;
+        line-height: em(46);
+        h3 {
+            font-size: em(30);
+        }
+        p {
+            font-size: em(20);
+            display: none;
+        }
     }
-  }
-  @include media($mq-desk-up) {
-    .hero__inner {
-      margin-top: 15%;
+    @include media($mq-lap-up) {
+        .hero__image {
+            background-position: top center;
+        }
+        .hero__cta {
+            h3 {
+                font-size: em(34);
+            }
+            p {
+                display: block;
+            }
+        }
     }
-
-    .hero__image {
-      padding-bottom: 50%;
-      background-attachment: fixed;
-      z-index: 0;
+    @include media($mq-desk-up) {
+        .hero__inner {
+            margin-top: 15%;
+        }
+        .hero__image {
+            padding-bottom: 50%;
+            background-attachment: fixed;
+            z-index: 0;
+        }
     }
-  }
-  &.hero-present{
-    .hero__inner {
-      margin-top: 0%;
+    &.hero-present {
+        .hero__inner {
+            margin-top: 0%;
+        }
     }
-  }
 }
-
