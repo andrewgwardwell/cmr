@@ -2,14 +2,11 @@ img {
     -ms-interpolation-mode: bicubic;
 }
 
-
-
-
 .contact-bar {
     @include transition(all 1s);
     overflow: hidden;
     height: auto;
-    max-height: 50px;
+    min-height: 50px;
     width: 100%;
     background: rgba($color-grey--light, 1);
     opacity: 1;
@@ -20,11 +17,18 @@ img {
         -webkit-margin-start: 0;
     }
     span {
-        float: right;
         vertical-align: middle;
         display: inline-block;
         padding-top: 7px;
         padding-right: 10px;
+    }
+    .heading{
+        width:100%;
+        text-align: center;
+    }
+    .details{
+        width: 210px;
+        margin: 0 auto 20px;
     }
     .icon {
         padding-top: 5px;
@@ -38,13 +42,18 @@ img {
 }
 
 .contact-bar.mobile{
-  width: 60%;
-  background:none;
+  width: 100%;
   box-shadow: none;
   padding-left: 10px;
-      .icon, span {
-        float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+      .icon, span{
+        float: right;
         padding: 0;
+        padding-top: 7.5px;
+      }
+      span {
+          float: left;
       }
 }
 
@@ -73,7 +82,7 @@ img {
     @include db-outer-container;
     width: 100%;
     background: $color-background;
-    height: 50px;
+    height: 75px;
 }
 
 .logo-wrap,
@@ -94,11 +103,14 @@ img {
     max-height: 30px;
     margin: 0 auto;
     display: block;
+    max-width: 100%;
 }
 
 .logo {
     display: block;
     float: left;
+    margin-bottom: 10px;
+    padding-left: 10px;
 }
 
 .comp__name {

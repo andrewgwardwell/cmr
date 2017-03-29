@@ -426,6 +426,18 @@ function _cmr_dashboard_build(){
     );
   }
 
+  $items['Edit Doug']= array(
+    'link' => 'user/3/edit',
+    'name' => 'Edit Doug User Settings',
+    'description' => 'Edit Doug User Settings'
+  );
+
+  $items['Edit Elly']= array(
+    'link' => 'user/4/edit',
+    'name' => 'Edit Elly User Settings',
+    'description' => 'Edit Elly User Settings'
+  );
+
   $items['Main Menu Edit']= array(
     'link' => 'admin/structure/menu/manage/menu-colmares-menu',
     'name' => 'Main Menu Edit',

@@ -213,12 +213,12 @@
  * @endcode
  */
 $databases['default']['default'] = array(
-'driver' => 'mysql',
-'database' => 'cmr',
-'username' => 'root',
-'password' => '',
-'host' => 'localhost',
-'port' => 3306
+	'driver' => 'mysql',
+	'database' => 'cmr',
+	'username' => 'root',
+	'password' => 'root',
+	'host' => '127.0.0.1',
+	'port' => 8889
 );
 
 

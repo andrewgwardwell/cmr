@@ -212,13 +212,22 @@
  *   );
  * @endcode
  */
-$databases['default']['default'] = array(
-'driver' => 'mysql',
-'database' => 'colmares_cmr',
-'username' => 'colmares_admin',
-'password' => 'drupaluser',
-'host' => 'localhost',
-);
+ /**
+ * Include a local settings file if it exists.
+ */
+$local_settings = dirname(__FILE__) . '/settings.local.php';
+if (file_exists($local_settings)) {
+  include $local_settings;
+} else {
+  $databases['default']['default'] = array(
+  'driver' => 'mysql',
+  'database' => 'colmares_cmr',
+  'username' => 'colmares_admin',
+  'password' => 'drupaluser',
+  'host' => 'localhost',
+  );
+}
+
 
 
 /**
